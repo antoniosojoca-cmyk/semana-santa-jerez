@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -24,6 +25,11 @@ body {
     font-family: Georgia, "Times New Roman", serif;
 }
 
+
+/* =========================
+   PORTADA
+========================= */
+
 .portada {
     position: relative;
     width: 100%;
@@ -31,15 +37,23 @@ body {
     overflow: hidden;
 }
 
+
+/* =========================
+   IMÁGENES
+========================= */
+
 .slide {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
+
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+
     opacity: 0;
+
     transition: opacity 2.5s ease-in-out;
 }
 
@@ -47,106 +61,264 @@ body {
     opacity: 1;
 }
 
+
+/* =========================
+   OSCURECIDO
+========================= */
+
 .portada::after {
     content: "";
+
     position: absolute;
     inset: 0;
+
     background:
         linear-gradient(
             to bottom,
-            rgba(0,0,0,0.15),
-            rgba(0,0,0,0.20) 45%,
-            rgba(0,0,0,0.72)
+            rgba(0,0,0,0.12),
+            rgba(0,0,0,0.18) 45%,
+            rgba(0,0,0,0.78)
         );
+
     pointer-events: none;
 }
 
+
+/* =========================
+   TITULO
+========================= */
+
 .titulo {
     position: absolute;
+
     z-index: 5;
+
     left: 0;
     right: 0;
+
     bottom: 115px;
+
     text-align: center;
+
     color: #f1eadb;
+
     padding: 20px;
-    text-shadow: 0 3px 12px rgba(0,0,0,0.9);
+
+    text-shadow:
+        0 3px 12px rgba(0,0,0,0.9);
 }
 
 .titulo h1 {
+
     margin: 0;
+
     font-size: clamp(38px, 6vw, 82px);
+
     font-weight: normal;
+
     letter-spacing: 5px;
 }
 
 .titulo p {
+
     margin: 15px 0 0;
+
     font-size: clamp(16px, 2vw, 24px);
+
     letter-spacing: 4px;
+
     color: #d1c5ae;
 }
 
-.menu {
+
+/* =========================
+   LINEA DECORATIVA
+========================= */
+
+.linea {
+
     position: absolute;
+
+    z-index: 6;
+
+    bottom: 91px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90px;
+
+    height: 1px;
+
+    background: #b9a06a;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+
+    position: absolute;
+
     z-index: 10;
+
     left: 0;
     right: 0;
+
     bottom: 35px;
+
     display: flex;
+
     justify-content: center;
+
     gap: 38px;
+
     flex-wrap: wrap;
+
     padding: 0 20px;
 }
 
 .menu a {
+
     color: #eee7d8;
+
     text-decoration: none;
+
     font-size: 15px;
+
     letter-spacing: 2px;
+
     transition: color 0.3s ease;
 }
 
 .menu a:hover {
+
     color: #b9a06a;
 }
 
-.linea {
+
+/* =========================
+   BOTON MUSICA
+========================= */
+
+.musica {
+
+    position: fixed;
+
+    z-index: 20;
+
+    right: 22px;
+
+    bottom: 22px;
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    border: 1px solid #b9a06a;
+
+    background: rgba(8,7,6,0.75);
+
+    color: #b9a06a;
+
+    font-size: 19px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.musica:hover {
+
+    background: rgba(185,160,106,0.18);
+
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   YOUTUBE OCULTO
+========================= */
+
+.youtube {
+
     position: absolute;
-    z-index: 6;
-    bottom: 91px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90px;
+
+    width: 1px;
     height: 1px;
-    background: #b9a06a;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    left: -100px;
+    top: -100px;
 }
 
 </style>
+
 </head>
 
 
 <body>
 
+
 <div class="portada">
 
-    <!-- IMAGEN 1 · CRISTO -->
-    <div class="slide activa"
-         style="background-image: url('https://www.lapasionenjerez.com/wp-content/uploads/2025/07/Santisimo-Cristo-del-Amor-750x536.jpg">
+
+    <!-- =========================
+         IMAGEN 1 · CRISTO
+    ========================== -->
+
+    <div
+        class="slide activa"
+        style="
+        background-image:
+        url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Buena_Muerte_Jerez.jpg');
+        ">
     </div>
 
-    <!-- IMAGEN 2 · ORACIÓN -->
-    <div class="slide"
-         style="background-image: url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Oraci%C3%B3n_en_el_huerto%2C_Jerez.jpg');">
+
+    <!-- =========================
+         IMAGEN 2 · ORACIÓN
+    ========================== -->
+
+    <div
+        class="slide"
+        style="
+        background-image:
+        url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Oraci%C3%B3n_en_el_huerto%2C_Jerez.jpg');
+        ">
     </div>
 
 
-    <!-- IMAGEN 3 · LAS MANOS -->
-<div class="slide"
-     style="background-image: url('https://hdadsanbenito.com/wp-content/uploads/2024/09/IMG_1440-scaled.jpg');">
-</div>
+    <!-- =========================
+         IMAGEN 3 · LAS MANOS
+    ========================== -->
 
+    <div
+        class="slide"
+        style="
+        background-image:
+        url('https://hdadsanbenito.com/wp-content/uploads/2024/09/IMG_1440-scaled.jpg');
+        ">
+    </div>
+
+
+    <!-- =========================
+         TITULO
+    ========================== -->
 
     <div class="titulo">
 
@@ -156,8 +328,13 @@ body {
 
     </div>
 
+
     <div class="linea"></div>
 
+
+    <!-- =========================
+         MENU
+    ========================== -->
 
     <nav class="menu">
 
@@ -173,10 +350,50 @@ body {
 
     </nav>
 
+
+</div>
+
+
+<!-- =========================
+     BOTON MUSICA
+========================= -->
+
+<button
+    class="musica"
+    id="botonMusica"
+    onclick="alternarMusica()"
+    title="Música">
+
+    ♪
+
+</button>
+
+
+<!-- =========================
+     YOUTUBE OCULTO
+========================= -->
+
+<div class="youtube">
+
+    <iframe
+        id="youtube"
+        width="1"
+        height="1"
+        src="https://www.youtube.com/embed/7-9CYrKLZEs?autoplay=1&enablejsapi=1"
+        title="Música"
+        frameborder="0"
+        allow="autoplay">
+    </iframe>
+
 </div>
 
 
 <script>
+
+
+/* =========================
+   CAMBIO DE IMAGENES
+========================= */
 
 const slides = document.querySelectorAll(".slide");
 
@@ -192,8 +409,71 @@ setInterval(() => {
 
 }, 7000);
 
+
+
+/* =========================
+   MUSICA
+========================= */
+
+let sonando = false;
+
+
+function alternarMusica() {
+
+    const iframe =
+        document.getElementById("youtube");
+
+    if (!sonando) {
+
+        iframe.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            "*"
+        );
+
+        sonando = true;
+
+    } else {
+
+        iframe.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}',
+            "*"
+        );
+
+        sonando = false;
+
+    }
+
+}
+
+
+/* =========================
+   INTENTO DE AUTOPLAY
+========================= */
+
+window.addEventListener("load", function() {
+
+    setTimeout(function() {
+
+        const iframe =
+            document.getElementById("youtube");
+
+        iframe.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            "*"
+        );
+
+        sonando = true;
+
+    }, 1500);
+
+});
+
 </script>
 
+
 </body>
+
 </html>
+
+
 
