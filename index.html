@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Semana Santa de Jerez</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #080706;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* PORTADA */
+
+.portada {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* IMÁGENES */
+
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 2.5s ease-in-out;
+}
+
+.slide.activa {
+    opacity: 1;
+}
+
+/* OSCURECIDO SUAVE */
+
+.portada::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.15),
+            rgba(0,0,0,0.20) 45%,
+            rgba(0,0,0,0.72)
+        );
+    pointer-events: none;
+}
+
+/* TITULO */
+
+.titulo {
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    bottom: 115px;
+    text-align: center;
+    color: #f1eadb;
+    padding: 20px;
+    text-shadow: 0 3px 12px rgba(0,0,0,0.9);
+}
+
+.titulo h1 {
+    margin: 0;
+    font-size: clamp(38px, 6vw, 82px);
+    font-weight: normal;
+    letter-spacing: 5px;
+}
+
+.titulo p {
+    margin: 15px 0 0;
+    font-size: clamp(16px, 2vw, 24px);
+    letter-spacing: 4px;
+    color: #d1c5ae;
+}
+
+/* MENU */
+
+.menu {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    bottom: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 38px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.menu a {
+    color: #eee7d8;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #b9a06a;
+}
+
+/* PEQUEÑO DETALLE DECORATIVO */
+
+.linea {
+    position: absolute;
+    z-index: 6;
+    bottom: 91px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 1px;
+    background: #b9a06a;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="portada">
+
+    <!-- IMAGEN 1 -->
+    <div class="slide activa"
+         style="background-image: url('https://static.grupojoly.com/clip/4b2a536b-dc15-486c-8c3b-7988a59e40bb_source-aspect-ratio_1600w_0.jpg');">
+    </div>
+
+    <!-- IMAGEN 2 -->
+    <div class="slide"
+         style="background-image: url('https://static.grupojoly.com/clip/1aca5a54-a2e9-4650-9f06-da662e1c0612_source-aspect-ratio_1600w_0.jpg');">
+    </div>
+
+    <!-- IMAGEN 3 -->
+    <div class="slide"
+         style="background-image: url('https://static.grupojoly.com/clip/c82a707a-93b3-4cfc-9608-66c1070fefb9_source-aspect-ratio_1600w_0.jpg');">
+    </div>
+
+
+    <div class="titulo">
+
+        <h1>SEMANA SANTA DE JEREZ</h1>
+
+        <p>Fe · tradición · silencio · emoción</p>
+
+    </div>
+
+    <div class="linea"></div>
+
+
+    <nav class="menu">
+
+        <a href="#">HERMANDADES</a>
+
+        <a href="#">MADRUGÁ</a>
+
+        <a href="#">SEMANA SANTA</a>
+
+        <a href="#">DEVOCIONES</a>
+
+        <a href="#">GALERÍA</a>
+
+    </nav>
+
+</div>
+
+
+<script>
+
+const slides = document.querySelectorAll(".slide");
+
+let actual = 0;
+
+setInterval(() => {
+
+    slides[actual].classList.remove("activa");
+
+    actual = (actual + 1) % slides.length;
+
+    slides[actual].classList.add("activa");
+
+}, 7000);
+
+</script>
+
+</body>
+</html>
