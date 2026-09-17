@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Buena Muerte — Semana Santa de Jerez</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#080808;
+    color:#f1eadc;
+    font-family:Georgia,"Times New Roman",serif;
+}
+
+/* CABECERA */
+
+header{
+    text-align:center;
+    padding:55px 20px 25px;
+}
+
+header h1{
+    margin:0;
+    font-size:44px;
+    font-weight:normal;
+    letter-spacing:6px;
+    color:#e8dcc5;
+}
+
+header p{
+    margin:14px 0 0;
+    color:#c9a35b;
+    font-size:17px;
+    letter-spacing:3px;
+}
+
+/* MENU */
+
+nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+    padding:20px 15px 30px;
+    border-bottom:1px solid #2c261d;
+}
+
+nav a{
+    text-decoration:none;
+    color:#e8dcc5;
+    font-size:14px;
+    letter-spacing:2px;
+    transition:color .3s ease;
+}
+
+nav a:hover{
+    color:#c9a35b;
+}
+
+/* INTRODUCCION */
+
+.intro{
+    text-align:center;
+    max-width:900px;
+    margin:0 auto;
+    padding:65px 25px 55px;
+}
+
+.intro h2{
+    margin:0;
+    color:#e8dcc5;
+    font-size:34px;
+    font-weight:normal;
+    letter-spacing:3px;
+}
+
+.intro .linea{
+    width:70px;
+    height:1px;
+    background:#c9a35b;
+    margin:25px auto;
+}
+
+.intro p{
+    margin:0;
+    color:#b9ad98;
+    font-size:17px;
+    line-height:1.8;
+}
+
+/* GALERIA */
+
+.galeria{
+    width:94%;
+    max-width:1500px;
+    margin:0 auto 80px;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:42px;
+}
+
+/* FOTOGRAFIAS */
+
+.foto{
+    background:#050505;
+    overflow:hidden;
+}
+
+.foto img{
+    width:100%;
+    height:auto;
+    display:block;
+
+    transition:
+        transform .7s ease,
+        filter .7s ease;
+
+    filter:brightness(.88);
+}
+
+.foto:hover img{
+    transform:scale(1.025);
+    filter:brightness(1);
+}
+
+/* PIE DE FOTO */
+
+.pie{
+    padding:16px 12px 18px;
+    text-align:center;
+}
+
+.pie p{
+    margin:0;
+    color:#c9a35b;
+    font-size:13px;
+    letter-spacing:1px;
+}
+
+/* CIERRE */
+
+.final{
+    text-align:center;
+    padding:10px 20px 80px;
+}
+
+.final .linea{
+    width:70px;
+    height:1px;
+    background:#c9a35b;
+    margin:0 auto 28px;
+}
+
+.final h2{
+    margin:0;
+    color:#c9a35b;
+    font-size:27px;
+    font-weight:normal;
+    letter-spacing:4px;
+}
+
+.final p{
+    max-width:700px;
+    margin:18px auto 0;
+    color:#b9ad98;
+    font-size:16px;
+    line-height:1.7;
+}
+
+/* MOVIL */
+
+@media(max-width:800px){
+
+    header{
+        padding-top:35px;
+    }
+
+    header h1{
+        font-size:31px;
+        letter-spacing:4px;
+    }
+
+    nav{
+        gap:18px;
+    }
+
+    nav a{
+        font-size:12px;
+    }
+
+    .intro{
+        padding-top:45px;
+    }
+
+    .intro h2{
+        font-size:27px;
+    }
+
+    .galeria{
+        grid-template-columns:1fr;
+        width:94%;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>BUENA MUERTE</h1>
+
+    <p>SEMANA SANTA DE JEREZ</p>
+
+</header>
+
+
+<nav>
+
+    <a href="index.html">PORTADA</a>
+
+    <a href="hermandades.html">HERMANDADES</a>
+
+    <a href="#">MADRUGÁ</a>
+
+    <a href="#">SEMANA SANTA</a>
+
+    <a href="#">DEVOCIONES</a>
+
+    <a href="#">GALERÍA</a>
+
+</nav>
+
+
+<section class="intro">
+
+    <h2>Santísimo Cristo de la Buena Muerte</h2>
+
+    <div class="linea"></div>
+
+    <p>
+        Una noche de silencio, oscuridad y oración.
+        Desde Santiago, la Buena Muerte recorre las calles
+        de Jerez durante la Madrugada del Viernes Santo.
+    </p>
+
+</section>
+
+
+<section class="galeria">
+
+
+    <!-- FOTOGRAFIA 1 -->
+
+    <div class="foto">
+
+        <img
+        src="https://static.grupojoly.com/clip/e1f5992e-d6c2-4e1d-81e9-09596e055595_source-aspect-ratio_1600w_0.jpg"
+        alt="Hermandad de la Buena Muerte en Jerez">
+
+        <div class="pie">
+            <p>La noche de la Buena Muerte</p>
+        </div>
+
+    </div>
+
+
+    <!-- FOTOGRAFIA 2 -->
+
+    <div class="foto">
+
+        <img
+        src="https://static.grupojoly.com/clip/4b2a536b-dc15-486c-8c3b-7988a59e40bb_source-aspect-ratio_1600w_0.jpg"
+        alt="Nazarenos de la Buena Muerte">
+
+        <div class="pie">
+            <p>El silencio de los nazarenos</p>
+        </div>
+
+    </div>
+
+
+    <!-- FOTOGRAFIA 3 -->
+
+    <div class="foto">
+
+        <img
+        src="https://static.grupojoly.com/clip/1aca5a54-a2e9-4650-9f06-da662e1c0612_source-aspect-ratio_1600w_0.jpg"
+        alt="Cortejo de la Buena Muerte">
+
+        <div class="pie">
+            <p>La Madrugada de Jerez</p>
+        </div>
+
+    </div>
+
+
+    <!-- FOTOGRAFIA 4 -->
+
+    <div class="foto">
+
+        <img
+        src="https://static.grupojoly.com/clip/70472041-d3d6-4545-943c-a5c5beaf6292_source-aspect-ratio_1600w_0.jpg"
+        alt="Buena Muerte en la Plaza de la Asunción">
+
+        <div class="pie">
+            <p>Camino de la Carrera Oficial</p>
+        </div>
+
+    </div>
+
+
+    <!-- FOTOGRAFIA 5 -->
+
+    <div class="foto">
+
+        <img
+        src="https://static.grupojoly.com/clip/c82a707a-93b3-4cfc-9608-66c1070fefb9_source-aspect-ratio_1600w_0.jpg"
+        alt="Paso de la Buena Muerte">
+
+        <div class="pie">
+            <p>La cruz y el silencio</p>
+        </div>
+
+    </div>
+
+
+    <!-- FOTOGRAFIA 6 -->
+
+    <div class="foto">
+
+        <img
+        src="https://static.grupojoly.com/clip/03e451a9-16da-4db7-8cd0-c927c489cbcf_source-aspect-ratio_1600w_0.jpg"
+        alt="María Santísima del Dulce Nombre">
+
+        <div class="pie">
+            <p>María Santísima del Dulce Nombre</p>
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<section class="final">
+
+    <div class="linea"></div>
+
+    <h2>EL SILENCIO TAMBIÉN REZA</h2>
+
+    <p>
+        En la oscuridad de la Madrugada, una cruz avanza
+        lentamente por las calles de Jerez.
+        Y durante unos instantes, todo parece detenerse.
+    </p>
+
+</section>
+
+
+</body>
+
+</html>
