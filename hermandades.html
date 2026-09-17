@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hermandades · Semana Santa de Jerez</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #080706;
+    color: #eee7d8;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =========================
+   CABECERA
+========================= */
+
+header {
+    padding: 45px 20px 30px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: clamp(38px, 5vw, 65px);
+    font-weight: normal;
+    letter-spacing: 6px;
+}
+
+header p {
+    margin: 15px 0 0;
+    color: #b9a06a;
+    font-size: 17px;
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+    padding: 20px;
+    border-top: 1px solid rgba(185,160,106,0.25);
+    border-bottom: 1px solid rgba(185,160,106,0.25);
+}
+
+nav a {
+    color: #eee7d8;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #b9a06a;
+}
+
+
+/* =========================
+   INTRODUCCION
+========================= */
+
+.introduccion {
+    max-width: 900px;
+    margin: 70px auto 50px;
+    padding: 0 25px;
+    text-align: center;
+}
+
+.introduccion h2 {
+    margin: 0 0 20px;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: normal;
+    letter-spacing: 3px;
+}
+
+.introduccion p {
+    margin: 0;
+    color: #cfc7b8;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   GALERIA
+========================= */
+
+.galeria {
+    width: 92%;
+    max-width: 1450px;
+    margin: 0 auto 80px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 35px;
+}
+
+
+/* =========================
+   TARJETA
+========================= */
+
+.hermandad {
+    position: relative;
+    overflow: hidden;
+
+    background: #11100e;
+
+    cursor: pointer;
+}
+
+.hermandad img {
+    display: block;
+
+    width: 100%;
+    height: 520px;
+
+    object-fit: cover;
+
+    transition:
+        transform 1s ease,
+        filter 1s ease;
+
+    filter: brightness(0.82);
+}
+
+.hermandad:hover img {
+    transform: scale(1.04);
+    filter: brightness(1);
+}
+
+
+/* =========================
+   NOMBRE
+========================= */
+
+.nombre {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 45px 25px 25px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.95),
+            rgba(0,0,0,0)
+        );
+
+    text-align: center;
+}
+
+.nombre h3 {
+    margin: 0;
+
+    font-size: 28px;
+    font-weight: normal;
+
+    letter-spacing: 3px;
+}
+
+.nombre span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #b9a06a;
+
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   PIE
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 40px 20px 60px;
+
+    color: #8e877a;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   MOVIL
+========================= */
+
+@media (max-width: 800px) {
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .hermandad img {
+        height: 500px;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>HERMANDADES</h1>
+
+    <p>SEMANA SANTA DE JEREZ</p>
+
+</header>
+
+
+<nav>
+
+    <a href="index.html">PORTADA</a>
+
+    <a href="hermandades.html">HERMANDADES</a>
+
+    <a href="#">MADRUGÁ</a>
+
+    <a href="#">SEMANA SANTA</a>
+
+    <a href="#">DEVOCIONES</a>
+
+    <a href="#">GALERÍA</a>
+
+</nav>
+
+
+<section class="introduccion">
+
+    <h2>Una ciudad, una fe, una historia</h2>
+
+    <p>
+        Las hermandades de Jerez forman parte de una historia
+        que se transmite de generación en generación.
+        Rostros, imágenes, silencios y devociones que cada
+        primavera vuelven a llenar las calles de la ciudad.
+    </p>
+
+</section>
+
+
+<section class="galeria">
+
+
+    <!-- =========================
+         BUENA MUERTE
+    ========================== -->
+
+    <a class="hermandad" href="#">
+
+        <img
+        src="https://static.grupojoly.com/clip/4b2a536b-dc15-486c-8c3b-7988a59e40bb_source-aspect-ratio_1600w_0.jpg"
+        alt="Santísimo Cristo de la Buena Muerte">
+
+        <div class="nombre">
+
+            <h3>BUENA MUERTE</h3>
+
+            <span>SANTÍSIMO CRISTO DE LA BUENA MUERTE</span>
+
+        </div>
+
+    </a>
+
+
+    <!-- =========================
+         DULCE NOMBRE
+    ========================== -->
+
+    <a class="hermandad" href="#">
+
+        <img
+        src="https://static.grupojoly.com/clip/1aca5a54-a2e9-4650-9f06-da662e1c0612_source-aspect-ratio_1600w_0.jpg"
+        alt="María Santísima del Dulce Nombre">
+
+        <div class="nombre">
+
+            <h3>DULCE NOMBRE</h3>
+
+            <span>MARÍA SANTÍSIMA DEL DULCE NOMBRE</span>
+
+        </div>
+
+    </a>
+
+
+    <!-- =========================
+         DEVOCION
+    ========================== -->
+
+    <a class="hermandad" href="#">
+
+        <img
+        src="https://static.grupojoly.com/clip/37901f8c-24d6-4514-aac5-1b5fe1564b38_source-aspect-ratio_1600w_0.jpg"
+        alt="Devoción">
+
+        <div class="nombre">
+
+            <h3>DEVOCIONES</h3>
+
+            <span>LA FE DE JEREZ</span>
+
+        </div>
+
+    </a>
+
+
+    <!-- =========================
+         NAZARENOS
+    ========================== -->
+
+    <a class="hermandad" href="#">
+
+        <img
+        src="https://static.grupojoly.com/clip/c82a707a-93b3-4cfc-9608-66c1070fefb9_source-aspect-ratio_1600w_0.jpg"
+        alt="Nazarenos de Jerez">
+
+        <div class="nombre">
+
+            <h3>NAZARENOS</h3>
+
+            <span>EL ROSTRO DE LA FE</span>
+
+        </div>
+
+    </a>
+
+
+</section>
+
+
+<footer>
+
+    SEMANA SANTA DE JEREZ · FE · TRADICIÓN · MEMORIA
+
+</footer>
+
+
+</body>
+
+</html>
