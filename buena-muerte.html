@@ -22,16 +22,31 @@ body{
     width:100%;
     height:100%;
     background:#000;
-    overflow:hidden;
-    font-family:Georgia,"Times New Roman",serif;
     color:#f1eadc;
+    font-family:Georgia,"Times New Roman",serif;
+    overflow:hidden;
 }
+
+body{
+    background:#000;
+}
+
+
+/* =========================
+   ESCENARIO
+   ========================= */
 
 .exposicion{
     position:relative;
+
     width:100%;
     height:100vh;
+
     background:#000;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
 
@@ -40,7 +55,9 @@ body{
    ========================= */
 
 .slide{
+
     position:absolute;
+
     inset:0;
 
     width:100%;
@@ -64,14 +81,18 @@ body{
 }
 
 
-/*
-   LA IMAGEN OCUPA LA PANTALLA,
-   SIN MARCO, SIN BORDE Y SIN SOMBRA
-*/
+/* =========================
+   MARCO ANCHO
+   ========================= */
 
-.imagen{
-    position:absolute;
-    inset:0;
+.marco{
+
+    position:relative;
+
+    width:92vw;
+    max-width:1500px;
+
+    height:74vh;
 
     display:flex;
     align-items:center;
@@ -79,61 +100,56 @@ body{
 
     background:#000;
 
-    padding:40px 50px 65px;
-}
-
-.imagen img{
-
-    max-width:100%;
-    max-height:100%;
-
-    width:auto;
-    height:auto;
-
-    object-fit:contain;
-
-    display:block;
-
-    border:0;
-    outline:0;
-
-    /*
-       INTENTO DE FUNDIR LOS TONOS OSCUROS
-       CON EL FONDO NEGRO
-    */
-
-    mix-blend-mode:screen;
-
-    filter:
-        brightness(.72)
-        contrast(2.15)
-        saturate(1.05);
-
-    transform:scale(1);
-
-    transition:
-        transform 8s ease,
-        filter 2.5s ease;
-}
-
-
-.slide.activa .imagen img{
-
-    transform:scale(1.025);
-
-    filter:
-        brightness(.82)
-        contrast(2.25)
-        saturate(1.08);
+    overflow:hidden;
 }
 
 
 /* =========================
-   OSCURECIMIENTO
+   IMAGEN HORIZONTAL
+   ========================= */
+
+.marco img{
+
+    display:block;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    border:0;
+    outline:0;
+
+    box-shadow:none;
+
+    transform:scale(1);
+
+    filter:brightness(.94);
+
+    transition:
+        transform 8s ease,
+        filter 2s ease;
+}
+
+
+.slide.activa .marco img{
+
+    transform:scale(1.025);
+
+    filter:brightness(1);
+}
+
+
+/* =========================
+   VELO SUAVE
    ========================= */
 
 .velo{
+
     position:absolute;
+
     inset:0;
 
     z-index:5;
@@ -141,11 +157,13 @@ body{
     pointer-events:none;
 
     background:
+
         linear-gradient(
             to bottom,
-            rgba(0,0,0,.25),
-            rgba(0,0,0,0) 35%,
-            rgba(0,0,0,.35)
+            rgba(0,0,0,.15),
+            transparent 25%,
+            transparent 70%,
+            rgba(0,0,0,.30)
         );
 }
 
@@ -155,9 +173,11 @@ body{
    ========================= */
 
 .titulo{
+
     position:absolute;
 
-    top:25px;
+    top:24px;
+
     left:0;
     right:0;
 
@@ -169,27 +189,30 @@ body{
 }
 
 .titulo h1{
+
     margin:0;
 
+    color:#e8dcc5;
+
     font-size:29px;
+
     font-weight:normal;
 
     letter-spacing:7px;
 
-    color:#e8dcc5;
-
     text-shadow:
-        0 2px 14px #000;
+        0 2px 15px #000;
 }
 
 .titulo p{
+
     margin:8px 0 0;
+
+    color:#c9a35b;
 
     font-size:12px;
 
     letter-spacing:3px;
-
-    color:#c9a35b;
 
     text-shadow:
         0 2px 12px #000;
@@ -197,15 +220,17 @@ body{
 
 
 /* =========================
-   TEXTO INFERIOR
+   TEXTO
    ========================= */
 
 .texto{
+
     position:absolute;
 
     left:0;
     right:0;
-    bottom:28px;
+
+    bottom:27px;
 
     z-index:20;
 
@@ -215,27 +240,30 @@ body{
 }
 
 .texto h2{
+
     margin:0;
 
-    font-size:22px;
+    color:#f1eadc;
+
+    font-size:21px;
+
     font-weight:normal;
 
     letter-spacing:3px;
-
-    color:#f1eadc;
 
     text-shadow:
         0 2px 14px #000;
 }
 
 .texto p{
+
     margin:7px 0 0;
+
+    color:#c9a35b;
 
     font-size:12px;
 
     letter-spacing:2px;
-
-    color:#c9a35b;
 
     text-shadow:
         0 2px 10px #000;
@@ -247,6 +275,7 @@ body{
    ========================= */
 
 .musica{
+
     position:fixed;
 
     right:24px;
@@ -270,12 +299,19 @@ body{
     cursor:pointer;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
+
+    transition:
+        background .3s ease,
+        color .3s ease;
 }
 
 .musica:hover{
+
     background:#c9a35b;
+
     color:#000;
 }
 
@@ -285,6 +321,7 @@ body{
    ========================= */
 
 .volver{
+
     position:fixed;
 
     left:24px;
@@ -301,10 +338,17 @@ body{
     letter-spacing:2px;
 
     opacity:.8;
+
+    transition:
+        color .3s ease,
+        opacity .3s ease;
 }
 
 .volver:hover{
+
     color:#c9a35b;
+
+    opacity:1;
 }
 
 
@@ -313,6 +357,7 @@ body{
    ========================= */
 
 .youtube{
+
     position:fixed;
 
     left:-10000px;
@@ -322,6 +367,7 @@ body{
     height:1px;
 
     opacity:0;
+
     pointer-events:none;
 }
 
@@ -332,48 +378,65 @@ body{
 
 @media(max-width:700px){
 
-    .imagen{
-        padding:50px 12px 70px;
+    .marco{
+
+        width:96vw;
+
+        height:68vh;
     }
 
     .titulo{
+
         top:20px;
     }
 
     .titulo h1{
+
         font-size:21px;
+
         letter-spacing:5px;
     }
 
     .titulo p{
+
         font-size:9px;
+
         letter-spacing:2px;
     }
 
     .texto{
-        bottom:27px;
-        padding:0 45px;
+
+        bottom:28px;
+
+        padding:0 40px;
     }
 
     .texto h2{
+
         font-size:17px;
+
         letter-spacing:2px;
     }
 
     .texto p{
+
         font-size:10px;
     }
 
     .musica{
+
         width:42px;
         height:42px;
+
         right:15px;
         bottom:15px;
     }
 
     .volver{
+
         left:15px;
         bottom:21px;
+
         font-size:9px;
     }
 
@@ -391,49 +454,15 @@ body{
 
 
     <!-- =========================
-         CRISTO 1
+         1 — VIRGEN
          ========================= -->
 
     <div class="slide activa">
 
-        <div class="imagen">
+        <div class="marco">
 
             <img
-            src="https://static.grupojoly.com/clip/8363eb48-49ce-4dd4-af30-c30e1aa88f0f_source-aspect-ratio_1600w_0.jpg"
-            alt="Santísimo Cristo de la Buena Muerte">
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================
-         CRISTO 2
-         ========================= -->
-
-    <div class="slide">
-
-        <div class="imagen">
-
-            <img
-            src="https://soyjerez.com/wp-content/uploads/2020/06/cristo-buena-muerte.jpg"
-            alt="Santísimo Cristo de la Buena Muerte">
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================
-         VIRGEN 1
-         ========================= -->
-
-    <div class="slide">
-
-        <div class="imagen">
-
-            <img
-            src="https://static.grupojoly.com/clip/fd2006e4-8309-46aa-987e-1ab8e476cb35_source-aspect-ratio_1600w_0.jpg"
+            src="https://static.grupojoly.com/clip/03e451a9-16da-4db7-8cd0-c927c489cbcf_source-aspect-ratio_1600w_0.jpg"
             alt="María Santísima del Dulce Nombre">
 
         </div>
@@ -442,32 +471,15 @@ body{
 
 
     <!-- =========================
-         VIRGEN 2
+         2 — CRISTO
          ========================= -->
 
     <div class="slide">
 
-        <div class="imagen">
+        <div class="marco">
 
             <img
-            src="https://www.jerez.es/fileadmin/DesarrolloWeb/ESPECIALES/MAGNA_MARIANA_JEREZ_2024/IMG_Imagineria/MariaDulceNombre.jpg"
-            alt="María Santísima del Dulce Nombre">
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================
-         CRISTO 3
-         ========================= -->
-
-    <div class="slide">
-
-        <div class="imagen">
-
-            <img
-            src="https://2.bp.blogspot.com/_TMGpNzqt1fQ/TNQSiAdbo1I/AAAAAAAAKX8/I-w2FBo-8Uw/s1600/Buena%2BMuerte%2B%287%29.JPG"
+            src="https://static.grupojoly.com/clip/c82a707a-93b3-4cfc-9608-66c1070fefb9_source-aspect-ratio_1600w_0.jpg"
             alt="Santísimo Cristo de la Buena Muerte">
 
         </div>
@@ -476,21 +488,74 @@ body{
 
 
     <!-- =========================
-         VIRGEN 3
+         3 — VIRGEN
          ========================= -->
 
     <div class="slide">
 
-        <div class="imagen">
+        <div class="marco">
 
             <img
-            src="https://www.uniondehermandades.com/wp-content/uploads/2018/12/5-10.jpg"
+            src="https://static.grupojoly.com/clip/e74addd3-006b-4db4-bc9f-d9ac7a6d029d_source-aspect-ratio_1600w_0.jpg"
             alt="María Santísima del Dulce Nombre">
 
         </div>
 
     </div>
 
+
+    <!-- =========================
+         4 — CRISTO
+         ========================= -->
+
+    <div class="slide">
+
+        <div class="marco">
+
+            <img
+            src="https://static.grupojoly.com/clip/70472041-d3d6-4545-943c-a5c5beaf6292_source-aspect-ratio_1600w_0.jpg"
+            alt="Santísimo Cristo de la Buena Muerte">
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         5 — CRISTO
+         ========================= -->
+
+    <div class="slide">
+
+        <div class="marco">
+
+            <img
+            src="https://static.grupojoly.com/clip/ba8c1b53-f994-4b0f-834d-baa1179c0e35_source-aspect-ratio_1600w_0.jpg"
+            alt="Hermandad de la Buena Muerte">
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         6 — VIRGEN
+         ========================= -->
+
+    <div class="slide">
+
+        <div class="marco">
+
+            <img
+            src="https://static.grupojoly.com/clip/1aca5a54-a2e9-4650-9f06-da662e1c0612_source-aspect-ratio_1600w_0.jpg"
+            alt="Hermandad de la Buena Muerte">
+
+        </div>
+
+    </div>
+
+
+    <!-- VELO -->
 
     <div class="velo"></div>
 
@@ -510,9 +575,9 @@ body{
 
     <div class="texto" id="texto">
 
-        <h2>Santísimo Cristo de la Buena Muerte</h2>
+        <h2>María Santísima del Dulce Nombre</h2>
 
-        <p>El silencio de la noche</p>
+        <p>La noche de la Buena Muerte</p>
 
     </div>
 
@@ -521,13 +586,14 @@ body{
 
 
 <!-- =========================
-     BOTON MUSICA
+     MUSICA
      ========================= -->
 
 <button
 class="musica"
 id="botonMusica"
-type="button">
+type="button"
+aria-label="Reproducir música">
 
 ♪
 
@@ -552,7 +618,7 @@ href="hermandades.html">
 <iframe
 class="youtube"
 id="youtube"
-src="https://www.youtube.com/embed/Uq0QTbotmag?enablejsapi=1&playsinline=1&loop=1&playlist=Uq0QTbotmag"
+src="https://www.youtube.com/embed/Uq0QTbotmag?enablejsapi=1&playsinline=1&controls=0&loop=1&playlist=Uq0QTbotmag"
 allow="autoplay">
 </iframe>
 
@@ -566,24 +632,23 @@ allow="autoplay">
 const slides =
 document.querySelectorAll(".slide");
 
-const texto =
-document.getElementById("texto");
+const tituloFoto =
+document.querySelector(".texto h2");
+
+const subtituloFoto =
+document.querySelector(".texto p");
+
 
 const textos = [
 
     [
-        "Santísimo Cristo de la Buena Muerte",
-        "El silencio de la noche"
-    ],
-
-    [
-        "Santísimo Cristo de la Buena Muerte",
-        "Ante la Cruz"
-    ],
-
-    [
         "María Santísima del Dulce Nombre",
-        "La mirada de María"
+        "La noche de la Buena Muerte"
+    ],
+
+    [
+        "Santísimo Cristo de la Buena Muerte",
+        "El silencio de la Madrugada"
     ],
 
     [
@@ -593,15 +658,21 @@ const textos = [
 
     [
         "Santísimo Cristo de la Buena Muerte",
-        "La Pasión y el silencio"
+        "Ante la Catedral"
     ],
 
     [
-        "María Santísima del Dulce Nombre",
-        "La luz de la Madrugada"
+        "La Buena Muerte",
+        "Jerez · Viernes Santo Madrugada"
+    ],
+
+    [
+        "La Buena Muerte",
+        "Silencio, fe y tradición"
     ]
 
 ];
+
 
 let actual = 0;
 
@@ -613,21 +684,26 @@ function cambiarSlide(){
     actual++;
 
     if(actual >= slides.length){
+
         actual = 0;
     }
 
     slides[actual].classList.add("activa");
 
-    texto.querySelector("h2").textContent =
+    tituloFoto.textContent =
         textos[actual][0];
 
-    texto.querySelector("p").textContent =
+    subtituloFoto.textContent =
         textos[actual][1];
-
 }
 
 
-setInterval(cambiarSlide,7000);
+/* 7 segundos por fotografía */
+
+setInterval(
+    cambiarSlide,
+    7000
+);
 
 
 /* =========================
@@ -643,20 +719,20 @@ document.getElementById("botonMusica");
 let musicaActiva = false;
 
 
-/*
-   Cuando pulsamos el botón,
-   esperamos un instante y
-   mandamos la orden a YouTube.
-*/
-
 function reproducirMusica(){
 
     youtube.contentWindow.postMessage(
+
         JSON.stringify({
+
             event:"command",
+
             func:"playVideo",
+
             args:[]
+
         }),
+
         "*"
     );
 
@@ -669,11 +745,17 @@ function reproducirMusica(){
 function pararMusica(){
 
     youtube.contentWindow.postMessage(
+
         JSON.stringify({
+
             event:"command",
+
             func:"pauseVideo",
+
             args:[]
+
         }),
+
         "*"
     );
 
@@ -698,18 +780,6 @@ botonMusica.addEventListener(
         }
 
     }
-);
-
-
-/*
-   Intentamos autoplay.
-   Si Chrome lo bloquea,
-   el botón permite iniciarla.
-*/
-
-setTimeout(
-    reproducirMusica,
-    2500
 );
 
 </script>
