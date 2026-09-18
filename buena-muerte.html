@@ -22,9 +22,9 @@ body{
     width:100%;
     height:100%;
     background:#000;
-    color:#f1eadc;
-    font-family:Georgia,"Times New Roman",serif;
     overflow:hidden;
+    font-family:Georgia,"Times New Roman",serif;
+    color:#f1eadc;
 }
 
 .exposicion{
@@ -36,12 +36,15 @@ body{
 
 
 /* =========================
-   DIAPOSITIVAS
+   FOTOGRAFIAS
    ========================= */
 
 .slide{
     position:absolute;
     inset:0;
+
+    width:100%;
+    height:100%;
 
     display:flex;
     align-items:center;
@@ -49,7 +52,7 @@ body{
 
     opacity:0;
 
-    transition:opacity 2.8s ease-in-out;
+    transition:opacity 2.5s ease-in-out;
 
     background:#000;
 
@@ -61,9 +64,10 @@ body{
 }
 
 
-/* =========================
-   IMAGEN
-   ========================= */
+/*
+   LA IMAGEN OCUPA LA PANTALLA,
+   SIN MARCO, SIN BORDE Y SIN SOMBRA
+*/
 
 .imagen{
     position:absolute;
@@ -73,14 +77,12 @@ body{
     align-items:center;
     justify-content:center;
 
-    padding:45px 60px 65px;
-
     background:#000;
+
+    padding:40px 50px 65px;
 }
 
 .imagen img{
-
-    display:block;
 
     max-width:100%;
     max-height:100%;
@@ -90,40 +92,44 @@ body{
 
     object-fit:contain;
 
+    display:block;
+
     border:0;
     outline:0;
 
-    /* ESTA ES LA CLAVE:
-       EL NEGRO DE LA FOTO SE FUNDE
-       CON EL NEGRO DE LA PANTALLA */
+    /*
+       INTENTO DE FUNDIR LOS TONOS OSCUROS
+       CON EL FONDO NEGRO
+    */
 
     mix-blend-mode:screen;
 
     filter:
-        brightness(.92)
-        contrast(1.08);
+        brightness(.72)
+        contrast(2.15)
+        saturate(1.05);
 
     transform:scale(1);
 
     transition:
         transform 8s ease,
-        filter 3s ease;
+        filter 2.5s ease;
 }
 
 
-/* PEQUEÑO ACERCAMIENTO */
-
 .slide.activa .imagen img{
+
     transform:scale(1.025);
 
     filter:
-        brightness(1)
-        contrast(1.08);
+        brightness(.82)
+        contrast(2.25)
+        saturate(1.08);
 }
 
 
 /* =========================
-   VELO MUY SUAVE
+   OSCURECIMIENTO
    ========================= */
 
 .velo{
@@ -137,9 +143,9 @@ body{
     background:
         linear-gradient(
             to bottom,
-            rgba(0,0,0,.15),
+            rgba(0,0,0,.25),
             rgba(0,0,0,0) 35%,
-            rgba(0,0,0,.20)
+            rgba(0,0,0,.35)
         );
 }
 
@@ -165,28 +171,28 @@ body{
 .titulo h1{
     margin:0;
 
-    color:#e8dcc5;
-
     font-size:29px;
     font-weight:normal;
 
     letter-spacing:7px;
 
+    color:#e8dcc5;
+
     text-shadow:
-        0 2px 15px rgba(0,0,0,1);
+        0 2px 14px #000;
 }
 
 .titulo p{
     margin:8px 0 0;
 
-    color:#c9a35b;
-
     font-size:12px;
 
     letter-spacing:3px;
 
+    color:#c9a35b;
+
     text-shadow:
-        0 2px 12px rgba(0,0,0,1);
+        0 2px 12px #000;
 }
 
 
@@ -211,28 +217,28 @@ body{
 .texto h2{
     margin:0;
 
-    color:#f1eadc;
-
     font-size:22px;
     font-weight:normal;
 
     letter-spacing:3px;
 
+    color:#f1eadc;
+
     text-shadow:
-        0 2px 14px rgba(0,0,0,1);
+        0 2px 14px #000;
 }
 
 .texto p{
     margin:7px 0 0;
 
-    color:#c9a35b;
-
     font-size:12px;
 
     letter-spacing:2px;
 
+    color:#c9a35b;
+
     text-shadow:
-        0 2px 10px rgba(0,0,0,1);
+        0 2px 10px #000;
 }
 
 
@@ -255,7 +261,7 @@ body{
 
     border:1px solid #c9a35b;
 
-    background:rgba(0,0,0,.85);
+    background:#050505;
 
     color:#c9a35b;
 
@@ -266,10 +272,6 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
-
-    transition:
-        background .3s ease,
-        color .3s ease;
 }
 
 .musica:hover{
@@ -298,16 +300,11 @@ body{
 
     letter-spacing:2px;
 
-    opacity:.75;
-
-    transition:
-        color .3s ease,
-        opacity .3s ease;
+    opacity:.8;
 }
 
 .volver:hover{
     color:#c9a35b;
-    opacity:1;
 }
 
 
@@ -318,11 +315,11 @@ body{
 .youtube{
     position:fixed;
 
-    width:1px;
-    height:1px;
-
     left:-10000px;
     top:-10000px;
+
+    width:1px;
+    height:1px;
 
     opacity:0;
     pointer-events:none;
@@ -336,7 +333,7 @@ body{
 @media(max-width:700px){
 
     .imagen{
-        padding:55px 15px 75px;
+        padding:50px 12px 70px;
     }
 
     .titulo{
@@ -355,7 +352,7 @@ body{
 
     .texto{
         bottom:27px;
-        padding:0 50px;
+        padding:0 45px;
     }
 
     .texto h2{
@@ -370,7 +367,6 @@ body{
     .musica{
         width:42px;
         height:42px;
-
         right:15px;
         bottom:15px;
     }
@@ -394,7 +390,9 @@ body{
 <div class="exposicion">
 
 
-    <!-- CRISTO 1 -->
+    <!-- =========================
+         CRISTO 1
+         ========================= -->
 
     <div class="slide activa">
 
@@ -409,7 +407,9 @@ body{
     </div>
 
 
-    <!-- CRISTO 2 -->
+    <!-- =========================
+         CRISTO 2
+         ========================= -->
 
     <div class="slide">
 
@@ -424,7 +424,9 @@ body{
     </div>
 
 
-    <!-- VIRGEN 1 -->
+    <!-- =========================
+         VIRGEN 1
+         ========================= -->
 
     <div class="slide">
 
@@ -439,7 +441,9 @@ body{
     </div>
 
 
-    <!-- VIRGEN 2 -->
+    <!-- =========================
+         VIRGEN 2
+         ========================= -->
 
     <div class="slide">
 
@@ -454,7 +458,9 @@ body{
     </div>
 
 
-    <!-- CRISTO 3 -->
+    <!-- =========================
+         CRISTO 3
+         ========================= -->
 
     <div class="slide">
 
@@ -469,7 +475,9 @@ body{
     </div>
 
 
-    <!-- VIRGEN 3 -->
+    <!-- =========================
+         VIRGEN 3
+         ========================= -->
 
     <div class="slide">
 
@@ -512,12 +520,14 @@ body{
 </div>
 
 
-<!-- MUSICA -->
+<!-- =========================
+     BOTON MUSICA
+     ========================= -->
 
 <button
 class="musica"
 id="botonMusica"
-aria-label="Activar música">
+type="button">
 
 ♪
 
@@ -535,17 +545,23 @@ href="hermandades.html">
 </a>
 
 
-<!-- YOUTUBE OCULTO -->
+<!-- =========================
+     YOUTUBE
+     ========================= -->
 
 <iframe
 class="youtube"
 id="youtube"
-src="https://www.youtube.com/embed/Uq0QTbotmag?enablejsapi=1&autoplay=1&loop=1&playlist=Uq0QTbotmag"
+src="https://www.youtube.com/embed/Uq0QTbotmag?enablejsapi=1&playsinline=1&loop=1&playlist=Uq0QTbotmag"
 allow="autoplay">
 </iframe>
 
 
 <script>
+
+/* =========================
+   DIAPOSITIVAS
+   ========================= */
 
 const slides =
 document.querySelectorAll(".slide");
@@ -627,45 +643,74 @@ document.getElementById("botonMusica");
 let musicaActiva = false;
 
 
-setTimeout(function(){
+/*
+   Cuando pulsamos el botón,
+   esperamos un instante y
+   mandamos la orden a YouTube.
+*/
+
+function reproducirMusica(){
 
     youtube.contentWindow.postMessage(
-        '{"event":"command","func":"playVideo","args":""}',
+        JSON.stringify({
+            event:"command",
+            func:"playVideo",
+            args:[]
+        }),
         "*"
     );
 
     musicaActiva = true;
 
-},1500);
+    botonMusica.textContent="♫";
+}
 
 
-botonMusica.addEventListener("click",function(){
+function pararMusica(){
 
-    if(musicaActiva){
+    youtube.contentWindow.postMessage(
+        JSON.stringify({
+            event:"command",
+            func:"pauseVideo",
+            args:[]
+        }),
+        "*"
+    );
 
-        youtube.contentWindow.postMessage(
-            '{"event":"command","func":"pauseVideo","args":""}',
-            "*"
-        );
+    musicaActiva = false;
 
-        musicaActiva = false;
+    botonMusica.textContent="♪";
+}
 
-        botonMusica.textContent="♪";
 
-    }else{
+botonMusica.addEventListener(
+    "click",
+    function(){
 
-        youtube.contentWindow.postMessage(
-            '{"event":"command","func":"playVideo","args":""}',
-            "*"
-        );
+        if(musicaActiva){
 
-        musicaActiva = true;
+            pararMusica();
 
-        botonMusica.textContent="♫";
+        }else{
+
+            reproducirMusica();
+
+        }
 
     }
+);
 
-});
+
+/*
+   Intentamos autoplay.
+   Si Chrome lo bloquea,
+   el botón permite iniciarla.
+*/
+
+setTimeout(
+    reproducirMusica,
+    2500
+);
 
 </script>
 
