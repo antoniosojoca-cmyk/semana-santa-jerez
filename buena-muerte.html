@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,201 +15,310 @@
     box-sizing:border-box;
 }
 
+html,
 body{
     margin:0;
-    background:#080808;
+    padding:0;
+    width:100%;
+    height:100%;
+    background:#050505;
     color:#f1eadc;
     font-family:Georgia,"Times New Roman",serif;
+    overflow:hidden;
 }
 
-/* CABECERA */
+/* ESCENARIO */
 
-header{
-    text-align:center;
-    padding:55px 20px 25px;
-}
-
-header h1{
-    margin:0;
-    font-size:44px;
-    font-weight:normal;
-    letter-spacing:6px;
-    color:#e8dcc5;
-}
-
-header p{
-    margin:14px 0 0;
-    color:#c9a35b;
-    font-size:17px;
-    letter-spacing:3px;
-}
-
-/* MENU */
-
-nav{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:30px;
-    padding:20px 15px 30px;
-    border-bottom:1px solid #2c261d;
-}
-
-nav a{
-    text-decoration:none;
-    color:#e8dcc5;
-    font-size:14px;
-    letter-spacing:2px;
-    transition:color .3s ease;
-}
-
-nav a:hover{
-    color:#c9a35b;
-}
-
-/* INTRODUCCION */
-
-.intro{
-    text-align:center;
-    max-width:900px;
-    margin:0 auto;
-    padding:65px 25px 55px;
-}
-
-.intro h2{
-    margin:0;
-    color:#e8dcc5;
-    font-size:34px;
-    font-weight:normal;
-    letter-spacing:3px;
-}
-
-.intro .linea{
-    width:70px;
-    height:1px;
-    background:#c9a35b;
-    margin:25px auto;
-}
-
-.intro p{
-    margin:0;
-    color:#b9ad98;
-    font-size:17px;
-    line-height:1.8;
-}
-
-/* GALERIA */
-
-.galeria{
-    width:94%;
-    max-width:1500px;
-    margin:0 auto 80px;
-
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:42px;
+.exposicion{
+    position:relative;
+    width:100%;
+    height:100vh;
+    background:#050505;
 }
 
 /* FOTOGRAFIAS */
 
-.foto{
-    background:#050505;
-    overflow:hidden;
-}
+.slide{
+    position:absolute;
+    inset:0;
 
-.foto img{
-    width:100%;
-    height:auto;
-    display:block;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    opacity:0;
 
     transition:
-        transform .7s ease,
-        filter .7s ease;
+        opacity 2.8s ease-in-out;
 
-    filter:brightness(.88);
+    pointer-events:none;
 }
 
-.foto:hover img{
-    transform:scale(1.025);
-    filter:brightness(1);
+.slide.activa{
+    opacity:1;
 }
 
-/* PIE DE FOTO */
+/* IMAGEN */
 
-.pie{
-    padding:16px 12px 18px;
+.slide img{
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    display:block;
+
+    filter:brightness(.82);
+
+    transform:scale(1.01);
+
+    transition:
+        transform 8s ease,
+        filter 3s ease;
+}
+
+.slide.activa img{
+    transform:scale(1.045);
+    filter:brightness(.94);
+}
+
+/* OSCURECIDO SUAVE */
+
+.slide::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.15),
+            rgba(0,0,0,.05) 45%,
+            rgba(0,0,0,.55)
+        );
+
+    pointer-events:none;
+}
+
+/* TITULO SUPERIOR */
+
+.titulo{
+    position:absolute;
+
+    top:34px;
+    left:0;
+    right:0;
+
+    z-index:20;
+
     text-align:center;
+
+    pointer-events:none;
 }
 
-.pie p{
+.titulo h1{
     margin:0;
-    color:#c9a35b;
-    font-size:13px;
-    letter-spacing:1px;
-}
 
-/* CIERRE */
+    color:#e8dcc5;
 
-.final{
-    text-align:center;
-    padding:10px 20px 80px;
-}
-
-.final .linea{
-    width:70px;
-    height:1px;
-    background:#c9a35b;
-    margin:0 auto 28px;
-}
-
-.final h2{
-    margin:0;
-    color:#c9a35b;
-    font-size:27px;
+    font-size:30px;
     font-weight:normal;
-    letter-spacing:4px;
+
+    letter-spacing:7px;
+
+    text-shadow:
+        0 2px 15px rgba(0,0,0,.9);
 }
 
-.final p{
-    max-width:700px;
-    margin:18px auto 0;
-    color:#b9ad98;
-    font-size:16px;
-    line-height:1.7;
+.titulo p{
+    margin:9px 0 0;
+
+    color:#c9a35b;
+
+    font-size:13px;
+
+    letter-spacing:3px;
+
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.9);
+}
+
+/* TEXTO INFERIOR */
+
+.texto{
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:48px;
+
+    z-index:20;
+
+    text-align:center;
+
+    pointer-events:none;
+
+    padding:0 25px;
+}
+
+.texto h2{
+    margin:0;
+
+    color:#f1eadc;
+
+    font-size:25px;
+    font-weight:normal;
+
+    letter-spacing:3px;
+
+    text-shadow:
+        0 2px 14px rgba(0,0,0,1);
+}
+
+.texto p{
+    margin:10px 0 0;
+
+    color:#c9a35b;
+
+    font-size:14px;
+
+    letter-spacing:2px;
+
+    text-shadow:
+        0 2px 10px rgba(0,0,0,1);
+}
+
+/* BOTON MUSICA */
+
+.musica{
+    position:fixed;
+
+    right:25px;
+    bottom:24px;
+
+    z-index:50;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    border:1px solid #c9a35b;
+
+    background:rgba(5,5,5,.75);
+
+    color:#c9a35b;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:
+        0 0 18px rgba(0,0,0,.7);
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+}
+
+.musica:hover{
+    background:#c9a35b;
+    color:#050505;
+}
+
+/* BOTON VOLVER */
+
+.volver{
+    position:fixed;
+
+    left:25px;
+    bottom:27px;
+
+    z-index:50;
+
+    color:#e8dcc5;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    letter-spacing:2px;
+
+    opacity:.75;
+
+    transition:
+        color .3s ease,
+        opacity .3s ease;
+}
+
+.volver:hover{
+    color:#c9a35b;
+    opacity:1;
+}
+
+/* YOUTUBE OCULTO */
+
+.youtube{
+    position:fixed;
+
+    width:1px;
+    height:1px;
+
+    left:-10000px;
+    top:-10000px;
+
+    opacity:0;
+    pointer-events:none;
 }
 
 /* MOVIL */
 
-@media(max-width:800px){
+@media(max-width:700px){
 
-    header{
-        padding-top:35px;
+    .titulo{
+        top:25px;
     }
 
-    header h1{
-        font-size:31px;
-        letter-spacing:4px;
+    .titulo h1{
+        font-size:22px;
+        letter-spacing:5px;
     }
 
-    nav{
-        gap:18px;
+    .titulo p{
+        font-size:11px;
+        letter-spacing:2px;
     }
 
-    nav a{
+    .texto{
+        bottom:40px;
+    }
+
+    .texto h2{
+        font-size:20px;
+        letter-spacing:2px;
+    }
+
+    .texto p{
         font-size:12px;
     }
 
-    .intro{
-        padding-top:45px;
+    .musica{
+        width:44px;
+        height:44px;
+
+        right:18px;
+        bottom:18px;
     }
 
-    .intro h2{
-        font-size:27px;
-    }
-
-    .galeria{
-        grid-template-columns:1fr;
-        width:94%;
+    .volver{
+        left:18px;
+        bottom:24px;
+        font-size:10px;
     }
 
 }
@@ -221,156 +331,264 @@ nav a:hover{
 <body>
 
 
-<header>
-
-    <h1>BUENA MUERTE</h1>
-
-    <p>SEMANA SANTA DE JEREZ</p>
-
-</header>
+<div class="exposicion">
 
 
-<nav>
+    <!-- IMAGEN 1 - CRISTO -->
 
-    <a href="index.html">PORTADA</a>
-
-    <a href="hermandades.html">HERMANDADES</a>
-
-    <a href="#">MADRUGÁ</a>
-
-    <a href="#">SEMANA SANTA</a>
-
-    <a href="#">DEVOCIONES</a>
-
-    <a href="#">GALERÍA</a>
-
-</nav>
-
-
-<section class="intro">
-
-    <h2>Santísimo Cristo de la Buena Muerte</h2>
-
-    <div class="linea"></div>
-
-    <p>
-        Una noche de silencio, oscuridad y oración.
-        Desde Santiago, la Buena Muerte recorre las calles
-        de Jerez durante la Madrugada del Viernes Santo.
-    </p>
-
-</section>
-
-
-<section class="galeria">
-
-
-    <!-- FOTOGRAFIA 1 -->
-
-    <div class="foto">
+    <div class="slide activa">
 
         <img
-        src="https://static.grupojoly.com/clip/e1f5992e-d6c2-4e1d-81e9-09596e055595_source-aspect-ratio_1600w_0.jpg"
-        alt="Hermandad de la Buena Muerte en Jerez">
-
-        <div class="pie">
-            <p>La noche de la Buena Muerte</p>
-        </div>
+        src="https://static.grupojoly.com/clip/8363eb48-49ce-4dd4-af30-c30e1aa88f0f_source-aspect-ratio_1600w_0.jpg"
+        alt="Santísimo Cristo de la Buena Muerte de Jerez">
 
     </div>
 
 
-    <!-- FOTOGRAFIA 2 -->
+    <!-- IMAGEN 2 - CRISTO -->
 
-    <div class="foto">
+    <div class="slide">
 
         <img
-        src="https://static.grupojoly.com/clip/4b2a536b-dc15-486c-8c3b-7988a59e40bb_source-aspect-ratio_1600w_0.jpg"
-        alt="Nazarenos de la Buena Muerte">
-
-        <div class="pie">
-            <p>El silencio de los nazarenos</p>
-        </div>
+        src="https://soyjerez.com/wp-content/uploads/2020/06/cristo-buena-muerte.jpg"
+        alt="Santísimo Cristo de la Buena Muerte">
 
     </div>
 
 
-    <!-- FOTOGRAFIA 3 -->
+    <!-- IMAGEN 3 - VIRGEN -->
 
-    <div class="foto">
-
-        <img
-        src="https://static.grupojoly.com/clip/1aca5a54-a2e9-4650-9f06-da662e1c0612_source-aspect-ratio_1600w_0.jpg"
-        alt="Cortejo de la Buena Muerte">
-
-        <div class="pie">
-            <p>La Madrugada de Jerez</p>
-        </div>
-
-    </div>
-
-
-    <!-- FOTOGRAFIA 4 -->
-
-    <div class="foto">
+    <div class="slide">
 
         <img
-        src="https://static.grupojoly.com/clip/70472041-d3d6-4545-943c-a5c5beaf6292_source-aspect-ratio_1600w_0.jpg"
-        alt="Buena Muerte en la Plaza de la Asunción">
-
-        <div class="pie">
-            <p>Camino de la Carrera Oficial</p>
-        </div>
-
-    </div>
-
-
-    <!-- FOTOGRAFIA 5 -->
-
-    <div class="foto">
-
-        <img
-        src="https://static.grupojoly.com/clip/c82a707a-93b3-4cfc-9608-66c1070fefb9_source-aspect-ratio_1600w_0.jpg"
-        alt="Paso de la Buena Muerte">
-
-        <div class="pie">
-            <p>La cruz y el silencio</p>
-        </div>
-
-    </div>
-
-
-    <!-- FOTOGRAFIA 6 -->
-
-    <div class="foto">
-
-        <img
-        src="https://static.grupojoly.com/clip/03e451a9-16da-4db7-8cd0-c927c489cbcf_source-aspect-ratio_1600w_0.jpg"
+        src="https://static.grupojoly.com/clip/fd2006e4-8309-46aa-987e-1ab8e476cb35_source-aspect-ratio_1600w_0.jpg"
         alt="María Santísima del Dulce Nombre">
 
-        <div class="pie">
-            <p>María Santísima del Dulce Nombre</p>
-        </div>
+    </div>
+
+
+    <!-- IMAGEN 4 - VIRGEN -->
+
+    <div class="slide">
+
+        <img
+        src="https://www.jerez.es/fileadmin/DesarrolloWeb/ESPECIALES/MAGNA_MARIANA_JEREZ_2024/IMG_Imagineria/MariaDulceNombre.jpg"
+        alt="María Santísima del Dulce Nombre">
 
     </div>
 
 
-</section>
+    <!-- IMAGEN 5 - CRISTO -->
+
+    <div class="slide">
+
+        <img
+        src="https://2.bp.blogspot.com/_TMGpNzqt1fQ/TNQSiAdbo1I/AAAAAAAAKX8/I-w2FBo-8Uw/s1600/Buena%2BMuerte%2B%287%29.JPG"
+        alt="Santísimo Cristo de la Buena Muerte">
+
+    </div>
 
 
-<section class="final">
+    <!-- IMAGEN 6 - VIRGEN -->
 
-    <div class="linea"></div>
+    <div class="slide">
 
-    <h2>EL SILENCIO TAMBIÉN REZA</h2>
+        <img
+        src="https://www.uniondehermandades.com/wp-content/uploads/2018/12/5-10.jpg"
+        alt="María Santísima del Dulce Nombre">
 
-    <p>
-        En la oscuridad de la Madrugada, una cruz avanza
-        lentamente por las calles de Jerez.
-        Y durante unos instantes, todo parece detenerse.
-    </p>
+    </div>
 
-</section>
+
+    <!-- TITULO -->
+
+    <div class="titulo">
+
+        <h1>BUENA MUERTE</h1>
+
+        <p>JEREZ DE LA FRONTERA · MADRUGADA</p>
+
+    </div>
+
+
+    <!-- TEXTO -->
+
+    <div class="texto" id="texto">
+
+        <h2>Santísimo Cristo de la Buena Muerte</h2>
+
+        <p>El silencio de la noche</p>
+
+    </div>
+
+
+</div>
+
+
+<!-- BOTON MUSICA -->
+
+<button
+class="musica"
+id="botonMusica"
+aria-label="Activar música">
+
+♪
+</button>
+
+
+<!-- VOLVER -->
+
+<a
+class="volver"
+href="hermandades.html">
+
+← HERMANDADES
+
+</a>
+
+
+<!-- YOUTUBE OCULTO -->
+
+<iframe
+class="youtube"
+id="youtube"
+src="https://www.youtube.com/embed/Uq0QTbotmag?enablejsapi=1&autoplay=1&loop=1&playlist=Uq0QTbotmag"
+allow="autoplay">
+</iframe>
+
+
+<script>
+
+/* =========================
+   CAMBIO DE FOTOGRAFIAS
+   ========================= */
+
+const slides =
+document.querySelectorAll(".slide");
+
+const texto =
+document.getElementById("texto");
+
+const textos = [
+
+    [
+        "Santísimo Cristo de la Buena Muerte",
+        "El silencio de la noche"
+    ],
+
+    [
+        "Santísimo Cristo de la Buena Muerte",
+        "Ante la Cruz"
+    ],
+
+    [
+        "María Santísima del Dulce Nombre",
+        "La mirada de María"
+    ],
+
+    [
+        "María Santísima del Dulce Nombre",
+        "Madre del Dulce Nombre"
+    ],
+
+    [
+        "Santísimo Cristo de la Buena Muerte",
+        "La Pasión y el silencio"
+    ],
+
+    [
+        "María Santísima del Dulce Nombre",
+        "La luz de la Madrugada"
+    ]
+
+];
+
+let actual = 0;
+
+function cambiarSlide(){
+
+    slides[actual].classList.remove("activa");
+
+    actual++;
+
+    if(actual >= slides.length){
+        actual = 0;
+    }
+
+    slides[actual].classList.add("activa");
+
+    texto.querySelector("h2").textContent =
+        textos[actual][0];
+
+    texto.querySelector("p").textContent =
+        textos[actual][1];
+
+}
+
+
+/* Cada fotografía permanece unos segundos */
+
+setInterval(cambiarSlide, 7000);
+
+
+/* =========================
+   MUSICA
+   ========================= */
+
+const youtube =
+document.getElementById("youtube");
+
+const botonMusica =
+document.getElementById("botonMusica");
+
+let musicaActiva = false;
+
+
+/* Intentar iniciar */
+
+setTimeout(function(){
+
+    youtube.contentWindow.postMessage(
+        '{"event":"command","func":"playVideo","args":""}',
+        "*"
+    );
+
+    musicaActiva = true;
+
+},1500);
+
+
+/* Boton */
+
+botonMusica.addEventListener("click",function(){
+
+    if(musicaActiva){
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}',
+            "*"
+        );
+
+        musicaActiva = false;
+
+        botonMusica.textContent = "♪";
+
+    }else{
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            "*"
+        );
+
+        musicaActiva = true;
+
+        botonMusica.textContent = "♫";
+
+    }
+
+});
+
+</script>
 
 
 </body>
