@@ -1,352 +1,41 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Amargura — Semana Santa de Jerez</title>
+<title>Amargura</title>
 
 <style>
-
-*{
-    box-sizing:border-box;
-}
-
-html,body{
+body{
     margin:0;
-    padding:0;
-    width:100%;
-    height:100%;
     background:#050505;
     color:white;
-    font-family:Georgia, "Times New Roman", serif;
-}
-
-/* CONTENEDOR */
-
-.pagina{
-    min-height:100vh;
-    background:#050505;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
-
-/* CABECERA */
-
-.cabecera{
+    font-family:Georgia,serif;
     text-align:center;
-    padding:35px 20px 20px;
-    z-index:5;
 }
 
-.cabecera h1{
-    margin:0;
-    font-size:48px;
-    font-weight:normal;
-    letter-spacing:7px;
-}
-
-.cabecera p{
-    margin:10px 0 0;
+h1{
+    margin-top:80px;
     color:#c9a35b;
-    letter-spacing:3px;
-    font-size:15px;
+    font-size:50px;
+    letter-spacing:6px;
 }
 
-/* MARCO DE FOTOGRAFÍAS */
-
-.marco{
-    position:relative;
-    width:92vw;
-    max-width:1500px;
-    height:72vh;
-    overflow:hidden;
-    background:#000;
+p{
+    font-size:20px;
 }
-
-/* FOTOS */
-
-.foto{
-    position:absolute;
-    inset:0;
-    opacity:0;
-    transition:opacity 2.5s ease-in-out;
-}
-
-.foto.activa{
-    opacity:1;
-}
-
-.foto img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-}
-
-/* TEXTO */
-
-.texto{
-    text-align:center;
-    padding:20px;
-    font-size:17px;
-    letter-spacing:2px;
-}
-
-/* BOTÓN MÚSICA */
-
-.musica{
-    position:fixed;
-    right:25px;
-    bottom:25px;
-
-    width:48px;
-    height:48px;
-
-    border-radius:50%;
-    border:1px solid #c9a35b;
-
-    background:rgba(0,0,0,.85);
-    color:#c9a35b;
-
-    font-size:21px;
-    cursor:pointer;
-
-    z-index:20;
-}
-
-/* VOLVER */
-
-.volver{
-    position:fixed;
-    left:25px;
-    bottom:28px;
-
-    color:#ddd;
-    text-decoration:none;
-
-    font-size:14px;
-    letter-spacing:2px;
-
-    z-index:20;
-}
-
-.volver:hover{
-    color:#c9a35b;
-}
-
-/* YOUTUBE OCULTO */
-
-.youtube{
-    position:absolute;
-    width:1px;
-    height:1px;
-    left:-100px;
-    top:-100px;
-    opacity:0;
-}
-
-/* MÓVIL */
-
-@media(max-width:700px){
-
-    .cabecera{
-        padding:25px 10px 15px;
-    }
-
-    .cabecera h1{
-        font-size:32px;
-        letter-spacing:4px;
-    }
-
-    .cabecera p{
-        font-size:11px;
-        letter-spacing:2px;
-    }
-
-    .marco{
-        width:96vw;
-        height:65vh;
-    }
-
-}
-
 </style>
 
 </head>
 
-
 <body>
 
-<div class="pagina">
+<h1>AMARGURA</h1>
 
-
-    <div class="cabecera">
-
-        <h1>AMARGURA</h1>
-
-        <p>JEREZ DE LA FRONTERA · MIÉRCOLES SANTO</p>
-
-    </div>
-
-
-    <div class="marco">
-
-
-        <!-- FOTO 1 -->
-
-        <div class="foto activa">
-
-            <img src="https://static.grupojoly.com/clip/8a49b992-3783-410f-aa11-ad73a8fb309d_source-aspect-ratio_1600w_0.jpg">
-
-        </div>
-
-
-        <!-- FOTO 2 -->
-
-        <div class="foto">
-
-            <img src="https://static.grupojoly.com/clip/923e3cb4-009d-43c9-a606-45ec04295b93_source-aspect-ratio_1600w_0.jpg">
-
-        </div>
-
-
-        <!-- FOTO 3 -->
-
-        <div class="foto">
-
-            <img src="https://static.grupojoly.com/clip/29323607-d404-4467-9ca3-661ffa6da05f_source-aspect-ratio_1600w_0.jpg">
-
-        </div>
-
-
-        <!-- FOTO 4 -->
-
-        <div class="foto">
-
-            <img src="https://static.grupojoly.com/clip/c91d9835-8c62-4c47-9a06-26b4075c9f87_source-aspect-ratio_1600w_0.jpg">
-
-        </div>
-
-
-        <!-- FOTO 5 -->
-
-        <div class="foto">
-
-            <img src="https://static.grupojoly.com/clip/d425d6a0-5822-455a-8e3f-6a9cb234c8bf_source-aspect-ratio_1600w_0.jpg">
-
-        </div>
-
-
-        <!-- FOTO 6 -->
-
-        <div class="foto">
-
-            <img src="https://static.grupojoly.com/clip/e1f5992e-d6c2-4e1d-81e9-09596e055595_source-aspect-ratio_1600w_0.jpg">
-
-        </div>
-
-
-    </div>
-
-
-    <div class="texto">
-
-        Sagrada Flagelación · María Santísima de la Amargura
-
-    </div>
-
-
-</div>
-
-
-<!-- MÚSICA -->
-
-<button class="musica" id="musica">♪</button>
-
-
-<iframe
-    id="youtube"
-    class="youtube"
-    src="https://www.youtube.com/embed/WVNiNH1-QQQ?enablejsapi=1&playsinline=1&controls=0"
-    allow="autoplay">
-</iframe>
-
-
-<a href="hermandades.html" class="volver">
-
-    ← HERMANDADES
-
-</a>
-
-
-<script>
-
-const fotos = document.querySelectorAll(".foto");
-
-let actual = 0;
-
-setInterval(function(){
-
-    fotos[actual].classList.remove("activa");
-
-    actual++;
-
-    if(actual >= fotos.length){
-        actual = 0;
-    }
-
-    fotos[actual].classList.add("activa");
-
-},7000);
-
-
-/* MÚSICA */
-
-const boton = document.getElementById("musica");
-
-const youtube = document.getElementById("youtube");
-
-let sonando = false;
-
-
-boton.addEventListener("click",function(){
-
-    if(!sonando){
-
-        youtube.contentWindow.postMessage(
-            '{"event":"command","func":"playVideo","args":""}',
-            "*"
-        );
-
-        boton.textContent="Ⅱ";
-
-        sonando=true;
-
-    }else{
-
-        youtube.contentWindow.postMessage(
-            '{"event":"command","func":"pauseVideo","args":""}',
-            "*"
-        );
-
-        boton.textContent="♪";
-
-        sonando=false;
-
-    }
-
-});
-
-</script>
-
+<p>Jerez de la Frontera · Miércoles Santo</p>
 
 </body>
-
 </html>
+
 
 
