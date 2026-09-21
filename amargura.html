@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -13,39 +15,66 @@
     box-sizing:border-box;
 }
 
-html,
-body{
+html,body{
     margin:0;
     padding:0;
     width:100%;
     height:100%;
     background:#050505;
-    overflow:hidden;
+    color:white;
     font-family:Georgia, "Times New Roman", serif;
-    color:#f2eee7;
 }
 
-/* ESCENARIO */
+/* CONTENEDOR */
 
-.escenario{
-    position:relative;
-    width:100%;
-    height:100vh;
+.pagina{
+    min-height:100vh;
     background:#050505;
     display:flex;
+    flex-direction:column;
     align-items:center;
-    justify-content:center;
 }
 
-/* FOTOGRAFÍAS */
+/* CABECERA */
+
+.cabecera{
+    text-align:center;
+    padding:35px 20px 20px;
+    z-index:5;
+}
+
+.cabecera h1{
+    margin:0;
+    font-size:48px;
+    font-weight:normal;
+    letter-spacing:7px;
+}
+
+.cabecera p{
+    margin:10px 0 0;
+    color:#c9a35b;
+    letter-spacing:3px;
+    font-size:15px;
+}
+
+/* MARCO DE FOTOGRAFÍAS */
+
+.marco{
+    position:relative;
+    width:92vw;
+    max-width:1500px;
+    height:72vh;
+    overflow:hidden;
+    background:#000;
+}
+
+/* FOTOS */
 
 .foto{
     position:absolute;
-    width:92vw;
-    max-width:1500px;
-    height:74vh;
+    inset:0;
     opacity:0;
-    transition:opacity 2.8s ease-in-out;
+    transition:opacity 2.5s ease-in-out;
 }
 
 .foto.activa{
@@ -59,98 +88,51 @@ body{
     display:block;
 }
 
-/* OSCURECIMIENTO SUAVE */
+/* TEXTO */
 
-.oscuro{
-    position:absolute;
-    inset:0;
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,0.25),
-            rgba(0,0,0,0.05) 45%,
-            rgba(0,0,0,0.45)
-        );
-    pointer-events:none;
-}
-
-/* TITULO */
-
-.titulo{
-    position:absolute;
-    top:6vh;
-    left:0;
-    width:100%;
+.texto{
     text-align:center;
-    z-index:10;
-    text-shadow:0 2px 12px rgba(0,0,0,0.9);
-}
-
-.titulo h1{
-    margin:0;
-    font-size:clamp(30px,4vw,58px);
-    letter-spacing:7px;
-    font-weight:normal;
-}
-
-.titulo p{
-    margin:10px 0 0;
-    font-size:clamp(12px,1.2vw,18px);
-    letter-spacing:4px;
-    color:#c9a35b;
-}
-
-/* TEXTO INFERIOR */
-
-.frase{
-    position:absolute;
-    bottom:7vh;
-    width:100%;
-    text-align:center;
-    z-index:10;
-    font-size:clamp(13px,1.3vw,19px);
+    padding:20px;
+    font-size:17px;
     letter-spacing:2px;
-    color:#eee8df;
-    text-shadow:0 2px 10px #000;
 }
 
 /* BOTÓN MÚSICA */
 
 .musica{
     position:fixed;
-    right:28px;
-    bottom:28px;
+    right:25px;
+    bottom:25px;
+
     width:48px;
     height:48px;
+
     border-radius:50%;
     border:1px solid #c9a35b;
-    background:rgba(0,0,0,0.75);
-    color:#c9a35b;
-    font-size:22px;
-    cursor:pointer;
-    z-index:30;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
 
-.musica:hover{
-    background:#c9a35b;
-    color:#050505;
+    background:rgba(0,0,0,.85);
+    color:#c9a35b;
+
+    font-size:21px;
+    cursor:pointer;
+
+    z-index:20;
 }
 
 /* VOLVER */
 
 .volver{
     position:fixed;
-    left:28px;
-    bottom:30px;
-    z-index:30;
-    color:#d9d1c5;
+    left:25px;
+    bottom:28px;
+
+    color:#ddd;
     text-decoration:none;
+
     font-size:14px;
     letter-spacing:2px;
-    text-shadow:0 2px 8px #000;
+
+    z-index:20;
 }
 
 .volver:hover{
@@ -160,121 +142,50 @@ body{
 /* YOUTUBE OCULTO */
 
 .youtube{
-    position:fixed;
+    position:absolute;
     width:1px;
     height:1px;
     left:-100px;
     top:-100px;
     opacity:0;
-    pointer-events:none;
 }
 
 /* MÓVIL */
 
 @media(max-width:700px){
 
-    .foto{
-        width:96vw;
-        height:65vh;
+    .cabecera{
+        padding:25px 10px 15px;
     }
 
-    .titulo{
-        top:4vh;
-    }
-
-    .titulo h1{
+    .cabecera h1{
+        font-size:32px;
         letter-spacing:4px;
     }
 
-    .titulo p{
+    .cabecera p{
+        font-size:11px;
         letter-spacing:2px;
     }
 
-    .frase{
-        bottom:8vh;
-        padding:0 20px;
-    }
-
-    .volver{
-        left:15px;
-        bottom:18px;
-    }
-
-    .musica{
-        right:15px;
-        bottom:15px;
+    .marco{
+        width:96vw;
+        height:65vh;
     }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
-
-<div class="escenario">
-
-
-    <!-- FOTO 1 · CRISTO -->
-
-    <div class="foto activa">
-
-        <img src="https://static.grupojoly.com/clip/f1153812-2787-479c-928a-db46574aef8f_source-aspect-ratio_1600w_0.jpg">
-
-    </div>
+<div class="pagina">
 
 
-    <!-- FOTO 2 · VIRGEN -->
-
-    <div class="foto">
-
-        <img src="https://static.grupojoly.com/clip/3bc8e173-de9b-4819-9637-6650b9912c50_source-aspect-ratio_1600w_0.jpg">
-
-    </div>
-
-
-    <!-- FOTO 3 · CRISTO -->
-
-    <div class="foto">
-
-        <img src="https://3.bp.blogspot.com/_sdHDyy-nQMU/Sum9O74sylI/AAAAAAAACqU/VKrAOGIlk6c/s800/DSC_1083.JPG">
-
-    </div>
-
-
-    <!-- FOTO 4 · VIRGEN -->
-
-    <div class="foto">
-
-        <img src="https://static.grupojoly.com/clip/db4aace8-e83c-4839-947e-973392c4e6ef_source-aspect-ratio_1600w_0.jpg">
-
-    </div>
-
-
-    <!-- FOTO 5 · CRISTO -->
-
-    <div class="foto">
-
-        <img src="https://3.bp.blogspot.com/_sdHDyy-nQMU/Sum9gfMHbEI/AAAAAAAACqc/MeOf75YtMO8/s800/DSC_1102.JPG">
-
-    </div>
-
-
-    <!-- FOTO 6 · VIRGEN -->
-
-    <div class="foto">
-
-        <img src="https://static.grupojoly.com/clip/067d0c26-b564-47b8-be00-7825ba8a7dde_source-aspect-ratio_1600w_0.jpg">
-
-    </div>
-
-
-    <div class="oscuro"></div>
-
-
-    <div class="titulo">
+    <div class="cabecera">
 
         <h1>AMARGURA</h1>
 
@@ -283,7 +194,67 @@ body{
     </div>
 
 
-    <div class="frase">
+    <div class="marco">
+
+
+        <!-- FOTO 1 -->
+
+        <div class="foto activa">
+
+            <img src="https://static.grupojoly.com/clip/8a49b992-3783-410f-aa11-ad73a8fb309d_source-aspect-ratio_1600w_0.jpg">
+
+        </div>
+
+
+        <!-- FOTO 2 -->
+
+        <div class="foto">
+
+            <img src="https://static.grupojoly.com/clip/923e3cb4-009d-43c9-a606-45ec04295b93_source-aspect-ratio_1600w_0.jpg">
+
+        </div>
+
+
+        <!-- FOTO 3 -->
+
+        <div class="foto">
+
+            <img src="https://static.grupojoly.com/clip/29323607-d404-4467-9ca3-661ffa6da05f_source-aspect-ratio_1600w_0.jpg">
+
+        </div>
+
+
+        <!-- FOTO 4 -->
+
+        <div class="foto">
+
+            <img src="https://static.grupojoly.com/clip/c91d9835-8c62-4c47-9a06-26b4075c9f87_source-aspect-ratio_1600w_0.jpg">
+
+        </div>
+
+
+        <!-- FOTO 5 -->
+
+        <div class="foto">
+
+            <img src="https://static.grupojoly.com/clip/d425d6a0-5822-455a-8e3f-6a9cb234c8bf_source-aspect-ratio_1600w_0.jpg">
+
+        </div>
+
+
+        <!-- FOTO 6 -->
+
+        <div class="foto">
+
+            <img src="https://static.grupojoly.com/clip/e1f5992e-d6c2-4e1d-81e9-09596e055595_source-aspect-ratio_1600w_0.jpg">
+
+        </div>
+
+
+    </div>
+
+
+    <div class="texto">
 
         Sagrada Flagelación · María Santísima de la Amargura
 
@@ -295,31 +266,31 @@ body{
 
 <!-- MÚSICA -->
 
-<button class="musica" id="botonMusica">♪</button>
+<button class="musica" id="musica">♪</button>
 
 
 <iframe
     id="youtube"
     class="youtube"
-    src="https://www.youtube.com/embed/WVNiNH1-QQQ?enablejsapi=1&playsinline=1&controls=0&loop=1&playlist=WVNiNH1-QQQ"
+    src="https://www.youtube.com/embed/WVNiNH1-QQQ?enablejsapi=1&playsinline=1&controls=0"
     allow="autoplay">
 </iframe>
 
 
-<a class="volver" href="hermandades.html">
+<a href="hermandades.html" class="volver">
+
     ← HERMANDADES
+
 </a>
 
 
 <script>
 
-/* CAMBIO DE FOTOGRAFÍAS */
-
 const fotos = document.querySelectorAll(".foto");
 
 let actual = 0;
 
-setInterval(() => {
+setInterval(function(){
 
     fotos[actual].classList.remove("activa");
 
@@ -336,56 +307,46 @@ setInterval(() => {
 
 /* MÚSICA */
 
-const boton = document.getElementById("botonMusica");
+const boton = document.getElementById("musica");
+
 const youtube = document.getElementById("youtube");
 
 let sonando = false;
 
-function reproducir(){
 
-    youtube.contentWindow.postMessage(
-        '{"event":"command","func":"playVideo","args":""}',
-        "*"
-    );
+boton.addEventListener("click",function(){
 
-    sonando = true;
+    if(!sonando){
 
-    boton.textContent = "Ⅱ";
-}
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            "*"
+        );
 
-function parar(){
+        boton.textContent="Ⅱ";
 
-    youtube.contentWindow.postMessage(
-        '{"event":"command","func":"pauseVideo","args":""}',
-        "*"
-    );
+        sonando=true;
 
-    sonando = false;
-
-    boton.textContent = "♪";
-}
-
-boton.addEventListener("click", function(){
-
-    if(sonando){
-        parar();
     }else{
-        reproducir();
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}',
+            "*"
+        );
+
+        boton.textContent="♪";
+
+        sonando=false;
+
     }
 
 });
-
-
-/* INTENTO DE INICIO AUTOMÁTICO */
-
-setTimeout(function(){
-
-    reproducir();
-
-},1500);
 
 </script>
 
 
 </body>
+
 </html>
+
+
