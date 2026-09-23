@@ -32,6 +32,7 @@ body{
 /* ESCENARIO */
 
 .escenario{
+
     position:relative;
 
     width:100%;
@@ -48,6 +49,7 @@ body{
 /* MARCO */
 
 .marco{
+
     position:relative;
 
     width:92vw;
@@ -61,44 +63,63 @@ body{
 }
 
 
-/* FOTOGRAFIAS */
+/* FOTOGRAFÍAS */
 
 .foto{
+
     position:absolute;
 
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
+    inset:0;
 
     opacity:0;
 
     transition:opacity 2.8s ease-in-out;
-
-    z-index:1;
 }
 
 .foto.activa{
+
     opacity:1;
-    z-index:2;
 }
 
 .foto img{
+
     width:100%;
     height:100%;
 
-    display:block;
-
     object-fit:cover;
+
+    display:block;
+}
+
+
+/* OSCURECIMIENTO */
+
+.oscuro{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.30),
+            rgba(0,0,0,.03) 45%,
+            rgba(0,0,0,.45)
+        );
+
+    pointer-events:none;
 }
 
 
 /* TITULO */
 
 .titulo{
+
     position:absolute;
 
     top:6vh;
+
     left:0;
 
     width:100%;
@@ -107,12 +128,11 @@ body{
 
     z-index:10;
 
-    pointer-events:none;
-
-    text-shadow:0 2px 12px rgba(0,0,0,.95);
+    text-shadow:0 2px 12px rgba(0,0,0,.9);
 }
 
 .titulo h1{
+
     margin:0;
 
     font-size:clamp(32px,4vw,58px);
@@ -120,11 +140,10 @@ body{
     font-weight:normal;
 
     letter-spacing:7px;
-
-    color:#ffffff;
 }
 
 .titulo p{
+
     margin:10px 0 0;
 
     color:#c9a35b;
@@ -138,19 +157,16 @@ body{
 /* TEXTO INFERIOR */
 
 .frase{
+
     position:absolute;
 
     bottom:7vh;
-
-    left:0;
 
     width:100%;
 
     text-align:center;
 
     z-index:10;
-
-    pointer-events:none;
 
     font-size:clamp(13px,1.3vw,19px);
 
@@ -165,6 +181,7 @@ body{
 /* BOTON MUSICA */
 
 .musica{
+
     position:fixed;
 
     right:28px;
@@ -194,7 +211,9 @@ body{
 }
 
 .musica:hover{
+
     background:#c9a35b;
+
     color:#050505;
 }
 
@@ -202,6 +221,7 @@ body{
 /* VOLVER */
 
 .volver{
+
     position:fixed;
 
     left:28px;
@@ -221,6 +241,7 @@ body{
 }
 
 .volver:hover{
+
     color:#c9a35b;
 }
 
@@ -228,6 +249,7 @@ body{
 /* YOUTUBE OCULTO */
 
 .youtube{
+
     position:fixed;
 
     width:1px;
@@ -247,33 +269,42 @@ body{
 @media(max-width:700px){
 
     .marco{
+
         width:96vw;
+
         height:65vh;
     }
 
     .titulo{
+
         top:4vh;
     }
 
     .titulo h1{
+
         letter-spacing:4px;
     }
 
     .titulo p{
+
         letter-spacing:2px;
     }
 
     .frase{
+
         bottom:8vh;
+
         padding:0 20px;
     }
 
     .volver{
+
         left:15px;
         bottom:18px;
     }
 
     .musica{
+
         right:15px;
         bottom:15px;
     }
@@ -282,7 +313,208 @@ body{
 
 </style>
 
-</h
+</head>
+
+
+<body>
+
+
+<div class="escenario">
+
+
+    <div class="marco">
+
+
+        <!-- FOTO 1 · ESPERANZA DE LA YEDRA -->
+
+        <div class="foto activa">
+
+            <img src="https://www.lapasionenjerez.com/wp-content/uploads/2017/12/Nuestra-Senora-de-la-Esperanza-de-la-Yedra-Coronada-750x536.jpg">
+
+        </div>
+
+
+        <!-- FOTO 2 · JESÚS DE LA SENTENCIA -->
+
+        <div class="foto">
+
+            <img src="https://www.lapasionenjerez.com/wp-content/uploads/2016/03/Nuestro-Padre-Jesus-de-la-Sentencia-y-Humildad-750x536.jpg">
+
+        </div>
+
+
+        <!-- FOTO 3 · ESPERANZA DE LA YEDRA -->
+
+        <div class="foto">
+
+            <img src="https://www.lapasionenjerez.com/wp-content/uploads/2017/12/Nuestra-Senora-de-la-Esperanza-de-la-Yedra-Coronada.jpg">
+
+        </div>
+
+
+        <!-- FOTO 4 · JESÚS DE LA SENTENCIA -->
+
+        <div class="foto">
+
+            <img src="https://static.grupojoly.com/clip/0aedcc32-3e6d-42f1-892a-0f3ac6bebc19_source-aspect-ratio_1600w_0.jpg">
+
+        </div>
+
+
+        <!-- FOTO 5 · ESPERANZA DE LA YEDRA -->
+
+        <div class="foto">
+
+            <img src="https://static.grupojoly.com/clip/ae99a82d-ce80-489d-af02-ba3dae057a86_source-aspect-ratio_1600w_0.jpg">
+
+        </div>
+
+
+        <!-- FOTO 6 · JESÚS DE LA SENTENCIA -->
+
+        <div class="foto">
+
+            <img src="https://static.grupojoly.com/clip/4c50400c-0dab-454b-8143-bc9b1f282435_source-aspect-ratio_1600w_0.jpg">
+
+        </div>
+
+
+    </div>
+
+
+    <div class="oscuro"></div>
+
+
+    <div class="titulo">
+
+        <h1>LA YEDRA</h1>
+
+        <p>JEREZ DE LA FRONTERA · NOCHE DE JESÚS</p>
+
+    </div>
+
+
+    <div class="frase">
+
+        Jesús de la Sentencia y Humildad · Nuestra Señora de la Esperanza de la Yedra Coronada
+
+    </div>
+
+
+</div>
+
+
+<!-- BOTON MUSICA -->
+
+<button class="musica" id="botonMusica">♪</button>
+
+
+<!-- MUSICA OCULTA -->
+
+<iframe
+
+    id="youtube"
+
+    class="youtube"
+
+    src="https://www.youtube.com/embed/VXsaMH5uVD8?enablejsapi=1&playsinline=1&controls=0&loop=1&playlist=VXsaMH5uVD8"
+
+    allow="autoplay">
+
+</iframe>
+
+
+<!-- VOLVER -->
+
+<a href="hermandades.html" class="volver">
+
+    ← HERMANDADES
+
+</a>
+
+
+<script>
+
+
+/* CAMBIO DE FOTOGRAFIAS */
+
+const fotos = document.querySelectorAll(".foto");
+
+let actual = 0;
+
+
+setInterval(function(){
+
+    fotos[actual].classList.remove("activa");
+
+    actual++;
+
+    if(actual >= fotos.length){
+
+        actual = 0;
+
+    }
+
+    fotos[actual].classList.add("activa");
+
+},7000);
+
+
+
+/* MUSICA */
+
+const boton = document.getElementById("botonMusica");
+
+const youtube = document.getElementById("youtube");
+
+let sonando = false;
+
+
+boton.addEventListener("click",function(){
+
+    if(!sonando){
+
+        youtube.contentWindow.postMessage(
+
+            '{"event":"command","func":"playVideo","args":""}',
+
+            "*"
+
+        );
+
+        boton.textContent="Ⅱ";
+
+        sonando=true;
+
+    }
+
+    else{
+
+        youtube.contentWindow.postMessage(
+
+            '{"event":"command","func":"pauseVideo","args":""}',
+
+            "*"
+
+        );
+
+        boton.textContent="♪";
+
+        sonando=false;
+
+    }
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
+
+
 
 
 
