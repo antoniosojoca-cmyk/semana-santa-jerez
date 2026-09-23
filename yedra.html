@@ -33,8 +33,10 @@ body{
 
 .escenario{
     position:relative;
+
     width:100%;
     height:100vh;
+
     background:#050505;
 
     display:flex;
@@ -56,8 +58,6 @@ body{
     overflow:hidden;
 
     background:#000;
-
-    z-index:1;
 }
 
 
@@ -66,13 +66,16 @@ body{
 .foto{
     position:absolute;
 
-    inset:0;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
 
     opacity:0;
 
-    z-index:1;
-
     transition:opacity 2.8s ease-in-out;
+
+    z-index:1;
 }
 
 .foto.activa{
@@ -84,30 +87,9 @@ body{
     width:100%;
     height:100%;
 
-    object-fit:cover;
-
     display:block;
-}
 
-
-/* OSCURECIMIENTO */
-
-.oscuro{
-    position:absolute;
-
-    inset:0;
-
-    z-index:3;
-
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,.30),
-            rgba(0,0,0,.03) 45%,
-            rgba(0,0,0,.45)
-        );
-
-    pointer-events:none;
+    object-fit:cover;
 }
 
 
@@ -125,7 +107,9 @@ body{
 
     z-index:10;
 
-    text-shadow:0 2px 12px rgba(0,0,0,.9);
+    pointer-events:none;
+
+    text-shadow:0 2px 12px rgba(0,0,0,.95);
 }
 
 .titulo h1{
@@ -136,6 +120,8 @@ body{
     font-weight:normal;
 
     letter-spacing:7px;
+
+    color:#ffffff;
 }
 
 .titulo p{
@@ -156,11 +142,15 @@ body{
 
     bottom:7vh;
 
+    left:0;
+
     width:100%;
 
     text-align:center;
 
     z-index:10;
+
+    pointer-events:none;
 
     font-size:clamp(13px,1.3vw,19px);
 
@@ -292,142 +282,9 @@ body{
 
 </style>
 
-</head>
+</h
 
 
-<body>
-
-
-<div class="escenario">
-
-
-    <div class="marco">
-
-
-        <!-- FOTO 1 · NUESTRA SEÑORA DE LA ESPERANZA DE LA YEDRA -->
-
-        <div class="foto activa">
-
-            <img
-                src="https://www.lapasionenjerez.com/wp-content/uploads/2017/12/Nuestra-Senora-de-la-Esperanza-de-la-Yedra-Coronada-750x536.jpg"
-                alt="Nuestra Señora de la Esperanza de la Yedra Coronada">
-
-        </div>
-
-
-        <!-- FOTO 2 · LA YEDRA -->
-
-        <div class="foto">
-
-            <img
-                src="https://www.hermandaddelayedra.com/wp-content/uploads/2014/08/palio_header.jpg"
-                alt="Hermandad de la Yedra">
-
-        </div>
-
-
-        <!-- FOTO 3 · JESÚS DE LA SENTENCIA -->
-
-        <div class="foto">
-
-            <img
-                src="https://www.lapasionenjerez.com/wp-content/uploads/2016/03/Nuestro-Padre-Jesus-de-la-Sentencia-y-Humildad-750x536.jpg"
-                alt="Nuestro Padre Jesús de la Sentencia y Humildad">
-
-        </div>
-
-
-        <!-- FOTO 4 · ESPERANZA DE LA YEDRA -->
-
-        <div class="foto">
-
-            <img
-                src="https://www.lapasionenjerez.com/wp-content/uploads/2017/12/Nuestra-Senora-de-la-Esperanza-de-la-Yedra-Coronada.jpg"
-                alt="Nuestra Señora de la Esperanza de la Yedra Coronada">
-
-        </div>
-
-
-        <!-- FOTO 5 · JESÚS DE LA SENTENCIA -->
-
-        <div class="foto">
-
-            <img
-                src="https://static.grupojoly.com/clip/0aedcc32-3e6d-42f1-892a-0f3ac6bebc19_source-aspect-ratio_1600w_0.jpg"
-                alt="Jesús de la Sentencia">
-
-        </div>
-
-
-        <!-- FOTO 6 · ESPERANZA DE LA YEDRA -->
-
-        <div class="foto">
-
-            <img
-                src="https://static.grupojoly.com/clip/ae99a82d-ce80-489d-af02-ba3dae057a86_source-aspect-ratio_1600w_0.jpg"
-                alt="Esperanza de la Yedra">
-
-        </div>
-
-
-        <!-- OSCURECIMIENTO SOBRE LAS FOTOGRAFIAS -->
-
-        <div class="oscuro"></div>
-
-
-    </div>
-
-
-    <!-- TITULO -->
-
-    <div class="titulo">
-
-        <h1>LA YEDRA</h1>
-
-        <p>JEREZ DE LA FRONTERA · NOCHE DE JESÚS</p>
-
-    </div>
-
-
-    <!-- FRASE -->
-
-    <div class="frase">
-
-        Jesús de la Sentencia y Humildad · Nuestra Señora de la Esperanza de la Yedra Coronada
-
-    </div>
-
-
-</div>
-
-
-<!-- BOTON MUSICA -->
-
-<button class="musica" id="botonMusica">♪</button>
-
-
-<!-- MUSICA OCULTA -->
-
-<iframe
-
-    id="youtube"
-
-    class="youtube"
-
-    src="https://www.youtube.com/embed/VXsaMH5uVD8?enablejsapi=1&playsinline=1&controls=0"
-
-    allow="autoplay">
-
-</iframe>
-
-
-<!-- VOLVER -->
-
-<a href="hermandades.html" class="volver">
-
-    ← HERMANDADES
-
-<
 
 
 
