@@ -1,9 +1,8 @@
-```html
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,33 +14,36 @@
     box-sizing:border-box;
 }
 
-body{
+html,body{
     margin:0;
+    padding:0;
     background:#080808;
-    color:#f1eadc;
+    color:#ffffff;
     font-family:Georgia,"Times New Roman",serif;
+}
+
+body{
+    min-height:100vh;
 }
 
 /* CABECERA */
 
 header{
     text-align:center;
-    padding:55px 20px 25px;
-    background:#080808;
+    padding:45px 20px 25px;
 }
 
-header h1{
+h1{
     margin:0;
     font-size:42px;
-    letter-spacing:5px;
-    font-weight:normal;
+    letter-spacing:6px;
     color:#e8dcc5;
 }
 
-header p{
-    margin:12px 0 0;
+.subtitulo{
+    margin-top:12px;
     color:#c9a35b;
-    font-size:17px;
+    font-size:18px;
     letter-spacing:3px;
 }
 
@@ -52,14 +54,15 @@ nav{
     justify-content:center;
     flex-wrap:wrap;
     gap:30px;
-    padding:20px 15px 30px;
-    border-bottom:1px solid #2c261d;
+    padding:18px 20px;
+    border-top:1px solid #332b20;
+    border-bottom:1px solid #332b20;
 }
 
 nav a{
+    color:#d8d0c2;
     text-decoration:none;
-    color:#e8dcc5;
-    font-size:14px;
+    font-size:15px;
     letter-spacing:2px;
     transition:color .3s ease;
 }
@@ -70,61 +73,55 @@ nav a:hover{
 
 /* INTRODUCCION */
 
-.intro{
+.introduccion{
     text-align:center;
-    padding:55px 20px 40px;
+    padding:35px 20px 25px;
 }
 
-.intro h2{
-    margin:0;
+.introduccion h2{
+    margin:0 0 12px;
     font-size:34px;
     font-weight:normal;
-    color:#e8dcc5;
     letter-spacing:3px;
+    color:#e8dcc5;
 }
 
-.intro p{
+.introduccion p{
     max-width:800px;
-    margin:18px auto 0;
+    margin:0 auto;
+    color:#bdb5a8;
     font-size:17px;
     line-height:1.7;
-    color:#b9ad98;
 }
 
-/* MADRUGÁ */
+/* LAS SEIS SALAS */
 
-.madruga{
+.salas{
     width:94%;
     max-width:1500px;
-    margin:0 auto 80px;
+    margin:25px auto 55px;
 
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:38px;
 }
 
-/* TARJETAS */
-
 .sala{
     position:relative;
     display:block;
     overflow:hidden;
-    background:#050505;
     text-decoration:none;
     border:1px solid #332b20;
+    background:#111;
 }
 
 .sala img{
+    display:block;
     width:100%;
     height:520px;
-    display:block;
     object-fit:cover;
-
-    filter:brightness(.80);
-
-    transition:
-        transform .7s ease,
-        filter .7s ease;
+    filter:brightness(.78);
+    transition:transform .4s ease,filter .4s ease;
 }
 
 .sala:hover img{
@@ -132,57 +129,38 @@ nav a:hover{
     filter:brightness(.94);
 }
 
-/* TEXTO SOBRE LA IMAGEN */
-
 .nombre{
     position:absolute;
     left:0;
     right:0;
     bottom:0;
 
-    padding:65px 25px 25px;
-
-    background:linear-gradient(
-        transparent,
-        rgba(0,0,0,.95)
-    );
+    padding:22px 15px;
 
     text-align:center;
-}
 
-.nombre h3{
-    margin:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.92),
+        rgba(0,0,0,.55),
+        rgba(0,0,0,0)
+    );
 
-    color:#f1eadc;
-    font-size:28px;
-    font-weight:normal;
+    color:#e8dcc5;
+    font-size:25px;
     letter-spacing:3px;
+    text-shadow:0 2px 5px #000;
 }
 
-.nombre p{
-    margin:10px 0 0;
-
-    color:#c9a35b;
-    font-size:15px;
-    letter-spacing:1.5px;
-}
-
-/* FRASE FINAL */
+/* TEXTO FINAL */
 
 .final{
     text-align:center;
-    padding:15px 20px 75px;
-}
-
-.final .linea{
-    width:70px;
-    height:1px;
-    background:#c9a35b;
-    margin:0 auto 25px;
+    padding:5px 20px 50px;
 }
 
 .final h2{
-    margin:0;
+    margin:0 0 10px;
     color:#c9a35b;
     font-size:25px;
     font-weight:normal;
@@ -190,44 +168,78 @@ nav a:hover{
 }
 
 .final p{
-    margin:12px 0 0;
-    color:#b9ad98;
-    font-size:16px;
-    letter-spacing:1px;
+    max-width:800px;
+    margin:auto;
+    color:#aaa;
+    line-height:1.7;
+}
+
+/* BOTON DE MUSICA */
+
+.musica{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+    border:1px solid #c9a35b;
+
+    background:#111;
+    color:#c9a35b;
+
+    font-size:23px;
+    cursor:pointer;
+
+    z-index:9999;
+
+    box-shadow:0 0 12px rgba(201,163,91,.25);
+}
+
+.musica:hover{
+    background:#c9a35b;
+    color:#080808;
+}
+
+/* YOUTUBE OCULTO */
+
+.youtube{
+    position:fixed;
+    width:1px;
+    height:1px;
+    opacity:0;
+    pointer-events:none;
+    left:-10px;
+    top:-10px;
 }
 
 /* MOVIL */
 
 @media(max-width:800px){
 
-    header{
-        padding-top:35px;
-    }
-
-    header h1{
+    h1{
         font-size:30px;
-        letter-spacing:3px;
+        letter-spacing:4px;
     }
 
     nav{
         gap:18px;
     }
 
-    nav a{
-        font-size:12px;
-    }
-
-    .intro h2{
-        font-size:27px;
-    }
-
-    .madruga{
+    .salas{
         grid-template-columns:1fr;
         width:94%;
+        gap:25px;
     }
 
     .sala img{
         height:470px;
+    }
+
+    .nombre{
+        font-size:21px;
     }
 
 }
@@ -236,184 +248,208 @@ nav a:hover{
 
 </head>
 
-
 <body>
-
 
 <header>
 
-    <h1>LA MADRUGÁ</h1>
 
-    <p>SEMANA SANTA DE JEREZ</p>
+<h1>LA MADRUGÁ</h1>
+
+<div class="subtitulo">
+    La noche de Jerez
+</div>
+
 
 </header>
 
-
 <nav>
 
-    <a href="index.html">PORTADA</a>
 
-    <a href="hermandades.html">HERMANDADES</a>
+<a href="index.html">PORTADA</a>
 
-    <a href="madruga.html">MADRUGÁ</a>
+<a href="hermandades.html">HERMANDADES</a>
 
-    <a href="#">SEMANA SANTA</a>
+<a href="madruga.html">MADRUGÁ</a>
 
-    <a href="#">DEVOCIONES</a>
+<a href="#">SEMANA SANTA</a>
 
-    <a href="#">GALERÍA</a>
+<a href="#">DEVOCIONES</a>
+
+<a href="#">GALERÍA</a>
+
 
 </nav>
 
-
-<section class="intro">
-
-    <h2>La noche de Jerez</h2>
-
-    <p>
-        Una noche de silencio, oración y emoción,
-        marcada por el paso de las hermandades
-        por las calles de Jerez.
-    </p>
-
-</section>
+<section class="introduccion">
 
 
-<section class="madruga">
+<h2>LA MADRUGÁ</h2>
 
-
-    <!-- LA SALIDA -->
-
-    <a class="sala" href="salida.html">
-
-        <img
-        src="https://static.grupojoly.com/clip/06529f86-2315-4e9a-b694-bccce06ea8d7_source-aspect-ratio_1600w_0.webp"
-        alt="La Salida — La Madrugá de Jerez">
-
-        <div class="nombre">
-
-            <h3>LA SALIDA</h3>
-
-            <p>El comienzo de la Madrugá</p>
-
-        </div>
-
-    </a>
-
-
-    <!-- EL SILENCIO -->
-
-    <a class="sala" href="silencio.html">
-
-        <img
-        src="https://static.grupojoly.com/clip/d2e83926-df3b-45ba-8cb6-ab3af587f34b_source-aspect-ratio_1600w_0.webp"
-        alt="El Silencio — La Madrugá de Jerez">
-
-        <div class="nombre">
-
-            <h3>EL SILENCIO</h3>
-
-            <p>Cuando la ciudad guarda silencio</p>
-
-        </div>
-
-    </a>
-
-
-    <!-- EL CAMINO -->
-
-    <a class="sala" href="camino.html">
-
-        <img
-        src="https://static.grupojoly.com/clip/59b0a3d2-711b-454d-8a10-bb8b7177b7bd_source-aspect-ratio_1600w_0.webp"
-        alt="El Camino — La Madrugá de Jerez">
-
-        <div class="nombre">
-
-            <h3>EL CAMINO</h3>
-
-            <p>Entre calles, incienso y oración</p>
-
-        </div>
-
-    </a>
-
-
-    <!-- LA DEVOCIÓN -->
-
-    <a class="sala" href="devocion.html">
-
-        <img
-        src="https://static.grupojoly.com/clip/13718e76-0795-4fe6-ba20-e0dfc6fd9010_source-aspect-ratio_1600w_0.webp"
-        alt="La Devoción — La Madrugá de Jerez">
-
-        <div class="nombre">
-
-            <h3>LA DEVOCIÓN</h3>
-
-            <p>La fe de Jerez</p>
-
-        </div>
-
-    </a>
-
-
-    <!-- LA SAETA -->
-
-    <a class="sala" href="saeta.html">
-
-        <img
-        src="https://static.grupojoly.com/clip/c9d22cda-d9f4-485a-8cca-a65954fee562_16-9-aspect-ratio_1600w_0.webp"
-        alt="La Saeta — La Madrugá de Jerez">
-
-        <div class="nombre">
-
-            <h3>LA SAETA</h3>
-
-            <p>Una voz en la noche</p>
-
-        </div>
-
-    </a>
-
-
-    <!-- EL REGRESO -->
-
-    <a class="sala" href="regreso.html">
-
-        <img
-        src="https://static.grupojoly.com/clip/bc1a7d32-773a-4035-8253-560c7059b1f5_16-9-aspect-ratio_1600w_0.webp"
-        alt="El Regreso — La Madrugá de Jerez">
-
-        <div class="nombre">
-
-            <h3>EL REGRESO</h3>
-
-            <p>El final de una noche inolvidable</p>
-
-        </div>
-
-    </a>
-
+<p>
+    Una noche de silencio, recogimiento y emoción.
+    Seis momentos para descubrir la Madrugá de Jerez
+    a través de sus imágenes, sus calles y su devoción.
+</p>
 
 </section>
 
+<section class="salas">
+
+
+<!-- LA SALIDA -->
+
+<a href="salida.html" class="sala">
+
+    <img
+    src="https://static.grupojoly.com/clip/06529f86-2315-4e9a-b694-bccce06ea8d7_source-aspect-ratio_1600w_0.webp"
+    alt="La Salida">
+
+    <div class="nombre">
+        LA SALIDA
+    </div>
+
+</a>
+
+
+<!-- EL SILENCIO -->
+
+<a href="silencio.html" class="sala">
+
+    <img
+    src="https://static.grupojoly.com/clip/d2e83926-df3b-45ba-8cb6-ab3af587f34b_source-aspect-ratio_1600w_0.webp"
+    alt="El Silencio">
+
+    <div class="nombre">
+        EL SILENCIO
+    </div>
+
+</a>
+
+
+<!-- EL CAMINO -->
+
+<a href="camino.html" class="sala">
+
+    <img
+    src="https://static.grupojoly.com/clip/59b0a3d2-711b-454d-8a10-bb8b7177b7bd_source-aspect-ratio_1600w_0.webp"
+    alt="El Camino">
+
+    <div class="nombre">
+        EL CAMINO
+    </div>
+
+</a>
+
+
+<!-- LA DEVOCIÓN -->
+
+<a href="devocion.html" class="sala">
+
+    <img
+    src="https://static.grupojoly.com/clip/13718e76-0795-4fe6-ba20-e0dfc6fd9010_source-aspect-ratio_1600w_0.webp"
+    alt="La Devoción">
+
+    <div class="nombre">
+        LA DEVOCIÓN
+    </div>
+
+</a>
+
+
+<!-- LA SAETA -->
+
+<a href="saeta.html" class="sala">
+
+    <img
+    src="https://static.grupojoly.com/clip/c9d22cda-d9f4-485a-8cca-a65954fee562_16-9-aspect-ratio_1600w_0.webp"
+    alt="La Saeta">
+
+    <div class="nombre">
+        LA SAETA
+    </div>
+
+</a>
+
+
+<!-- EL REGRESO -->
+
+<a href="regreso.html" class="sala">
+
+    <img
+    src="https://static.grupojoly.com/clip/bc1a7d32-773a-4035-8253-560c7059b1f5_16-9-aspect-ratio_1600w_0.webp"
+    alt="El Regreso">
+
+    <div class="nombre">
+        EL REGRESO
+    </div>
+
+</a>
+```
+
+</section>
 
 <section class="final">
 
-    <div class="linea"></div>
+```
+<h2>LA NOCHE DE JEREZ</h2>
 
-    <h2>LA NOCHE DE JEREZ</h2>
-
-    <p>
-        Una noche que permanece en la memoria,
-        entre silencio, fe y emoción.
-    </p>
+<p>
+    Seis escenas de una misma noche.
+    Seis momentos para recorrer la Madrugá
+    y descubrir la emoción de la Semana Santa de Jerez.
+</p>
+```
 
 </section>
 
+<!-- BOTON MUSICA -->
+
+<button class="musica" id="botonMusica">♪</button>
+
+<!-- YOUTUBE OCULTO -->
+
+<iframe
+    id="youtube"
+    class="youtube"
+    src="https://www.youtube.com/embed/oYNb9el5wCg?enablejsapi=1&playsinline=1&controls=0&loop=1&playlist=oYNb9el5wCg"
+    allow="autoplay">
+</iframe>
+
+<script>
+
+const boton = document.getElementById("botonMusica");
+const youtube = document.getElementById("youtube");
+
+let sonando = false;
+
+boton.addEventListener("click", function(){
+
+    if(!sonando){
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            "*"
+        );
+
+        boton.textContent = "Ⅱ";
+        sonando = true;
+
+    }else{
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}',
+            "*"
+        );
+
+        boton.textContent = "♪";
+        sonando = false;
+
+    }
+
+});
+
+</script>
 
 </body>
-
 </html>
-```
+
