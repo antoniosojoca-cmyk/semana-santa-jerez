@@ -1,0 +1,419 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>La Madrugá — Semana Santa de Jerez</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#080808;
+    color:#f1eadc;
+    font-family:Georgia,"Times New Roman",serif;
+}
+
+/* CABECERA */
+
+header{
+    text-align:center;
+    padding:55px 20px 25px;
+    background:#080808;
+}
+
+header h1{
+    margin:0;
+    font-size:42px;
+    letter-spacing:5px;
+    font-weight:normal;
+    color:#e8dcc5;
+}
+
+header p{
+    margin:12px 0 0;
+    color:#c9a35b;
+    font-size:17px;
+    letter-spacing:3px;
+}
+
+/* MENU */
+
+nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+    padding:20px 15px 30px;
+    border-bottom:1px solid #2c261d;
+}
+
+nav a{
+    text-decoration:none;
+    color:#e8dcc5;
+    font-size:14px;
+    letter-spacing:2px;
+    transition:color .3s ease;
+}
+
+nav a:hover{
+    color:#c9a35b;
+}
+
+/* INTRODUCCION */
+
+.intro{
+    text-align:center;
+    padding:55px 20px 40px;
+}
+
+.intro h2{
+    margin:0;
+    font-size:34px;
+    font-weight:normal;
+    color:#e8dcc5;
+    letter-spacing:3px;
+}
+
+.intro p{
+    max-width:800px;
+    margin:18px auto 0;
+    font-size:17px;
+    line-height:1.7;
+    color:#b9ad98;
+}
+
+/* MADRUGÁ */
+
+.madruga{
+    width:94%;
+    max-width:1500px;
+    margin:0 auto 80px;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:38px;
+}
+
+/* TARJETAS */
+
+.sala{
+    position:relative;
+    display:block;
+    overflow:hidden;
+    background:#050505;
+    text-decoration:none;
+    border:1px solid #332b20;
+}
+
+.sala img{
+    width:100%;
+    height:520px;
+    display:block;
+    object-fit:cover;
+
+    filter:brightness(.80);
+
+    transition:
+        transform .7s ease,
+        filter .7s ease;
+}
+
+.sala:hover img{
+    transform:scale(1.025);
+    filter:brightness(.94);
+}
+
+/* TEXTO SOBRE LA IMAGEN */
+
+.nombre{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+
+    padding:65px 25px 25px;
+
+    background:linear-gradient(
+        transparent,
+        rgba(0,0,0,.95)
+    );
+
+    text-align:center;
+}
+
+.nombre h3{
+    margin:0;
+
+    color:#f1eadc;
+    font-size:28px;
+    font-weight:normal;
+    letter-spacing:3px;
+}
+
+.nombre p{
+    margin:10px 0 0;
+
+    color:#c9a35b;
+    font-size:15px;
+    letter-spacing:1.5px;
+}
+
+/* FRASE FINAL */
+
+.final{
+    text-align:center;
+    padding:15px 20px 75px;
+}
+
+.final .linea{
+    width:70px;
+    height:1px;
+    background:#c9a35b;
+    margin:0 auto 25px;
+}
+
+.final h2{
+    margin:0;
+    color:#c9a35b;
+    font-size:25px;
+    font-weight:normal;
+    letter-spacing:4px;
+}
+
+.final p{
+    margin:12px 0 0;
+    color:#b9ad98;
+    font-size:16px;
+    letter-spacing:1px;
+}
+
+/* MOVIL */
+
+@media(max-width:800px){
+
+    header{
+        padding-top:35px;
+    }
+
+    header h1{
+        font-size:30px;
+        letter-spacing:3px;
+    }
+
+    nav{
+        gap:18px;
+    }
+
+    nav a{
+        font-size:12px;
+    }
+
+    .intro h2{
+        font-size:27px;
+    }
+
+    .madruga{
+        grid-template-columns:1fr;
+        width:94%;
+    }
+
+    .sala img{
+        height:470px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>LA MADRUGÁ</h1>
+
+    <p>SEMANA SANTA DE JEREZ</p>
+
+</header>
+
+
+<nav>
+
+    <a href="index.html">PORTADA</a>
+
+    <a href="hermandades.html">HERMANDADES</a>
+
+    <a href="madruga.html">MADRUGÁ</a>
+
+    <a href="#">SEMANA SANTA</a>
+
+    <a href="#">DEVOCIONES</a>
+
+    <a href="#">GALERÍA</a>
+
+</nav>
+
+
+<section class="intro">
+
+    <h2>La noche de Jerez</h2>
+
+    <p>
+        Una noche de silencio, oración y emoción,
+        marcada por el paso de las hermandades
+        por las calles de Jerez.
+    </p>
+
+</section>
+
+
+<section class="madruga">
+
+
+    <!-- LA SALIDA -->
+
+    <a class="sala" href="salida.html">
+
+        <img
+        src="https://static.grupojoly.com/clip/06529f86-2315-4e9a-b694-bccce06ea8d7_source-aspect-ratio_1600w_0.webp"
+        alt="La Salida — La Madrugá de Jerez">
+
+        <div class="nombre">
+
+            <h3>LA SALIDA</h3>
+
+            <p>El comienzo de la Madrugá</p>
+
+        </div>
+
+    </a>
+
+
+    <!-- EL SILENCIO -->
+
+    <a class="sala" href="silencio.html">
+
+        <img
+        src="https://static.grupojoly.com/clip/d2e83926-df3b-45ba-8cb6-ab3af587f34b_source-aspect-ratio_1600w_0.webp"
+        alt="El Silencio — La Madrugá de Jerez">
+
+        <div class="nombre">
+
+            <h3>EL SILENCIO</h3>
+
+            <p>Cuando la ciudad guarda silencio</p>
+
+        </div>
+
+    </a>
+
+
+    <!-- EL CAMINO -->
+
+    <a class="sala" href="camino.html">
+
+        <img
+        src="https://static.grupojoly.com/clip/59b0a3d2-711b-454d-8a10-bb8b7177b7bd_source-aspect-ratio_1600w_0.webp"
+        alt="El Camino — La Madrugá de Jerez">
+
+        <div class="nombre">
+
+            <h3>EL CAMINO</h3>
+
+            <p>Entre calles, incienso y oración</p>
+
+        </div>
+
+    </a>
+
+
+    <!-- LA DEVOCIÓN -->
+
+    <a class="sala" href="devocion.html">
+
+        <img
+        src="https://static.grupojoly.com/clip/13718e76-0795-4fe6-ba20-e0dfc6fd9010_source-aspect-ratio_1600w_0.webp"
+        alt="La Devoción — La Madrugá de Jerez">
+
+        <div class="nombre">
+
+            <h3>LA DEVOCIÓN</h3>
+
+            <p>La fe de Jerez</p>
+
+        </div>
+
+    </a>
+
+
+    <!-- LA SAETA -->
+
+    <a class="sala" href="saeta.html">
+
+        <img
+        src="https://static.grupojoly.com/clip/c9d22cda-d9f4-485a-8cca-a65954fee562_16-9-aspect-ratio_1600w_0.webp"
+        alt="La Saeta — La Madrugá de Jerez">
+
+        <div class="nombre">
+
+            <h3>LA SAETA</h3>
+
+            <p>Una voz en la noche</p>
+
+        </div>
+
+    </a>
+
+
+    <!-- EL REGRESO -->
+
+    <a class="sala" href="regreso.html">
+
+        <img
+        src="https://static.grupojoly.com/clip/bc1a7d32-773a-4035-8253-560c7059b1f5_16-9-aspect-ratio_1600w_0.webp"
+        alt="El Regreso — La Madrugá de Jerez">
+
+        <div class="nombre">
+
+            <h3>EL REGRESO</h3>
+
+            <p>El final de una noche inolvidable</p>
+
+        </div>
+
+    </a>
+
+
+</section>
+
+
+<section class="final">
+
+    <div class="linea"></div>
+
+    <h2>LA NOCHE DE JEREZ</h2>
+
+    <p>
+        Una noche que permanece en la memoria,
+        entre silencio, fe y emoción.
+    </p>
+
+</section>
+
+
+</body>
+
+</html>
+```
