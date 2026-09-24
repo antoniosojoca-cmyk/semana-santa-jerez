@@ -11,184 +11,236 @@
 
 <style>
 
-* {
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
 }
 
 html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: #000;
-    font-family: Georgia, "Times New Roman", serif;
+body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    font-family:Georgia,"Times New Roman",serif;
+    overflow:hidden;
 }
 
-.portada {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    background: #000;
+
+/* PORTADA */
+
+.portada{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    background:#000;
 }
 
-/* IMÁGENES DE LA PORTADA */
 
-.slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
+/* IMAGENES */
+
+.slide{
+    position:absolute;
+    inset:0;
+
+    opacity:0;
+
+    transition:opacity 2s ease-in-out;
 }
 
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+.slide.activa{
+    opacity:1;
 }
 
-.slide.activa {
-    opacity: 1;
+.slide img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
 }
+
 
 /* CAPA OSCURA */
 
-.portada::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.22);
-    pointer-events: none;
+.portada::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:rgba(0,0,0,.22);
+
+    pointer-events:none;
 }
 
-/* CONTENIDO CENTRAL */
 
-.contenido {
-    position: absolute;
-    z-index: 5;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    text-align: center;
-    color: white;
+/* CONTENIDO */
+
+.contenido{
+    position:absolute;
+
+    z-index:5;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:90%;
+
+    text-align:center;
+
+    color:white;
 }
+
 
 /* TITULO */
 
-h1 {
-    margin: 0;
-    font-size: clamp(38px, 6vw, 76px);
-    letter-spacing: 8px;
-    font-weight: normal;
-    text-shadow: 0 3px 15px #000;
+h1{
+    margin:0;
+
+    font-size:clamp(38px,6vw,76px);
+
+    letter-spacing:8px;
+
+    font-weight:normal;
+
+    text-shadow:0 3px 15px #000;
 }
+
 
 /* SUBTITULO */
 
-.subtitulo {
-    margin-top: 18px;
-    font-size: clamp(18px, 2vw, 28px);
-    letter-spacing: 4px;
-    color: #c9a35b;
-    text-shadow: 0 2px 8px #000;
+.subtitulo{
+    margin-top:18px;
+
+    font-size:clamp(18px,2vw,28px);
+
+    letter-spacing:4px;
+
+    color:#c9a35b;
+
+    text-shadow:0 2px 8px #000;
 }
 
-/* MENU PRINCIPAL */
 
-.menu {
-    margin-top: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-    flex-wrap: wrap;
+/* MENU */
+
+.menu{
+    margin-top:45px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:32px;
+
+    flex-wrap:wrap;
 }
 
-.menu a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 17px;
-    letter-spacing: 2px;
-    transition: color 0.3s ease;
-    text-shadow: 0 2px 8px #000;
+.menu a{
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:17px;
+
+    letter-spacing:2px;
+
+    transition:color .3s ease;
+
+    text-shadow:0 2px 8px #000;
 }
 
-.menu a:hover {
-    color: #c9a35b;
+.menu a:hover{
+    color:#c9a35b;
 }
 
-/* BOTON DE MUSICA */
 
-#musicaBtn {
-    position: fixed;
-    z-index: 20;
-    bottom: 25px;
-    right: 25px;
+/* BOTON MUSICA */
 
-    width: 46px;
-    height: 46px;
+.musica{
+    position:fixed;
 
-    border-radius: 50%;
-    border: 1px solid #c9a35b;
+    right:28px;
+    bottom:28px;
 
-    background: rgba(0,0,0,0.65);
+    width:48px;
+    height:48px;
 
-    color: #c9a35b;
+    border-radius:50%;
 
-    font-size: 21px;
+    border:1px solid #c9a35b;
 
-    cursor: pointer;
+    background:rgba(0,0,0,.80);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color:#c9a35b;
 
-    transition: 0.3s;
+    font-size:22px;
+
+    cursor:pointer;
+
+    z-index:30;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
 }
 
-#musicaBtn:hover {
-    background: rgba(201,163,91,0.18);
-    transform: scale(1.05);
+.musica:hover{
+    background:#c9a35b;
+
+    color:#050505;
 }
+
 
 /* YOUTUBE OCULTO */
 
-#youtube {
-    position: fixed;
-    width: 1px;
-    height: 1px;
+.youtube{
+    position:fixed;
 
-    opacity: 0;
+    width:1px;
+    height:1px;
 
-    pointer-events: none;
+    left:-100px;
+    top:-100px;
 
-    left: -100px;
-    top: -100px;
+    opacity:0;
+
+    pointer-events:none;
 }
+
 
 /* MOVIL */
 
-@media (max-width: 700px) {
+@media(max-width:700px){
 
-    h1 {
-        letter-spacing: 4px;
+    h1{
+        letter-spacing:4px;
     }
 
-    .subtitulo {
-        letter-spacing: 2px;
+    .subtitulo{
+        letter-spacing:2px;
     }
 
-    .menu {
-        gap: 18px;
-        margin-top: 30px;
+    .menu{
+        gap:18px;
+
+        margin-top:30px;
     }
 
-    .menu a {
-        font-size: 14px;
+    .menu a{
+        font-size:14px;
+    }
+
+    .musica{
+        right:15px;
+        bottom:15px;
     }
 
 }
@@ -197,11 +249,14 @@ h1 {
 
 </head>
 
+
 <body>
+
 
 <div class="portada">
 
-    <!-- PRIMERA IMAGEN -->
+
+    <!-- IMAGEN 1 -->
 
     <div class="slide activa">
 
@@ -210,7 +265,7 @@ h1 {
     </div>
 
 
-    <!-- SEGUNDA IMAGEN -->
+    <!-- IMAGEN 2 -->
 
     <div class="slide">
 
@@ -219,7 +274,7 @@ h1 {
     </div>
 
 
-    <!-- TERCERA IMAGEN -->
+    <!-- IMAGEN 3 -->
 
     <div class="slide">
 
@@ -228,14 +283,17 @@ h1 {
     </div>
 
 
-    <!-- TITULO Y MENU -->
+    <!-- CONTENIDO -->
 
     <div class="contenido">
 
         <h1>SEMANA SANTA DE JEREZ</h1>
 
+
         <div class="subtitulo">
+
             Fe · tradición · silencio · emoción
+
         </div>
 
 
@@ -245,17 +303,21 @@ h1 {
                 HERMANDADES
             </a>
 
+
             <a href="madruga.html">
                 MADRUGÁ
             </a>
+
 
             <a href="#">
                 SEMANA SANTA
             </a>
 
+
             <a href="#">
                 DEVOCIONES
             </a>
+
 
             <a href="#">
                 GALERÍA
@@ -268,69 +330,93 @@ h1 {
 </div>
 
 
-<!-- MUSICA DE FONDO -->
+<!-- BOTON MUSICA -->
+
+<button class="musica" id="botonMusica">
+
+    ♪
+
+</button>
+
+
+<!-- MUSICA OCULTA -->
 
 <iframe
     id="youtube"
-    src="https://www.youtube.com/embed/oYNb9el5wCg?autoplay=1&loop=1&playlist=oYNb9el5wCg&enablejsapi=1"
+    class="youtube"
+    src="https://www.youtube.com/embed/oYNb9el5wCg?enablejsapi=1&playsinline=1&controls=0&loop=1&playlist=oYNb9el5wCg"
     allow="autoplay">
 </iframe>
 
 
-<!-- BOTON DISCRETO -->
-
-<button id="musicaBtn" title="Música">
-    ♪
-</button>
-
-
 <script>
 
-/* CAMBIO AUTOMATICO DE LAS IMAGENES */
+
+/* CAMBIO DE IMAGENES */
 
 const slides = document.querySelectorAll(".slide");
 
 let actual = 0;
 
-setInterval(function() {
+
+setInterval(function(){
 
     slides[actual].classList.remove("activa");
 
-    actual = (actual + 1) % slides.length;
+    actual++;
+
+    if(actual >= slides.length){
+
+        actual = 0;
+
+    }
 
     slides[actual].classList.add("activa");
 
-}, 7000);
+},7000);
 
 
-/* CONTROL DE LA MUSICA */
 
-const boton = document.getElementById("musicaBtn");
+/* MUSICA */
+
+const boton = document.getElementById("botonMusica");
 
 const youtube = document.getElementById("youtube");
 
-let reproduciendo = true;
+let sonando = false;
 
 
-boton.addEventListener("click", function() {
+boton.addEventListener("click",function(){
 
-    if (reproduciendo) {
-
-        youtube.contentWindow.postMessage(
-            '{"event":"command","func":"pauseVideo","args":""}',
-            "*"
-        );
-
-        reproduciendo = false;
-
-    } else {
+    if(!sonando){
 
         youtube.contentWindow.postMessage(
+
             '{"event":"command","func":"playVideo","args":""}',
+
             "*"
+
         );
 
-        reproduciendo = true;
+        boton.textContent="Ⅱ";
+
+        sonando=true;
+
+    }
+
+    else{
+
+        youtube.contentWindow.postMessage(
+
+            '{"event":"command","func":"pauseVideo","args":""}',
+
+            "*"
+
+        );
+
+        boton.textContent="♪";
+
+        sonando=false;
 
     }
 
@@ -338,9 +424,16 @@ boton.addEventListener("click", function() {
 
 </script>
 
+
 </body>
 
 </html>
+
+
+
+
+
+
 
 
 
