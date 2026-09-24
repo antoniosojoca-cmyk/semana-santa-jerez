@@ -1,9 +1,9 @@
-
-
+```html
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -26,8 +26,6 @@ body {
     font-family: Georgia, "Times New Roman", serif;
 }
 
-/* PORTADA */
-
 .portada {
     position: relative;
     width: 100%;
@@ -36,7 +34,7 @@ body {
     background: #000;
 }
 
-/* IMÁGENES */
+/* IMÁGENES DE LA PORTADA */
 
 .slide {
     position: absolute;
@@ -56,7 +54,7 @@ body {
     opacity: 1;
 }
 
-/* CAPA OSCURA MUY SUAVE */
+/* CAPA OSCURA */
 
 .portada::after {
     content: "";
@@ -66,7 +64,7 @@ body {
     pointer-events: none;
 }
 
-/* CONTENIDO */
+/* CONTENIDO CENTRAL */
 
 .contenido {
     position: absolute;
@@ -99,7 +97,7 @@ h1 {
     text-shadow: 0 2px 8px #000;
 }
 
-/* MENU */
+/* MENU PRINCIPAL */
 
 .menu {
     margin-top: 45px;
@@ -123,24 +121,32 @@ h1 {
     color: #c9a35b;
 }
 
-/* BOTON MUSICA */
+/* BOTON DE MUSICA */
 
 #musicaBtn {
     position: fixed;
     z-index: 20;
     bottom: 25px;
     right: 25px;
+
     width: 46px;
     height: 46px;
+
     border-radius: 50%;
     border: 1px solid #c9a35b;
+
     background: rgba(0,0,0,0.65);
+
     color: #c9a35b;
+
     font-size: 21px;
+
     cursor: pointer;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     transition: 0.3s;
 }
 
@@ -155,8 +161,11 @@ h1 {
     position: fixed;
     width: 1px;
     height: 1px;
+
     opacity: 0;
+
     pointer-events: none;
+
     left: -100px;
     top: -100px;
 }
@@ -169,7 +178,172 @@ h1 {
         letter-spacing: 4px;
     }
 
-    .subt
+    .subtitulo {
+        letter-spacing: 2px;
+    }
+
+    .menu {
+        gap: 18px;
+        margin-top: 30px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="portada">
+
+    <!-- PRIMERA IMAGEN -->
+
+    <div class="slide activa">
+
+        <img src="https://s1.abcstatics.com/abc/www/multimedia/sevilla/2024/06/06/lanzada-de-jerez-U65824505088nZV-1200x630%40diario_abc.jpg">
+
+    </div>
+
+
+    <!-- SEGUNDA IMAGEN -->
+
+    <div class="slide">
+
+        <img src="https://static.grupojoly.com/clip/5d24e317-06f7-4d5a-b0ad-1845cccd8844_source-aspect-ratio_1600w_0.jpg">
+
+    </div>
+
+
+    <!-- TERCERA IMAGEN -->
+
+    <div class="slide">
+
+        <img src="https://www.uniondehermandades.com/wp-content/uploads/2018/11/1-1.jpg">
+
+    </div>
+
+
+    <!-- TITULO Y MENU -->
+
+    <div class="contenido">
+
+        <h1>SEMANA SANTA DE JEREZ</h1>
+
+        <div class="subtitulo">
+            Fe · tradición · silencio · emoción
+        </div>
+
+
+        <nav class="menu">
+
+            <a href="hermandades.html">
+                HERMANDADES
+            </a>
+
+            <a href="madruga.html">
+                MADRUGÁ
+            </a>
+
+            <a href="#">
+                SEMANA SANTA
+            </a>
+
+            <a href="#">
+                DEVOCIONES
+            </a>
+
+            <a href="#">
+                GALERÍA
+            </a>
+
+        </nav>
+
+    </div>
+
+</div>
+
+
+<!-- MUSICA DE FONDO -->
+
+<iframe
+    id="youtube"
+    src="https://www.youtube.com/embed/oYNb9el5wCg?autoplay=1&loop=1&playlist=oYNb9el5wCg&enablejsapi=1"
+    allow="autoplay">
+</iframe>
+
+
+<!-- BOTON DISCRETO -->
+
+<button id="musicaBtn" title="Música">
+    ♪
+</button>
+
+
+<script>
+
+/* CAMBIO AUTOMATICO DE LAS IMAGENES */
+
+const slides = document.querySelectorAll(".slide");
+
+let actual = 0;
+
+setInterval(function() {
+
+    slides[actual].classList.remove("activa");
+
+    actual = (actual + 1) % slides.length;
+
+    slides[actual].classList.add("activa");
+
+}, 7000);
+
+
+/* CONTROL DE LA MUSICA */
+
+const boton = document.getElementById("musicaBtn");
+
+const youtube = document.getElementById("youtube");
+
+let reproduciendo = true;
+
+
+boton.addEventListener("click", function() {
+
+    if (reproduciendo) {
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}',
+            "*"
+        );
+
+        reproduciendo = false;
+
+    } else {
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            "*"
+        );
+
+        reproduciendo = true;
+
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>
+```
+
+
 
 
 
