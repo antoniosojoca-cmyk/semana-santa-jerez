@@ -1,0 +1,334 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Granada — Semana Santa</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #080808;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* CABECERA */
+
+header {
+    text-align: center;
+    padding: 50px 20px 30px;
+}
+
+header h1 {
+    margin: 0;
+    color: #c9a35b;
+    font-size: 44px;
+    letter-spacing: 4px;
+}
+
+header p {
+    margin-top: 12px;
+    color: #cfcfcf;
+    font-size: 18px;
+}
+
+/* GALERÍA */
+
+.galeria {
+    width: 94%;
+    max-width: 1500px;
+    margin: 20px auto 70px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 35px;
+}
+
+.imagen {
+    background: #101010;
+    border: 1px solid #9b7a3c;
+    padding: 8px;
+}
+
+.imagen img {
+    display: block;
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+}
+
+/* BOTÓN MÚSICA */
+
+.musica {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+    border: 1px solid #c9a35b;
+
+    background: #080808;
+    color: #c9a35b;
+
+    font-size: 23px;
+    cursor: pointer;
+
+    z-index: 1000;
+}
+
+.musica:hover {
+    background: #c9a35b;
+    color: #080808;
+}
+
+/* YOUTUBE OCULTO */
+
+.youtube {
+    position: fixed;
+
+    width: 1px;
+    height: 1px;
+
+    left: -10px;
+    top: -10px;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* VOLVER */
+
+.volver {
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 auto 50px;
+
+    color: #c9a35b;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    letter-spacing: 2px;
+
+    border: 1px solid #9b7a3c;
+
+    padding: 12px 24px;
+
+    transition: 0.3s;
+}
+
+.volver:hover {
+    background: #c9a35b;
+    color: #080808;
+}
+
+/* PIE */
+
+footer {
+    text-align: center;
+
+    padding: 20px 20px 40px;
+
+    color: #777777;
+
+    font-size: 13px;
+}
+
+/* MÓVIL */
+
+@media (max-width: 800px) {
+
+    header h1 {
+        font-size: 34px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .imagen img {
+        height: 350px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <h1>GRANADA</h1>
+
+    <p>
+        Semana Santa de Granada
+    </p>
+
+</header>
+
+
+<section class="galeria">
+
+
+    <!-- IMAGEN 1 -->
+
+    <div class="imagen">
+
+        <img
+        src="https://flamencocasaana.com/wp-content/uploads/2025/04/semana-santa-granada-cristo-gitanos-1024x682.webp"
+        alt="Cristo de los Gitanos - Granada">
+
+    </div>
+
+
+    <!-- IMAGEN 2 -->
+
+    <div class="imagen">
+
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Semana_Santa_Granada.jpg?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original"
+        alt="Semana Santa de Granada">
+
+    </div>
+
+
+    <!-- IMAGEN 3 -->
+
+    <div class="imagen">
+
+        <img
+        src="https://www.marialacanastera.com/wp-content/uploads/2025/04/paso-del-cristo-de-los-gitanos-maria-la-canastera-3.jpeg"
+        alt="Cristo de los Gitanos - Granada">
+
+    </div>
+
+
+    <!-- IMAGEN 4 -->
+
+    <div class="imagen">
+
+        <img
+        src="https://hermandadelhuertogranada.com/wp-content/uploads/2020/04/3105a34e968c4cf7956a3125afecc1de.jpg"
+        alt="Hermandad del Huerto - Granada">
+
+    </div>
+
+
+    <!-- IMAGEN 5 -->
+
+    <div class="imagen">
+
+        <img
+        src="https://archidiocesisgranada.es/wp-content/uploads/2020/04/b70abf2b61c7194f3c2fee5698f1e285_XL-400x250.jpg"
+        alt="Semana Santa de Granada">
+
+    </div>
+
+
+    <!-- IMAGEN 6 -->
+
+    <div class="imagen">
+
+        <img
+        src="https://hermandadelhuertogranada.com/wp-content/uploads/2019/09/50AAE4DF-45BE-4D63-BA6A-639C17D66EC1.jpeg"
+        alt="Hermandad del Huerto - Granada">
+
+    </div>
+
+
+</section>
+
+
+<!-- VOLVER -->
+
+<a href="semana-santa.html" class="volver">
+    ← SEMANA SANTA
+</a>
+
+
+<!-- BOTÓN DE MÚSICA -->
+
+<button class="musica" id="botonMusica">♪</button>
+
+
+<!-- YOUTUBE OCULTO -->
+
+<iframe
+    id="youtube"
+    class="youtube"
+    src="https://www.youtube.com/embed/aysEoZ78BQ8?start=0&enablejsapi=1&playsinline=1&controls=0&loop=1&playlist=aysEoZ78BQ8"
+    allow="autoplay">
+</iframe>
+
+
+<footer>
+
+    Semana Santa · Granada
+
+</footer>
+
+
+<script>
+
+const boton = document.getElementById("botonMusica");
+
+const youtube = document.getElementById("youtube");
+
+let sonando = false;
+
+
+boton.addEventListener("click", function() {
+
+    if (!sonando) {
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            "*"
+        );
+
+        boton.textContent = "Ⅱ";
+
+        sonando = true;
+
+    } else {
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}',
+            "*"
+        );
+
+        boton.textContent = "♪";
+
+        sonando = false;
+
+    }
+
+});
+
+</script>
+
+
+</body>
+
+</html>
+```
