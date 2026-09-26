@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jaén — Semana Santa</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #080808;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+header {
+    text-align: center;
+    padding: 50px 20px 30px;
+}
+
+header h1 {
+    margin: 0;
+    color: #c9a35b;
+    font-size: 44px;
+    letter-spacing: 4px;
+}
+
+header p {
+    margin-top: 12px;
+    color: #cfcfcf;
+    font-size: 18px;
+}
+
+.galeria {
+    width: 94%;
+    max-width: 1500px;
+    margin: 20px auto 70px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 35px;
+}
+
+.imagen {
+    background: #101010;
+    border: 1px solid #9b7a3c;
+    padding: 8px;
+}
+
+.imagen img {
+    display: block;
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+}
+
+.musica {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+    border: 1px solid #c9a35b;
+
+    background: #080808;
+    color: #c9a35b;
+
+    font-size: 23px;
+    cursor: pointer;
+
+    z-index: 1000;
+}
+
+.musica:hover {
+    background: #c9a35b;
+    color: #080808;
+}
+
+.youtube {
+    position: fixed;
+
+    width: 1px;
+    height: 1px;
+
+    left: -10px;
+    top: -10px;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.volver {
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 auto 50px;
+
+    color: #c9a35b;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    letter-spacing: 2px;
+
+    border: 1px solid #9b7a3c;
+
+    padding: 12px 24px;
+
+    transition: 0.3s;
+}
+
+.volver:hover {
+    background: #c9a35b;
+    color: #080808;
+}
+
+footer {
+    text-align: center;
+
+    padding: 20px 20px 40px;
+
+    color: #777777;
+
+    font-size: 13px;
+}
+
+@media (max-width: 800px) {
+
+    header h1 {
+        font-size: 34px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .imagen img {
+        height: 350px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <h1>JAÉN</h1>
+
+    <p>
+        Semana Santa de Jaén
+    </p>
+
+</header>
+
+
+<section class="galeria">
+
+
+    <!-- IMAGEN 1 -->
+
+    <div class="imagen">
+
+        <img
+        src="https://www.elmesondespeñaperros.es/wp-content/uploads/2016/03/blog-portada-leyenda-del-abuelo-semana-santa-jaen.jpg"
+        alt="Semana Santa de Jaén">
+
+    </div>
+
+
+    <!-- IMAGEN 2 -->
+
+    <div class="imagen">
+
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/63/Piedad_Ja%C3%A9n_.jpg?utm_source=es.wikipedia.org&utm_campaign=imageinfo&utm_content=original"
+        alt="Piedad de Jaén">
+
+    </div>
+
+
+    <!-- IMAGEN 3 -->
+
+    <div class="imagen">
+
+        <img
+        src="https://www.witandbit.com/buckets/pasionenjaen/wp-content/uploads/2017/03/FOTO-MANUEL-QUESADA-TITOS-TRIDUO-VERA-CRUZ-11-03-2016-52.jpg"
+        alt="Vera Cruz de Jaén">
+
+    </div>
+
+
+    <!-- IMAGEN 4 -->
+
+    <div class="imagen">
+
+        <img
+        src="https://www.witandbit.com/buckets/pasionenjaen/wp-content/uploads/2015/04/foto-manuel-quesada-titos-jueves-santo-2-04-215-23.jpg"
+        alt="Semana Santa de Jaén">
+
+    </div>
+
+
+    <!-- IMAGEN 5 -->
+
+    <div class="imagen">
+
+        <img
+        src="https://www.witandbit.com/buckets/pasionenjaen/wp-content/uploads/2017/03/FOTO-MANUEL-QUESADA-TITOS-TRIDUO-VERA-CRUZ-11-03-2016-87.jpg"
+        alt="Vera Cruz de Jaén">
+
+    </div>
+
+
+    <!-- IMAGEN 6 -->
+
+    <div class="imagen">
+
+        <img
+        src="https://pasionenjaen.com/wp-content/uploads/2017/03/FOTO-MANUEL-QUESADA-TITOS-TRIDUO-VERA-CRUZ-11-03-2016-74-860x460.jpg"
+        alt="Semana Santa de Jaén">
+
+    </div>
+
+
+</section>
+
+
+<!-- VOLVER -->
+
+<a href="semana-santa.html" class="volver">
+    ← SEMANA SANTA
+</a>
+
+
+<!-- BOTÓN DE MÚSICA -->
+
+<button class="musica" id="botonMusica">♪</button>
+
+
+<!-- YOUTUBE OCULTO -->
+
+<iframe
+    id="youtube"
+    class="youtube"
+    src="https://www.youtube.com/embed/J6DyM8DUJ3Q?start=0&enablejsapi=1&playsinline=1&controls=0&loop=1&playlist=J6DyM8DUJ3Q"
+    allow="autoplay">
+</iframe>
+
+
+<footer>
+
+    Semana Santa · Jaén
+
+</footer>
+
+
+<script>
+
+const boton = document.getElementById("botonMusica");
+
+const youtube = document.getElementById("youtube");
+
+let sonando = false;
+
+
+boton.addEventListener("click", function() {
+
+    if (!sonando) {
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            "*"
+        );
+
+        boton.textContent = "Ⅱ";
+
+        sonando = true;
+
+    } else {
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}',
+            "*"
+        );
+
+        boton.textContent = "♪";
+
+        sonando = false;
+
+    }
+
+});
+
+</script>
+
+
+</body>
+
+</html>
+
