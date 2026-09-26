@@ -1,0 +1,267 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>El Regreso — La Madrugá</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#080808;
+    font-family:Georgia,"Times New Roman",serif;
+}
+
+.escenario{
+    position:relative;
+    width:100vw;
+    height:100vh;
+    background:#080808;
+}
+
+.marco{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:92vw;
+    max-width:1500px;
+    height:86vh;
+    border:1px solid #9b7a3c;
+    background:#000;
+    overflow:hidden;
+    box-shadow:
+        0 0 35px rgba(0,0,0,.8),
+        0 0 2px rgba(201,163,91,.4);
+}
+
+.foto{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    opacity:0;
+    animation:mostrar 36s infinite;
+}
+
+.foto:nth-child(1){
+    animation-delay:0s;
+}
+
+.foto:nth-child(2){
+    animation-delay:6s;
+}
+
+.foto:nth-child(3){
+    animation-delay:12s;
+}
+
+.foto:nth-child(4){
+    animation-delay:18s;
+}
+
+.foto:nth-child(5){
+    animation-delay:24s;
+}
+
+.foto:nth-child(6){
+    animation-delay:30s;
+}
+
+@keyframes mostrar{
+
+    0%{
+        opacity:0;
+    }
+
+    5%{
+        opacity:1;
+    }
+
+    16%{
+        opacity:1;
+    }
+
+    21%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+    }
+
+}
+
+.titulo{
+    position:absolute;
+    top:20px;
+    left:0;
+    right:0;
+    text-align:center;
+    color:#e8dcc5;
+    font-size:28px;
+    letter-spacing:5px;
+    text-shadow:0 2px 8px #000;
+    z-index:20;
+    pointer-events:none;
+}
+
+.musica{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    border:1px solid #c9a35b;
+    background:#111;
+    color:#c9a35b;
+    font-size:23px;
+    cursor:pointer;
+    z-index:9999;
+    box-shadow:0 0 12px rgba(201,163,91,.25);
+}
+
+.youtube{
+    position:fixed;
+    width:1px;
+    height:1px;
+    opacity:0;
+    pointer-events:none;
+    left:-10px;
+    top:-10px;
+}
+
+.volver{
+    position:fixed;
+    left:25px;
+    bottom:28px;
+    color:#c9a35b;
+    text-decoration:none;
+    font-size:16px;
+    letter-spacing:2px;
+    z-index:9999;
+    text-shadow:0 2px 5px #000;
+    transition:color .3s ease;
+}
+
+.volver:hover{
+    color:#ffffff;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="escenario">
+
+    <div class="marco">
+
+        <img
+        class="foto"
+        src="https://static.grupojoly.com/clip/f446d579-3bd5-4fd9-b8d9-6c1da7b2e6ad_source-aspect-ratio_1600w_0.webp"
+        alt="El Regreso">
+
+        <img
+        class="foto"
+        src="https://static.grupojoly.com/clip/13718e76-0795-4fe6-ba20-e0dfc6fd9010_source-aspect-ratio_1600w_0.webp"
+        alt="El Regreso">
+
+        <img
+        class="foto"
+        src="https://static.grupojoly.com/clip/b4248be0-4850-4d11-bcfd-7cca8df63a56_source-aspect-ratio_1600w_0.webp"
+        alt="El Regreso">
+
+        <img
+        class="foto"
+        src="https://static.grupojoly.com/clip/4b9cb587-c47a-4c8d-afb2-ec8db9f893dd_16-9-aspect-ratio_1600w_0.webp"
+        alt="El Regreso">
+
+        <img
+        class="foto"
+        src="https://static.grupojoly.com/clip/bf511333-61ea-448a-a9f2-9b96e6efdcb7_16-9-aspect-ratio_1600w_0.webp"
+        alt="El Regreso">
+
+        <img
+        class="foto"
+        src="https://static.grupojoly.com/clip/49ab3de2-6ae1-4621-8ed2-cefb91fc8d98_source-aspect-ratio_1600w_0.webp"
+        alt="El Regreso">
+
+        <div class="titulo">
+            EL REGRESO
+        </div>
+
+    </div>
+
+</div>
+
+<a href="madruga.html" class="volver">
+    ← MADRUGÁ
+</a>
+
+<button class="musica" id="botonMusica">
+    ♪
+</button>
+
+<iframe
+    id="youtube"
+    class="youtube"
+    src="https://www.youtube.com/embed/z96qe75LOF8?enablejsapi=1&playsinline=1&controls=0&loop=1&playlist=z96qe75LOF8"
+    allow="autoplay">
+</iframe>
+
+<script>
+
+const boton = document.getElementById("botonMusica");
+const youtube = document.getElementById("youtube");
+
+let sonando = false;
+
+boton.addEventListener("click", function(){
+
+    if(!sonando){
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            "*"
+        );
+
+        boton.textContent = "Ⅱ";
+        sonando = true;
+
+    }else{
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}',
+            "*"
+        );
+
+        boton.textContent = "♪";
+        sonando = false;
+
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>
+```
