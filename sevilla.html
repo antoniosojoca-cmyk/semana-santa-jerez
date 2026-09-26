@@ -1,0 +1,335 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sevilla — Semana Santa</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #080808;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* CABECERA */
+
+header {
+    text-align: center;
+    padding: 50px 20px 30px;
+}
+
+header h1 {
+    margin: 0;
+    color: #c9a35b;
+    font-size: 44px;
+    letter-spacing: 4px;
+}
+
+header p {
+    margin-top: 12px;
+    color: #cfcfcf;
+    font-size: 18px;
+}
+
+/* GALERÍA */
+
+.galeria {
+    width: 94%;
+    max-width: 1500px;
+    margin: 20px auto 70px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 35px;
+}
+
+.imagen {
+    background: #101010;
+    border: 1px solid #9b7a3c;
+    padding: 8px;
+}
+
+.imagen img {
+    display: block;
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+}
+
+/* BOTÓN MÚSICA */
+
+.musica {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+    border: 1px solid #c9a35b;
+
+    background: #080808;
+    color: #c9a35b;
+
+    font-size: 23px;
+    cursor: pointer;
+
+    z-index: 1000;
+}
+
+.musica:hover {
+    background: #c9a35b;
+    color: #080808;
+}
+
+/* YOUTUBE OCULTO */
+
+.youtube {
+    position: fixed;
+
+    width: 1px;
+    height: 1px;
+
+    left: -10px;
+    top: -10px;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* VOLVER */
+
+.volver {
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 auto 50px;
+
+    color: #c9a35b;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    letter-spacing: 2px;
+
+    border: 1px solid #9b7a3c;
+
+    padding: 12px 24px;
+
+    transition: 0.3s;
+}
+
+.volver:hover {
+    background: #c9a35b;
+    color: #080808;
+}
+
+/* PIE */
+
+footer {
+    text-align: center;
+
+    padding: 20px 20px 40px;
+
+    color: #777777;
+
+    font-size: 13px;
+}
+
+/* MÓVIL */
+
+@media (max-width: 800px) {
+
+    header h1 {
+        font-size: 34px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .imagen img {
+        height: 350px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>SEVILLA</h1>
+
+    <p>
+        Semana Santa de Sevilla
+    </p>
+
+</header>
+
+
+<section class="galeria">
+
+
+    <!-- IMAGEN 1 -->
+
+    <div class="imagen">
+
+        <img
+        src="https://i.pinimg.com/1200x/ef/75/ca/ef75ca6fa9f6fbf44fc7cf91cf53e722.jpg"
+        alt="Semana Santa de Sevilla">
+
+    </div>
+
+
+    <!-- IMAGEN 2 -->
+
+    <div class="imagen">
+
+        <img
+        src="https://i.pinimg.com/736x/ba/be/56/babe56c8b127ef9aad7a8eed19250501.jpg"
+        alt="Semana Santa de Sevilla">
+
+    </div>
+
+
+    <!-- IMAGEN 3 -->
+
+    <div class="imagen">
+
+        <img
+        src="https://i.pinimg.com/736x/ba/b6/82/bab6823fc21e69e3676c176c8a51e2dc.jpg"
+        alt="Semana Santa de Sevilla">
+
+    </div>
+
+
+    <!-- IMAGEN 4 -->
+
+    <div class="imagen">
+
+        <img
+        src="https://i.pinimg.com/1200x/0f/7a/55/0f7a55517343e96e9f2028478c69d9ff.jpg"
+        alt="Semana Santa de Sevilla">
+
+    </div>
+
+
+    <!-- IMAGEN 5 -->
+
+    <div class="imagen">
+
+        <img
+        src="https://i.pinimg.com/736x/28/01/a5/2801a53e67e34ca9ff8f2832dc7cbf67.jpg"
+        alt="Semana Santa de Sevilla">
+
+    </div>
+
+
+    <!-- IMAGEN 6 -->
+
+    <div class="imagen">
+
+        <img
+        src="https://i.pinimg.com/1200x/04/9b/c3/049bc3b4be0644005b3209106a2f35a6.jpg"
+        alt="Semana Santa de Sevilla">
+
+    </div>
+
+
+</section>
+
+
+<!-- VOLVER -->
+
+<a href="semana-santa.html" class="volver">
+    ← SEMANA SANTA
+</a>
+
+
+<!-- BOTÓN DE MÚSICA -->
+
+<button class="musica" id="botonMusica">♪</button>
+
+
+<!-- YOUTUBE OCULTO -->
+
+<iframe
+    id="youtube"
+    class="youtube"
+    src="https://www.youtube.com/embed/QwpZmI43leY?start=0&enablejsapi=1&playsinline=1&controls=0&loop=1&playlist=QwpZmI43leY"
+    allow="autoplay">
+</iframe>
+
+
+<footer>
+
+    Semana Santa · Sevilla
+
+</footer>
+
+
+<script>
+
+const boton = document.getElementById("botonMusica");
+
+const youtube = document.getElementById("youtube");
+
+let sonando = false;
+
+
+boton.addEventListener("click", function() {
+
+    if (!sonando) {
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            "*"
+        );
+
+        boton.textContent = "Ⅱ";
+
+        sonando = true;
+
+    } else {
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}',
+            "*"
+        );
+
+        boton.textContent = "♪";
+
+        sonando = false;
+
+    }
+
+});
+
+</script>
+
+
+</body>
+
+</html>
+```
