@@ -1,7 +1,6 @@
 
 
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
@@ -13,236 +12,186 @@
 
 <style>
 
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-html,body{
-    margin:0;
-    padding:0;
-    background:#080808;
-    color:#ffffff;
-    font-family:Georgia,"Times New Roman",serif;
-}
-
-body{
-    min-height:100vh;
+body {
+    margin: 0;
+    background: #080808;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 /* CABECERA */
 
-header{
-    text-align:center;
-    padding:45px 20px 25px;
+header {
+    text-align: center;
+    padding: 55px 20px 35px;
 }
 
-h1{
-    margin:0;
-    font-size:42px;
-    letter-spacing:6px;
-    color:#e8dcc5;
+header h1 {
+    margin: 0;
+    color: #c9a35b;
+    font-size: 46px;
+    letter-spacing: 4px;
 }
 
-.subtitulo{
-    margin-top:12px;
-    color:#c9a35b;
-    font-size:18px;
-    letter-spacing:3px;
+header p {
+    margin-top: 14px;
+    color: #d8d8d8;
+    font-size: 19px;
 }
 
-/* MENU */
+/* MENÚ */
 
-nav{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:30px;
-    padding:18px 20px;
-    border-top:1px solid #332b20;
-    border-bottom:1px solid #332b20;
+nav {
+    text-align: center;
+    margin-bottom: 45px;
 }
 
-nav a{
-    color:#d8d0c2;
-    text-decoration:none;
-    font-size:15px;
-    letter-spacing:2px;
-    transition:color .3s ease;
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 18px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
 }
 
-nav a:hover{
-    color:#c9a35b;
+nav a:hover {
+    color: #c9a35b;
 }
 
-/* INTRODUCCION */
+/* SALAS */
 
-.introduccion{
-    text-align:center;
-    padding:35px 20px 25px;
+.salas {
+    width: 94%;
+    max-width: 1500px;
+    margin: 0 auto 70px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 38px;
 }
 
-.introduccion h2{
-    margin:0 0 12px;
-    font-size:34px;
-    font-weight:normal;
-    letter-spacing:3px;
-    color:#e8dcc5;
+/* TARJETAS */
+
+.sala {
+    text-decoration: none;
+    color: #ffffff;
+    background: #101010;
+    border: 1px solid #9b7a3c;
+    padding-bottom: 22px;
+
+    transition: transform 0.3s, border-color 0.3s;
 }
 
-.introduccion p{
-    max-width:850px;
-    margin:0 auto;
-    color:#bdb5a8;
-    font-size:17px;
-    line-height:1.7;
+.sala:hover {
+    transform: translateY(-4px);
+    border-color: #c9a35b;
 }
 
-/* LAS SEIS SALAS */
-
-.salas{
-    width:94%;
-    max-width:1500px;
-    margin:25px auto 55px;
-
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:38px;
+.sala img {
+    display: block;
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
 }
 
-.sala{
-    position:relative;
-    display:block;
-    overflow:hidden;
-    text-decoration:none;
-    border:1px solid #332b20;
-    background:#111;
+.sala h2 {
+    margin: 20px 10px 0;
+    text-align: center;
+
+    color: #c9a35b;
+
+    font-size: 25px;
+    letter-spacing: 3px;
 }
 
-.sala img{
-    display:block;
-    width:100%;
-    height:520px;
-    object-fit:cover;
-    filter:brightness(.78);
-    transition:transform .4s ease,filter .4s ease;
+.sala p {
+    margin: 9px 15px 0;
+    text-align: center;
+
+    color: #bdbdbd;
+    font-size: 15px;
 }
 
-.sala:hover img{
-    transform:scale(1.025);
-    filter:brightness(.94);
+/* BOTÓN DE MÚSICA */
+
+.musica {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+    border: 1px solid #c9a35b;
+
+    background: #080808;
+    color: #c9a35b;
+
+    font-size: 23px;
+    cursor: pointer;
+
+    z-index: 1000;
 }
 
-.nombre{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-
-    padding:22px 15px;
-
-    text-align:center;
-
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,.92),
-        rgba(0,0,0,.55),
-        rgba(0,0,0,0)
-    );
-
-    color:#e8dcc5;
-    font-size:25px;
-    letter-spacing:3px;
-    text-shadow:0 2px 5px #000;
-}
-
-/* TEXTO FINAL */
-
-.final{
-    text-align:center;
-    padding:5px 20px 50px;
-}
-
-.final h2{
-    margin:0 0 10px;
-    color:#c9a35b;
-    font-size:25px;
-    font-weight:normal;
-    letter-spacing:4px;
-}
-
-.final p{
-    max-width:800px;
-    margin:auto;
-    color:#aaa;
-    line-height:1.7;
-}
-
-/* BOTON DE MUSICA */
-
-.musica{
-    position:fixed;
-    right:25px;
-    bottom:25px;
-
-    width:52px;
-    height:52px;
-
-    border-radius:50%;
-    border:1px solid #c9a35b;
-
-    background:#111;
-    color:#c9a35b;
-
-    font-size:23px;
-    cursor:pointer;
-
-    z-index:9999;
-
-    box-shadow:0 0 12px rgba(201,163,91,.25);
-}
-
-.musica:hover{
-    background:#c9a35b;
-    color:#080808;
+.musica:hover {
+    background: #c9a35b;
+    color: #080808;
 }
 
 /* YOUTUBE OCULTO */
 
-.youtube{
-    position:fixed;
-    width:1px;
-    height:1px;
-    opacity:0;
-    pointer-events:none;
-    left:-10px;
-    top:-10px;
+.youtube {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+
+    left: -10px;
+    top: -10px;
+
+    opacity: 0;
+    pointer-events: none;
 }
 
-/* MOVIL */
+/* PIE */
 
-@media(max-width:800px){
+footer {
+    text-align: center;
+    padding: 20px 20px 45px;
 
-    h1{
-        font-size:30px;
-        letter-spacing:4px;
+    color: #777777;
+    font-size: 13px;
+}
+
+/* MÓVIL */
+
+@media (max-width: 800px) {
+
+    header h1 {
+        font-size: 34px;
     }
 
-    nav{
-        gap:18px;
+    nav {
+        line-height: 2.5;
     }
 
-    .salas{
-        grid-template-columns:1fr;
-        width:94%;
-        gap:25px;
+    nav a {
+        margin: 0 8px;
     }
 
-    .sala img{
-        height:470px;
+    .salas {
+        grid-template-columns: 1fr;
+        gap: 28px;
     }
 
-    .nombre{
-        font-size:21px;
+    .sala img {
+        height: 300px;
     }
 
 }
@@ -255,180 +204,156 @@ nav a:hover{
 
 <header>
 
-<h1>SEMANA SANTA</h1>
+    <h1>SEMANA SANTA</h1>
 
-<div class="subtitulo">
-    Andalucía · Seis ciudades
-</div>
+    <p>
+        Una mirada a la Semana Santa de Andalucía
+    </p>
 
 </header>
 
 
 <nav>
 
-<a href="index.html">PORTADA</a>
+    <a href="index.html">PORTADA</a>
 
-<a href="hermandades.html">HERMANDADES</a>
+    <a href="hermandades.html">HERMANDADES</a>
 
-<a href="madruga.html">MADRUGÁ</a>
+    <a href="madruga.html">MADRUGÁ</a>
 
-<a href="semana-santa.html">SEMANA SANTA</a>
+    <a href="semana-santa.html">SEMANA SANTA</a>
 
-<a href="#">DEVOCIONES</a>
+    <a href="#">DEVOCIONES</a>
 
-<a href="#">GALERÍA</a>
+    <a href="#">GALERÍA</a>
 
 </nav>
-
-
-<section class="introduccion">
-
-<h2>SEMANA SANTA DE ANDALUCÍA</h2>
-
-<p>
-    Un recorrido por seis ciudades andaluzas,
-    seis formas de vivir la Semana Santa
-    y seis miradas a través de sus imágenes,
-    sus calles y sus tradiciones.
-</p>
-
-</section>
 
 
 <section class="salas">
 
 
-<!-- SEVILLA -->
+    <!-- SEVILLA -->
 
-<a href="sevilla.html" class="sala">
+    <a class="sala" href="sevilla.html">
 
-    <img
-    src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=1600&q=80"
-    alt="Sevilla">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Cristodelaexpiracion.jpg?utm_source=es.wikipedia.org&utm_campaign=imageinfo&utm_content=original"
+             alt="Semana Santa de Sevilla">
 
-    <div class="nombre">
-        SEVILLA
-    </div>
+        <h2>SEVILLA</h2>
 
-</a>
+        <p>La Semana Santa sevillana</p>
 
-
-<!-- MALAGA -->
-
-<a href="malaga.html" class="sala">
-
-    <img
-    src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1600&q=80"
-    alt="Málaga">
-
-    <div class="nombre">
-        MÁLAGA
-    </div>
-
-</a>
+    </a>
 
 
-<!-- GRANADA -->
+    <!-- MÁLAGA -->
 
-<a href="granada.html" class="sala">
+    <a class="sala" href="malaga.html">
 
-    <img
-    src="https://images.unsplash.com/photo-1509840841025-9088ba78a826?auto=format&fit=crop&w=1600&q=80"
-    alt="Granada">
+        <img src="https://i.pinimg.com/1200x/16/ab/b7/16abb71e0ccc6fa86c6937b18d919596.jpg"
+             alt="Semana Santa de Málaga">
 
-    <div class="nombre">
-        GRANADA
-    </div>
+        <h2>MÁLAGA</h2>
 
-</a>
+        <p>La Semana Santa malagueña</p>
 
-
-<!-- JAEN -->
-
-<a href="jaen.html" class="sala">
-
-    <img
-    src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1600&q=80"
-    alt="Jaén">
-
-    <div class="nombre">
-        JAÉN
-    </div>
-
-</a>
+    </a>
 
 
-<!-- CADIZ -->
+    <!-- GRANADA -->
 
-<a href="cadiz.html" class="sala">
+    <a class="sala" href="granada.html">
 
-    <img
-    src="https://images.unsplash.com/photo-1559564484-e48c7f09e6b2?auto=format&fit=crop&w=1600&q=80"
-    alt="Cádiz">
+        <img src="https://www.granadadigital.es/wp-content/uploads/2022/04/MARTES-SANTO-SEMANA-SANTA-GRANADA-2022-LA-ESPERANZA-Dani-B-10-1010x673.jpg"
+             alt="Semana Santa de Granada">
 
-    <div class="nombre">
-        CÁDIZ
-    </div>
+        <h2>GRANADA</h2>
 
-</a>
+        <p>La Semana Santa granadina</p>
+
+    </a>
 
 
-<!-- CORDOBA -->
+    <!-- JAÉN -->
 
-<a href="cordoba.html" class="sala">
+    <a class="sala" href="jaen.html">
 
-    <img
-    src="https://images.unsplash.com/photo-1559386484-97dfc0e15539?auto=format&fit=crop&w=1600&q=80"
-    alt="Córdoba">
+        <img src="https://fotografias-2.larazon.es/clipping/cmsimages01/2022/04/15/77C30BC3-B05C-467A-A0B6-81EAFE60EEBF/95.jpg?crop=5906,3321,x0,y308&width=1028&height=578&optimize=medium&format=webply"
+             alt="Semana Santa de Jaén">
 
-    <div class="nombre">
-        CÓRDOBA
-    </div>
+        <h2>JAÉN</h2>
 
-</a>
+        <p>La Semana Santa jiennense</p>
+
+    </a>
+
+
+    <!-- CÁDIZ -->
+
+    <a class="sala" href="cadiz.html">
+
+        <img src="https://islapasion.net/wp-content/uploads/2025/03/caminitocadiz.jpg"
+             alt="Semana Santa de Cádiz">
+
+        <h2>CÁDIZ</h2>
+
+        <p>La Semana Santa gaditana</p>
+
+    </a>
+
+
+    <!-- CÓRDOBA -->
+
+    <a class="sala" href="cordoba.html">
+
+        <img src="https://fotografias-2.larazon.es/clipping/cmsimages02/2026/03/26/B235D143-06E8-49F4-9F58-4CEC689799C0/novedad-hermandad-presentacion-pueblo-cordoba_95.jpg?crop=1200,675,x0,y19&width=1028&height=578&optimize=medium&format=webply"
+             alt="Semana Santa de Córdoba">
+
+        <h2>CÓRDOBA</h2>
+
+        <p>La Semana Santa cordobesa</p>
+
+    </a>
 
 
 </section>
 
 
-<section class="final">
-
-<h2>SEIS CIUDADES</h2>
-
-<p>
-    Sevilla, Málaga, Granada, Jaén, Cádiz y Córdoba.
-    Seis ciudades y seis formas de sentir
-    la Semana Santa de Andalucía.
-</p>
-
-</section>
-
-
-<!-- BOTON MUSICA -->
+<!-- BOTÓN DE MÚSICA -->
 
 <button class="musica" id="botonMusica">♪</button>
 
 
-<!-- YOUTUBE OCULTO -->
+<!-- YOUTUBE -->
 
 <iframe
     id="youtube"
     class="youtube"
-    src="https://www.youtube.com/embed/M71Jq0DeoP4?enablejsapi=1&playsinline=1&controls=0&loop=1&playlist=M71Jq0DeoP4"
+    src="https://www.youtube.com/embed/M71Jq0DeoP4?start=0&enablejsapi=1&playsinline=1&controls=0&loop=1&playlist=M71Jq0DeoP4"
     allow="autoplay">
 </iframe>
+
+
+<footer>
+
+    Semana Santa · Andalucía
+
+</footer>
 
 
 <script>
 
 const boton = document.getElementById("botonMusica");
+
 const youtube = document.getElementById("youtube");
 
 let sonando = false;
 
-boton.addEventListener("click", function(){
 
-    if(!sonando){
+boton.addEventListener("click", function() {
+
+    if (!sonando) {
 
         youtube.contentWindow.postMessage(
             '{"event":"command","func":"playVideo","args":""}',
@@ -436,9 +361,10 @@ boton.addEventListener("click", function(){
         );
 
         boton.textContent = "Ⅱ";
+
         sonando = true;
 
-    }else{
+    } else {
 
         youtube.contentWindow.postMessage(
             '{"event":"command","func":"pauseVideo","args":""}',
@@ -446,6 +372,7 @@ boton.addEventListener("click", function(){
         );
 
         boton.textContent = "♪";
+
         sonando = false;
 
     }
@@ -454,9 +381,12 @@ boton.addEventListener("click", function(){
 
 </script>
 
+
 </body>
 
 </html>
+
+
 
 
 
