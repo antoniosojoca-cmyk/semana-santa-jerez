@@ -1,5 +1,7 @@
-```html
+
+
 <!DOCTYPE html>
+
 <html lang="es">
 
 <head>
@@ -18,73 +20,116 @@
 html,body{
     margin:0;
     padding:0;
-    min-height:100%;
     background:#080808;
     color:#ffffff;
     font-family:Georgia,"Times New Roman",serif;
 }
 
 body{
-    padding:35px 25px 50px;
+    min-height:100vh;
 }
 
-.contenedor{
-    width:100%;
-    max-width:1500px;
-    margin:auto;
-}
+/* CABECERA */
 
-.titulo{
+header{
     text-align:center;
+    padding:45px 20px 25px;
+}
+
+h1{
+    margin:0;
+    font-size:42px;
+    letter-spacing:6px;
     color:#e8dcc5;
-    font-size:34px;
-    letter-spacing:7px;
-    margin:10px 0 8px;
-    text-shadow:0 2px 8px #000;
 }
 
 .subtitulo{
-    text-align:center;
-    color:#9b7a3c;
-    font-size:16px;
-    letter-spacing:4px;
-    margin-bottom:35px;
+    margin-top:12px;
+    color:#c9a35b;
+    font-size:18px;
+    letter-spacing:3px;
 }
 
+/* MENU */
+
+nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+    padding:18px 20px;
+    border-top:1px solid #332b20;
+    border-bottom:1px solid #332b20;
+}
+
+nav a{
+    color:#d8d0c2;
+    text-decoration:none;
+    font-size:15px;
+    letter-spacing:2px;
+    transition:color .3s ease;
+}
+
+nav a:hover{
+    color:#c9a35b;
+}
+
+/* INTRODUCCION */
+
+.introduccion{
+    text-align:center;
+    padding:35px 20px 25px;
+}
+
+.introduccion h2{
+    margin:0 0 12px;
+    font-size:34px;
+    font-weight:normal;
+    letter-spacing:3px;
+    color:#e8dcc5;
+}
+
+.introduccion p{
+    max-width:850px;
+    margin:0 auto;
+    color:#bdb5a8;
+    font-size:17px;
+    line-height:1.7;
+}
+
+/* LAS SEIS SALAS */
+
 .salas{
+    width:94%;
+    max-width:1500px;
+    margin:25px auto 55px;
+
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:25px;
+    gap:38px;
 }
 
 .sala{
     position:relative;
-    height:250px;
-    border:1px solid #9b7a3c;
-    background:#111;
+    display:block;
     overflow:hidden;
     text-decoration:none;
-    box-shadow:0 0 20px rgba(0,0,0,.7);
-    transition:transform .3s ease, border-color .3s ease;
-}
-
-.sala:hover{
-    transform:scale(1.015);
-    border-color:#c9a35b;
+    border:1px solid #332b20;
+    background:#111;
 }
 
 .sala img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
     display:block;
-    opacity:.72;
-    transition:opacity .3s ease, transform .4s ease;
+    width:100%;
+    height:520px;
+    object-fit:cover;
+    filter:brightness(.78);
+    transition:transform .4s ease,filter .4s ease;
 }
 
 .sala:hover img{
-    opacity:.9;
-    transform:scale(1.03);
+    transform:scale(1.025);
+    filter:brightness(.94);
 }
 
 .nombre{
@@ -92,50 +137,76 @@ body{
     left:0;
     right:0;
     bottom:0;
-    padding:22px 10px;
+
+    padding:22px 15px;
+
     text-align:center;
+
     background:linear-gradient(
         to top,
-        rgba(0,0,0,.95),
-        rgba(0,0,0,.45),
-        transparent
+        rgba(0,0,0,.92),
+        rgba(0,0,0,.55),
+        rgba(0,0,0,0)
     );
+
     color:#e8dcc5;
     font-size:25px;
-    letter-spacing:5px;
-    text-shadow:0 2px 8px #000;
+    letter-spacing:3px;
+    text-shadow:0 2px 5px #000;
 }
 
-.volver{
-    display:block;
-    width:max-content;
-    margin:35px auto 0;
+/* TEXTO FINAL */
+
+.final{
+    text-align:center;
+    padding:5px 20px 50px;
+}
+
+.final h2{
+    margin:0 0 10px;
     color:#c9a35b;
-    text-decoration:none;
-    font-size:16px;
-    letter-spacing:2px;
-    transition:color .3s ease;
+    font-size:25px;
+    font-weight:normal;
+    letter-spacing:4px;
 }
 
-.volver:hover{
-    color:#ffffff;
+.final p{
+    max-width:800px;
+    margin:auto;
+    color:#aaa;
+    line-height:1.7;
 }
+
+/* BOTON DE MUSICA */
 
 .musica{
     position:fixed;
     right:25px;
     bottom:25px;
+
     width:52px;
     height:52px;
+
     border-radius:50%;
     border:1px solid #c9a35b;
+
     background:#111;
     color:#c9a35b;
+
     font-size:23px;
     cursor:pointer;
+
     z-index:9999;
+
     box-shadow:0 0 12px rgba(201,163,91,.25);
 }
+
+.musica:hover{
+    background:#c9a35b;
+    color:#080808;
+}
+
+/* YOUTUBE OCULTO */
 
 .youtube{
     position:fixed;
@@ -147,19 +218,31 @@ body{
     top:-10px;
 }
 
-@media(max-width:700px){
+/* MOVIL */
+
+@media(max-width:800px){
+
+    h1{
+        font-size:30px;
+        letter-spacing:4px;
+    }
+
+    nav{
+        gap:18px;
+    }
 
     .salas{
         grid-template-columns:1fr;
+        width:94%;
+        gap:25px;
     }
 
-    .titulo{
-        font-size:27px;
-        letter-spacing:5px;
+    .sala img{
+        height:470px;
     }
 
-    .sala{
-        height:220px;
+    .nombre{
+        font-size:21px;
     }
 
 }
@@ -170,108 +253,163 @@ body{
 
 <body>
 
-<div class="contenedor">
+<header>
 
-    <div class="titulo">
-        SEMANA SANTA
-    </div>
+<h1>SEMANA SANTA</h1>
 
-    <div class="subtitulo">
-        SEIS CIUDADES · SEIS MIRADAS
-    </div>
-
-    <div class="salas">
-
-        <a href="sevilla.html" class="sala">
-
-            <img
-            src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=1600&q=80"
-            alt="Sevilla">
-
-            <div class="nombre">
-                SEVILLA
-            </div>
-
-        </a>
-
-
-        <a href="malaga.html" class="sala">
-
-            <img
-            src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1600&q=80"
-            alt="Málaga">
-
-            <div class="nombre">
-                MÁLAGA
-            </div>
-
-        </a>
-
-
-        <a href="granada.html" class="sala">
-
-            <img
-            src="https://images.unsplash.com/photo-1509840841025-9088ba78a826?auto=format&fit=crop&w=1600&q=80"
-            alt="Granada">
-
-            <div class="nombre">
-                GRANADA
-            </div>
-
-        </a>
-
-
-        <a href="jaen.html" class="sala">
-
-            <img
-            src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1600&q=80"
-            alt="Jaén">
-
-            <div class="nombre">
-                JAÉN
-            </div>
-
-        </a>
-
-
-        <a href="cadiz.html" class="sala">
-
-            <img
-            src="https://images.unsplash.com/photo-1559564484-e48c7f09e6b2?auto=format&fit=crop&w=1600&q=80"
-            alt="Cádiz">
-
-            <div class="nombre">
-                CÁDIZ
-            </div>
-
-        </a>
-
-
-        <a href="cordoba.html" class="sala">
-
-            <img
-            src="https://images.unsplash.com/photo-1559386484-97dfc0e15539?auto=format&fit=crop&w=1600&q=80"
-            alt="Córdoba">
-
-            <div class="nombre">
-                CÓRDOBA
-            </div>
-
-        </a>
-
-    </div>
-
-    <a href="index.html" class="volver">
-        ← MENÚ PRINCIPAL
-    </a>
-
+<div class="subtitulo">
+    Andalucía · Seis ciudades
 </div>
 
+</header>
 
-<button class="musica" id="botonMusica">
-    ♪
-</button>
 
+<nav>
+
+<a href="index.html">PORTADA</a>
+
+<a href="hermandades.html">HERMANDADES</a>
+
+<a href="madruga.html">MADRUGÁ</a>
+
+<a href="semana-santa.html">SEMANA SANTA</a>
+
+<a href="#">DEVOCIONES</a>
+
+<a href="#">GALERÍA</a>
+
+</nav>
+
+
+<section class="introduccion">
+
+<h2>SEMANA SANTA DE ANDALUCÍA</h2>
+
+<p>
+    Un recorrido por seis ciudades andaluzas,
+    seis formas de vivir la Semana Santa
+    y seis miradas a través de sus imágenes,
+    sus calles y sus tradiciones.
+</p>
+
+</section>
+
+
+<section class="salas">
+
+
+<!-- SEVILLA -->
+
+<a href="sevilla.html" class="sala">
+
+    <img
+    src="https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=1600&q=80"
+    alt="Sevilla">
+
+    <div class="nombre">
+        SEVILLA
+    </div>
+
+</a>
+
+
+<!-- MALAGA -->
+
+<a href="malaga.html" class="sala">
+
+    <img
+    src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1600&q=80"
+    alt="Málaga">
+
+    <div class="nombre">
+        MÁLAGA
+    </div>
+
+</a>
+
+
+<!-- GRANADA -->
+
+<a href="granada.html" class="sala">
+
+    <img
+    src="https://images.unsplash.com/photo-1509840841025-9088ba78a826?auto=format&fit=crop&w=1600&q=80"
+    alt="Granada">
+
+    <div class="nombre">
+        GRANADA
+    </div>
+
+</a>
+
+
+<!-- JAEN -->
+
+<a href="jaen.html" class="sala">
+
+    <img
+    src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1600&q=80"
+    alt="Jaén">
+
+    <div class="nombre">
+        JAÉN
+    </div>
+
+</a>
+
+
+<!-- CADIZ -->
+
+<a href="cadiz.html" class="sala">
+
+    <img
+    src="https://images.unsplash.com/photo-1559564484-e48c7f09e6b2?auto=format&fit=crop&w=1600&q=80"
+    alt="Cádiz">
+
+    <div class="nombre">
+        CÁDIZ
+    </div>
+
+</a>
+
+
+<!-- CORDOBA -->
+
+<a href="cordoba.html" class="sala">
+
+    <img
+    src="https://images.unsplash.com/photo-1559386484-97dfc0e15539?auto=format&fit=crop&w=1600&q=80"
+    alt="Córdoba">
+
+    <div class="nombre">
+        CÓRDOBA
+    </div>
+
+</a>
+
+
+</section>
+
+
+<section class="final">
+
+<h2>SEIS CIUDADES</h2>
+
+<p>
+    Sevilla, Málaga, Granada, Jaén, Cádiz y Córdoba.
+    Seis ciudades y seis formas de sentir
+    la Semana Santa de Andalucía.
+</p>
+
+</section>
+
+
+<!-- BOTON MUSICA -->
+
+<button class="musica" id="botonMusica">♪</button>
+
+
+<!-- YOUTUBE OCULTO -->
 
 <iframe
     id="youtube"
@@ -288,7 +426,7 @@ const youtube = document.getElementById("youtube");
 
 let sonando = false;
 
-boton.addEventListener("click",function(){
+boton.addEventListener("click", function(){
 
     if(!sonando){
 
@@ -297,8 +435,8 @@ boton.addEventListener("click",function(){
             "*"
         );
 
-        boton.textContent="Ⅱ";
-        sonando=true;
+        boton.textContent = "Ⅱ";
+        sonando = true;
 
     }else{
 
@@ -307,8 +445,8 @@ boton.addEventListener("click",function(){
             "*"
         );
 
-        boton.textContent="♪";
-        sonando=false;
+        boton.textContent = "♪";
+        sonando = false;
 
     }
 
@@ -319,4 +457,7 @@ boton.addEventListener("click",function(){
 </body>
 
 </html>
-```
+
+
+
+
