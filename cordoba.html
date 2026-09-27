@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Córdoba — Semana Santa</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #080808;
+    color: #f2eee7;
+    font-family: Georgia, "Times New Roman", serif;
+    text-align: center;
+}
+
+/* CABECERA */
+
+header {
+    padding: 45px 20px 30px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 42px;
+    letter-spacing: 5px;
+    font-weight: normal;
+    color: #f2eee7;
+}
+
+header p {
+    margin-top: 12px;
+    color: #c9a35b;
+    font-size: 19px;
+    letter-spacing: 2px;
+}
+
+/* GALERÍA */
+
+.galeria {
+    width: 94%;
+    max-width: 1500px;
+    margin: 10px auto 50px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+}
+
+.imagen {
+    background: #101010;
+    border: 1px solid #9b7a3c;
+    padding: 8px;
+}
+
+.imagen img {
+    display: block;
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+}
+
+/* BOTÓN DE MÚSICA */
+
+.musica {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+    border: 1px solid #c9a35b;
+
+    background: #080808;
+    color: #c9a35b;
+
+    font-size: 23px;
+    cursor: pointer;
+
+    z-index: 1000;
+}
+
+.musica:hover {
+    background: #c9a35b;
+    color: #080808;
+}
+
+/* YOUTUBE OCULTO */
+
+.youtube {
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    left: -100px;
+    top: -100px;
+    border: 0;
+}
+
+/* VOLVER */
+
+.volver {
+    display: inline-block;
+
+    margin: 0 auto 45px;
+
+    color: #c9a35b;
+    text-decoration: none;
+
+    border: 1px solid #9b7a3c;
+    padding: 12px 25px;
+
+    font-size: 16px;
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.volver:hover {
+    background: #c9a35b;
+    color: #080808;
+}
+
+/* PIE */
+
+footer {
+    padding: 25px 15px 35px;
+
+    color: #777;
+
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* MÓVIL */
+
+@media (max-width: 800px) {
+
+    header h1 {
+        font-size: 30px;
+        letter-spacing: 3px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+        width: 92%;
+        gap: 25px;
+    }
+
+    .imagen img {
+        height: 350px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>CÓRDOBA</h1>
+
+    <p>Semana Santa de Córdoba</p>
+
+</header>
+
+
+<main class="galeria">
+
+
+    <!-- IMAGEN 1 -->
+
+    <div class="imagen">
+        <img
+        src="https://www.gentedepaz.es/wp-content/uploads/2024/02/Piedad-de-Palmeras-22-752x440.jpg"
+        alt="Semana Santa de Córdoba">
+    </div>
+
+
+    <!-- IMAGEN 2 -->
+
+    <div class="imagen">
+        <img
+        src="https://www.gentedepaz.es/wp-content/uploads/2026/09/1000517693-752x440.jpg"
+        alt="Semana Santa de Córdoba">
+    </div>
+
+
+    <!-- IMAGEN 3 -->
+
+    <div class="imagen">
+        <img
+        src="https://www.artencordoba.com/wp-content/uploads/guiafotos/semana-santa/FOTOS/PIEDAD_PALMERAS/SEMANA_SANTA_PIEDAD_CORDOBA_03.jpg"
+        alt="La Piedad de Córdoba">
+    </div>
+
+
+    <!-- IMAGEN 4 -->
+
+    <div class="imagen">
+        <img
+        src="https://www.cargest.com/wp-content/uploads/2025/10/descubre-procesiones-semana-santa-cordoba-1200x675.jpg"
+        alt="Procesiones de Semana Santa de Córdoba">
+    </div>
+
+
+    <!-- IMAGEN 5 -->
+
+    <div class="imagen">
+        <img
+        src="https://cordobacapitalcofrade.com/wp-content/uploads/2023/12/virgen-esperanza-cordoba-kj7D-1248x698@abc-980x551.jpg"
+        alt="Virgen de la Esperanza de Córdoba">
+    </div>
+
+
+    <!-- IMAGEN 6 -->
+
+    <div class="imagen">
+        <img
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiP72VLLXOssbYHteYnJ4PvEugVVxdmd_Ax-t5xuztX6Ygh9cnEntyxWJ8NB4jJBynJA5050l2QymiKc3qwB0MNKO1EzEUKYhlSh8CIm3quFre0gHWNuRjY7wiOO9OXEiXgP2eU8Q3QzDo/s1600/DSC_2962.jpg"
+        alt="Semana Santa de Córdoba">
+    </div>
+
+
+</main>
+
+
+<!-- BOTÓN MÚSICA -->
+
+<button class="musica" id="botonMusica">♪</button>
+
+
+<!-- YOUTUBE -->
+
+<iframe
+    id="youtube"
+    class="youtube"
+    src="https://www.youtube.com/embed/-sT1TJe1r4U?start=0&enablejsapi=1&playsinline=1&controls=0&loop=1&playlist=-sT1TJe1r4U"
+    allow="autoplay">
+</iframe>
+
+
+<script>
+
+const boton = document.getElementById("botonMusica");
+const youtube = document.getElementById("youtube");
+
+let sonando = false;
+
+boton.addEventListener("click", function() {
+
+    if (!sonando) {
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            "*"
+        );
+
+        boton.textContent = "Ⅱ";
+
+        sonando = true;
+
+    } else {
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}',
+            "*"
+        );
+
+        boton.textContent = "♪";
+
+        sonando = false;
+
+    }
+
+});
+
+</script>
+
+
+<!-- VOLVER -->
+
+<a href="semana-santa.html" class="volver">
+    ← SEMANA SANTA
+</a>
+
+
+<footer>
+
+    Semana Santa · Córdoba · 2026
+
+</footer>
+
+
+</body>
+
+</html>
+
