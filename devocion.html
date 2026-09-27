@@ -1,5 +1,6 @@
-<!DOCTYPE html>
 
+
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -7,237 +8,203 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>La Devoción — La Madrugá</title>
+<title>Devociones — Semana Santa de Jerez</title>
 
 <style>
 
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-html,body{
-    margin:0;
-    padding:0;
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    background:#080808;
-    font-family:Georgia,"Times New Roman",serif;
+body {
+    margin: 0;
+    background: #080808;
+    color: #f2eee7;
+    font-family: Georgia, "Times New Roman", serif;
+    text-align: center;
 }
 
-.escenario{
-    position:relative;
-    width:100vw;
-    height:100vh;
-    background:#080808;
+/* CABECERA */
+
+header {
+    padding: 45px 20px 35px;
 }
 
-.marco{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-
-    width:92vw;
-    max-width:1500px;
-    height:86vh;
-
-    border:1px solid #9b7a3c;
-    background:#000;
-
-    overflow:hidden;
-
-    box-shadow:
-        0 0 35px rgba(0,0,0,.8),
-        0 0 2px rgba(201,163,91,.4);
+header h1 {
+    margin: 0;
+    font-size: 42px;
+    letter-spacing: 5px;
+    font-weight: normal;
+    color: #f2eee7;
 }
 
-/* FOTOGRAFIAS */
-
-.foto{
-    position:absolute;
-    inset:0;
-
-    width:100%;
-    height:100%;
-
-    object-fit:contain;
-
-    opacity:0;
-
-    animation:mostrar 36s infinite;
+header p {
+    margin-top: 12px;
+    color: #c9a35b;
+    font-size: 19px;
+    letter-spacing: 2px;
 }
 
-.foto:nth-child(1){
-    animation-delay:0s;
+/* SEIS SALAS */
+
+.salas {
+    width: 94%;
+    max-width: 1500px;
+    margin: 10px auto 55px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 38px;
 }
 
-.foto:nth-child(2){
-    animation-delay:6s;
+.sala {
+    display: block;
+
+    background: #101010;
+
+    border: 1px solid #9b7a3c;
+
+    padding: 8px;
+
+    text-decoration: none;
+    color: #f2eee7;
+
+    transition: 0.35s ease;
 }
 
-.foto:nth-child(3){
-    animation-delay:12s;
+.sala:hover {
+    border-color: #c9a35b;
+    transform: translateY(-4px);
 }
 
-.foto:nth-child(4){
-    animation-delay:18s;
+.sala img {
+    display: block;
+
+    width: 100%;
+    height: 430px;
+
+    object-fit: cover;
 }
 
-.foto:nth-child(5){
-    animation-delay:24s;
+.sala h2 {
+    margin: 0;
+
+    padding: 22px 10px 20px;
+
+    color: #c9a35b;
+
+    font-size: 24px;
+    font-weight: normal;
+
+    letter-spacing: 3px;
 }
 
-.foto:nth-child(6){
-    animation-delay:30s;
+/* BOTÓN MÚSICA */
+
+.musica {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 1px solid #c9a35b;
+
+    background: #080808;
+
+    color: #c9a35b;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    z-index: 1000;
 }
 
-@keyframes mostrar{
-
-    0%{
-        opacity:0;
-    }
-
-    5%{
-        opacity:1;
-    }
-
-    16%{
-        opacity:1;
-    }
-
-    21%{
-        opacity:0;
-    }
-
-    100%{
-        opacity:0;
-    }
-
-}
-
-/* TITULO */
-
-.titulo{
-    position:absolute;
-    top:20px;
-    left:0;
-    right:0;
-
-    text-align:center;
-
-    color:#e8dcc5;
-
-    font-size:28px;
-    letter-spacing:5px;
-
-    text-shadow:0 2px 8px #000;
-
-    z-index:20;
-
-    pointer-events:none;
-}
-
-/* BOTON MUSICA */
-
-.musica{
-    position:fixed;
-
-    right:25px;
-    bottom:25px;
-
-    width:52px;
-    height:52px;
-
-    border-radius:50%;
-
-    border:1px solid #c9a35b;
-
-    background:#111;
-
-    color:#c9a35b;
-
-    font-size:23px;
-
-    cursor:pointer;
-
-    z-index:9999;
-
-    box-shadow:0 0 12px rgba(201,163,91,.25);
-}
-
-.musica:hover{
-    background:#c9a35b;
-    color:#080808;
+.musica:hover {
+    background: #c9a35b;
+    color: #080808;
 }
 
 /* YOUTUBE OCULTO */
 
-.youtube{
-    position:fixed;
+.youtube {
+    position: fixed;
 
-    width:1px;
-    height:1px;
+    width: 1px;
+    height: 1px;
 
-    opacity:0;
+    left: -100px;
+    top: -100px;
 
-    pointer-events:none;
-
-    left:-10px;
-    top:-10px;
+    border: 0;
 }
 
 /* VOLVER */
 
-.volver{
-    position:fixed;
+.volver {
+    display: inline-block;
 
-    left:25px;
-    bottom:28px;
+    margin: 0 auto 45px;
 
-    color:#c9a35b;
+    padding: 12px 25px;
 
-    text-decoration:none;
+    color: #c9a35b;
 
-    font-size:16px;
+    text-decoration: none;
 
-    letter-spacing:2px;
+    border: 1px solid #9b7a3c;
 
-    z-index:9999;
+    font-size: 16px;
 
-    text-shadow:0 2px 5px #000;
+    letter-spacing: 2px;
 
-    transition:color .3s ease;
+    transition: 0.3s;
 }
 
-.volver:hover{
-    color:#e8dcc5;
+.volver:hover {
+    background: #c9a35b;
+    color: #080808;
 }
 
-/* MOVIL */
+/* PIE */
 
-@media(max-width:800px){
+footer {
+    padding: 25px 15px 35px;
 
-    .marco{
-        width:94vw;
-        height:82vh;
+    color: #777;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+}
+
+/* MÓVIL */
+
+@media (max-width: 800px) {
+
+    header h1 {
+        font-size: 30px;
+        letter-spacing: 3px;
     }
 
-    .titulo{
-        font-size:21px;
-        letter-spacing:3px;
-        top:14px;
+    header p {
+        font-size: 16px;
     }
 
-    .volver{
-        left:15px;
-        bottom:18px;
-        font-size:14px;
+    .salas {
+        grid-template-columns: 1fr;
+        width: 92%;
+        gap: 25px;
     }
 
-    .musica{
-        right:15px;
-        bottom:15px;
+    .sala img {
+        height: 350px;
     }
 
 }
@@ -246,129 +213,80 @@ html,body{
 
 </head>
 
+
 <body>
 
-<div class="escenario">
+
+<header>
+
+    <h1>DEVOCIONES</h1>
+
+    <p>Seis caminos de fe, oración y sentimiento</p>
+
+</header>
 
 
-<div class="marco">
-
-    <div class="titulo">
-        LA DEVOCIÓN
-    </div>
+<main class="salas">
 
 
-    <!-- IMAGEN 1 -->
+    <!-- 1 · EL REZO -->
 
-    <img
-    class="foto"
-    src="https://static.grupojoly.com/clip/1e93d85f-c664-4155-bb77-ace4057477b0_16-9-aspect-ratio_1600w_0.webp"
-    alt="La Devoción">
+    <a href="rezo.html" class="sala">
 
+        <img
+        src="https://static.grupojoly.com/clip/aa60e1dc-9ff5-4c40-a535-97e0fa2f9c0e_source-aspect-ratio_1600w_0.webp"
+        alt="El Rezo">
 
-    <!-- IMAGEN 2 -->
+        <h2>EL REZO</h2>
 
-    <img
-    class="foto"
-    src="https://static.grupojoly.com/clip/cad06890-f341-48c4-80dc-4114d962ebfa_source-aspect-ratio_1600w_0.webp"
-    alt="La Devoción">
+    </a>
 
 
-    <!-- IMAGEN 3 -->
+    <!-- 2 · LA MIRADA -->
 
-    <img
-    class="foto"
-    src="https://static.grupojoly.com/clip/e5a37ccd-e32b-44dd-95fb-d3039a0f85bf_source-aspect-ratio_1600w_0.webp"
-    alt="La Devoción">
+    <a href="mirada.html" class="sala">
 
+        <img
+        src="https://static.grupojoly.com/clip/cecb4cbd-33d1-40ae-b07b-9dedd167e3b9_source-aspect-ratio_1600w_0.webp"
+        alt="La Mirada">
 
-    <!-- IMAGEN 4 -->
+        <h2>LA MIRADA</h2>
 
-    <img
-    class="foto"
-    src="https://static.grupojoly.com/clip/32b2dfa3-68c7-4064-991d-c44185dcec13_source-aspect-ratio_1600w_0.webp"
-    alt="La Devoción">
+    </a>
 
 
-    <!-- IMAGEN 5 -->
+    <!-- 3 · EL RUEGO -->
 
-    <img
-    class="foto"
-    src="https://static.grupojoly.com/clip/8357a8ca-f59c-4866-b97e-73e5514aeb92_source-aspect-ratio_1600w_0.webp"
-    alt="La Devoción">
+    <a href="ruego.html" class="sala">
 
+        <img
+        src="https://static.grupojoly.com/clip/c90df948-1bb5-48c3-a1f0-7c8eb0e3c4b3_source-aspect-ratio_1600w_0.webp"
+        alt="El Ruego">
 
-    <!-- IMAGEN 6 -->
+        <h2>EL RUEGO</h2>
 
-    <img
-    class="foto"
-    src="https://static.grupojoly.com/clip/154439fb-93f3-4e04-a1c4-24160055bc59_source-aspect-ratio_1600w_0.webp"
-    alt="La Devoción">
-
-</div>
+    </a>
 
 
-</div>
+    <!-- 4 · AMOR -->
 
-<!-- VOLVER A MADRUGÁ -->
+    <a href="amor.html" class="sala">
 
-<a href="madruga.html" class="volver">
-    ← MADRUGÁ
-</a>
+        <img
+        src="https://static.grupojoly.com/clip/75d453d6-7e0b-40e6-8e18-305d0cbf5866_source-aspect-ratio_1600w_0.webp"
+        alt="Amor">
 
-<!-- BOTON MUSICA -->
+        <h2>AMOR</h2>
 
-<button class="musica" id="botonMusica">
-    ♪
-</button>
+    </a>
 
-<!-- YOUTUBE OCULTO -->
 
-<iframe
-    id="youtube"
-    class="youtube"
-    src="https://www.youtube.com/embed/psh8TEHDf9k?enablejsapi=1&playsinline=1&controls=0&loop=1&playlist=psh8TEHDf9k"
-    allow="autoplay">
-</iframe>
+    <!-- 5 · LA FE -->
 
-<script>
+    <a href="fe.html" class="sala">
 
-const boton = document.getElementById("botonMusica");
-const youtube = document.getElementById("youtube");
+        <img
+        src="https://static.grupojoly.com/clip/0193a667-d6e5-4cab-a32b-7d146bbfd6bf_source-aspect-ratio_1600w
 
-let sonando = false;
 
-boton.addEventListener("click",function(){
-
-    if(!sonando){
-
-        youtube.contentWindow.postMessage(
-            '{"event":"command","func":"playVideo","args":""}',
-            "*"
-        );
-
-        boton.textContent="Ⅱ";
-
-        sonando=true;
-
-    }else{
-
-        youtube.contentWindow.postMessage(
-            '{"event":"command","func":"pauseVideo","args":""}',
-            "*"
-        );
-
-        boton.textContent="♪";
-
-        sonando=false;
-
-    }
-
-});
-
-</script>
-
-</body>
-
-</html>
 
