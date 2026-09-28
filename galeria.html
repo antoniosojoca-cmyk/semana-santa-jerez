@@ -1,0 +1,506 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Galería — Semana Santa de Jerez</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    padding:0;
+    background:#080808;
+    color:#f2eee7;
+    font-family:Georgia,"Times New Roman",serif;
+}
+
+body{
+    min-height:100vh;
+}
+
+
+/* CABECERA */
+
+header{
+    text-align:center;
+    padding:45px 20px 30px;
+}
+
+header h1{
+    margin:0;
+    font-size:42px;
+    letter-spacing:5px;
+    font-weight:normal;
+}
+
+header p{
+    margin:14px 0 0;
+    color:#c9a35b;
+    font-size:18px;
+    letter-spacing:2px;
+}
+
+
+/* SALAS */
+
+.salas{
+    width:94%;
+    max-width:1500px;
+    margin:0 auto 50px;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+
+    gap:38px;
+}
+
+
+/* TARJETAS */
+
+.sala{
+    display:block;
+
+    background:#101010;
+
+    border:1px solid #9b7a3c;
+
+    text-decoration:none;
+
+    color:#f2eee7;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 0 18px rgba(0,0,0,.45);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+.sala:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 8px 28px rgba(0,0,0,.65);
+
+    border-color:#c9a35b;
+}
+
+
+/* IMÁGENES */
+
+.sala img{
+    display:block;
+
+    width:100%;
+    height:430px;
+
+    object-fit:cover;
+}
+
+
+/* TÍTULO DE CADA SALA */
+
+.sala h2{
+    margin:0;
+
+    padding:20px 15px 23px;
+
+    text-align:center;
+
+    color:#c9a35b;
+
+    font-size:23px;
+
+    letter-spacing:3px;
+
+    font-weight:normal;
+}
+
+
+/* ÚLTIMA TARJETA CENTRADA */
+
+.sala.ultima{
+    grid-column:1 / -1;
+    width:50%;
+    margin:0 auto;
+}
+
+
+/* BOTÓN VOLVER */
+
+.volver{
+    display:block;
+
+    width:max-content;
+
+    margin:0 auto 35px;
+
+    color:#c9a35b;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    letter-spacing:2px;
+
+    transition:color .3s ease;
+}
+
+.volver:hover{
+    color:#e8dcc5;
+}
+
+
+/* MÚSICA */
+
+.musica{
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    border:1px solid #c9a35b;
+
+    background:#111;
+
+    color:#c9a35b;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    z-index:9999;
+
+    box-shadow:0 0 12px rgba(201,163,91,.25);
+}
+
+.musica:hover{
+    background:#c9a35b;
+    color:#080808;
+}
+
+
+/* YOUTUBE OCULTO */
+
+.youtube{
+    position:fixed;
+
+    width:1px;
+    height:1px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    left:-10px;
+    top:-10px;
+}
+
+
+/* PIE */
+
+footer{
+    text-align:center;
+
+    padding:10px 20px 30px;
+
+    color:#8f8a82;
+
+    font-size:14px;
+
+    letter-spacing:1px;
+}
+
+
+/* MÓVIL */
+
+@media(max-width:800px){
+
+    header{
+        padding:32px 15px 25px;
+    }
+
+    header h1{
+        font-size:30px;
+        letter-spacing:4px;
+    }
+
+    header p{
+        font-size:15px;
+    }
+
+    .salas{
+        grid-template-columns:1fr;
+        gap:25px;
+        width:92%;
+    }
+
+    .sala img{
+        height:350px;
+    }
+
+    .sala h2{
+        font-size:20px;
+    }
+
+    .sala.ultima{
+        grid-column:auto;
+        width:100%;
+    }
+
+    .musica{
+        right:15px;
+        bottom:15px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>GALERÍA</h1>
+
+    <p>
+        Los días de la Semana Santa de Jerez
+    </p>
+
+</header>
+
+
+<main class="salas">
+
+
+    <!-- SÁBADO -->
+
+    <a href="sabado.html" class="sala">
+
+        <img
+            src="https://www.uniondehermandades.com/wp-content/uploads/2018/11/1-5.jpg"
+            alt="Sábado">
+
+        <h2>
+            SÁBADO
+        </h2>
+
+    </a>
+
+
+    <!-- DOMINGO DE RAMOS -->
+
+    <a href="domingo-ramos.html" class="sala">
+
+        <img
+            src="https://static.grupojoly.com/clip/924ab2b1-1dc7-430f-b6e2-42ded7222d2b_16-9-aspect-ratio_1600w_0_x1700y767.webp"
+            alt="Domingo de Ramos">
+
+        <h2>
+            DOMINGO DE RAMOS
+        </h2>
+
+    </a>
+
+
+    <!-- LUNES SANTO -->
+
+    <a href="lunes-santo.html" class="sala">
+
+        <img
+            src="https://static.grupojoly.com/clip/70aeb72a-86cb-4915-a72b-b51d67feb8cb_16-9-aspect-ratio_1600w_0.webp"
+            alt="Lunes Santo">
+
+        <h2>
+            LUNES SANTO
+        </h2>
+
+    </a>
+
+
+    <!-- MARTES SANTO -->
+
+    <a href="martes-santo.html" class="sala">
+
+        <img
+            src="https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Nuestro_Padre_Jes%C3%BAs_de_la_Salud_en_sus_Tres_Ca%C3%ADdas._Jerez_de_la_Frontera.jpg/960px-Nuestro_Padre_Jes%C3%BAs_de_la_Salud_en_sus_Tres_Ca%C3%ADdas._Jerez_de_la_Frontera.jpg?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+            alt="Martes Santo">
+
+        <h2>
+            MARTES SANTO
+        </h2>
+
+    </a>
+
+
+    <!-- MIÉRCOLES SANTO -->
+
+    <a href="miercoles-santo.html" class="sala">
+
+        <img
+            src="https://www.uniondehermandades.com/wp-content/uploads/2018/12/1-7.jpg"
+            alt="Miércoles Santo">
+
+        <h2>
+            MIÉRCOLES SANTO
+        </h2>
+
+    </a>
+
+
+    <!-- JUEVES SANTO -->
+
+    <a href="jueves-santo.html" class="sala">
+
+        <img
+            src="https://static.grupojoly.com/clip/f46c2f16-c617-4e50-a90b-8da7a7d64b67_16-9-aspect-ratio_1600w_0.webp"
+            alt="Jueves Santo">
+
+        <h2>
+            JUEVES SANTO
+        </h2>
+
+    </a>
+
+
+    <!-- NOCHE DE JESÚS -->
+
+    <a href="noche-de-jesus.html" class="sala">
+
+        <img
+            src="https://static.grupojoly.com/clip/6437dfaa-7640-44fe-93ca-8fc2b058c922_16-9-aspect-ratio_1600w_0.webp"
+            alt="Noche de Jesús">
+
+        <h2>
+            NOCHE DE JESÚS
+        </h2>
+
+    </a>
+
+
+    <!-- VIERNES SANTO -->
+
+    <a href="viernes-santo.html" class="sala">
+
+        <img
+            src="https://static.grupojoly.com/clip/be040e19-9788-4a7c-a672-fe8f8f3a3ed4_16-9-aspect-ratio_1600w_0.webp"
+            alt="Viernes Santo">
+
+        <h2>
+            VIERNES SANTO
+        </h2>
+
+    </a>
+
+
+    <!-- SÁBADO SANTO / DOMINGO DE RESURRECCIÓN -->
+
+    <a href="resurreccion.html" class="sala ultima">
+
+        <img
+            src="https://static.grupojoly.com/clip/8a4b8aab-25d7-449f-a3a9-f9e9d3c04234_source-aspect-ratio_1600w_0.webp"
+            alt="Sábado Santo y Domingo de Resurrección">
+
+        <h2>
+            SÁBADO SANTO · DOMINGO DE RESURRECCIÓN
+        </h2>
+
+    </a>
+
+
+</main>
+
+
+<a href="index.html" class="volver">
+    ← PORTADA
+</a>
+
+
+<!-- BOTÓN DE MÚSICA -->
+
+<button class="musica" id="botonMusica">
+    ♪
+</button>
+
+
+<!-- YOUTUBE -->
+
+<iframe
+    id="youtube"
+    class="youtube"
+    src="https://www.youtube.com/embed/kNFc940cvOo?start=0&enablejsapi=1&playsinline=1&controls=0&loop=1&playlist=kNFc940cvOo"
+    allow="autoplay">
+</iframe>
+
+
+<script>
+
+const boton = document.getElementById("botonMusica");
+
+const youtube = document.getElementById("youtube");
+
+let sonando = false;
+
+boton.addEventListener("click", function(){
+
+    if(!sonando){
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            "*"
+        );
+
+        boton.textContent = "Ⅱ";
+
+        sonando = true;
+
+    }else{
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}',
+            "*"
+        );
+
+        boton.textContent = "♪";
+
+        sonando = false;
+
+    }
+
+});
+
+</script>
+
+
+<footer>
+
+    Semana Santa de Jerez · Galería · 2026
+
+</footer>
+
+
+</body>
+
+</html>
+
