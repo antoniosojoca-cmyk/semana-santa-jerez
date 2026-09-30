@@ -337,45 +337,25 @@ h1{
 </button>
 
 
-<!-- MUSICA OCULTA -->
+```html
+<!-- BOTÓN DE MÚSICA -->
+
+<button class="musica" id="botonMusica">
+    ♪
+</button>
+
+
+<!-- YOUTUBE -->
 
 <iframe
     id="youtube"
     class="youtube"
-    src="https://www.youtube.com/embed/oYNb9el5wCg?enablejsapi=1&playsinline=1&controls=0&loop=1&playlist=oYNb9el5wCg"
+    src="https://www.youtube.com/embed/bsMXoziO0BE?start=0&enablejsapi=1&playsinline=1&controls=0&loop=1&playlist=bsMXoziO0BE"
     allow="autoplay">
 </iframe>
 
 
 <script>
-
-
-/* CAMBIO DE IMAGENES */
-
-const slides = document.querySelectorAll(".slide");
-
-let actual = 0;
-
-
-setInterval(function(){
-
-    slides[actual].classList.remove("activa");
-
-    actual++;
-
-    if(actual >= slides.length){
-
-        actual = 0;
-
-    }
-
-    slides[actual].classList.add("activa");
-
-},7000);
-
-
-
-/* MUSICA */
 
 const boton = document.getElementById("botonMusica");
 
@@ -384,43 +364,43 @@ const youtube = document.getElementById("youtube");
 let sonando = false;
 
 
-boton.addEventListener("click",function(){
+boton.addEventListener("click", function(){
 
     if(!sonando){
 
         youtube.contentWindow.postMessage(
-
             '{"event":"command","func":"playVideo","args":""}',
-
             "*"
-
         );
 
-        boton.textContent="Ⅱ";
+        boton.textContent = "Ⅱ";
 
-        sonando=true;
+        sonando = true;
 
-    }
-
-    else{
+    }else{
 
         youtube.contentWindow.postMessage(
-
             '{"event":"command","func":"pauseVideo","args":""}',
-
             "*"
-
         );
 
-        boton.textContent="♪";
+        boton.textContent = "♪";
 
-        sonando=false;
+        sonando = false;
 
     }
 
 });
 
 </script>
+
+
+    
+
+    
+
+
+    
 
 
 </body>
