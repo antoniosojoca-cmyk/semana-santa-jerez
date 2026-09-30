@@ -1,0 +1,474 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cristos — Rostros</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html,
+body{
+    margin:0;
+    padding:0;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    background:#080808;
+
+    font-family:Georgia,"Times New Roman",serif;
+}
+
+
+/* ESCENARIO */
+
+.escenario{
+    position:relative;
+
+    width:100vw;
+    height:100vh;
+
+    background:#080808;
+}
+
+
+/* MARCO */
+
+.marco{
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:92vw;
+    max-width:1500px;
+
+    height:86vh;
+
+    border:1px solid #9b7a3c;
+
+    background:#000;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 0 35px rgba(0,0,0,.8),
+        0 0 2px rgba(201,163,91,.4);
+}
+
+
+/* FOTOGRAFIAS */
+
+.foto{
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    opacity:0;
+
+    animation:mostrar 48s infinite;
+}
+
+
+/* OCHO IMÁGENES */
+
+.foto:nth-of-type(1){
+    animation-delay:0s;
+}
+
+.foto:nth-of-type(2){
+    animation-delay:6s;
+}
+
+.foto:nth-of-type(3){
+    animation-delay:12s;
+}
+
+.foto:nth-of-type(4){
+    animation-delay:18s;
+}
+
+.foto:nth-of-type(5){
+    animation-delay:24s;
+}
+
+.foto:nth-of-type(6){
+    animation-delay:30s;
+}
+
+.foto:nth-of-type(7){
+    animation-delay:36s;
+}
+
+.foto:nth-of-type(8){
+    animation-delay:42s;
+}
+
+
+/* TRANSICIÓN */
+
+@keyframes mostrar{
+
+    0%{
+        opacity:0;
+    }
+
+    5%{
+        opacity:1;
+    }
+
+    12.5%{
+        opacity:1;
+    }
+
+    17.5%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+    }
+
+}
+
+
+/* TITULO */
+
+.titulo{
+    position:absolute;
+
+    top:20px;
+
+    left:0;
+    right:0;
+
+    text-align:center;
+
+    color:#e8dcc5;
+
+    font-size:28px;
+
+    letter-spacing:5px;
+
+    text-shadow:0 2px 8px #000;
+
+    z-index:20;
+
+    pointer-events:none;
+}
+
+
+/* BOTÓN MÚSICA */
+
+.musica{
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+    border:1px solid #c9a35b;
+
+    background:#111;
+
+    color:#c9a35b;
+
+    font-size:23px;
+
+    cursor:pointer;
+
+    z-index:9999;
+
+    box-shadow:
+        0 0 12px rgba(201,163,91,.25);
+}
+
+.musica:hover{
+    background:#c9a35b;
+
+    color:#080808;
+}
+
+
+/* YOUTUBE OCULTO */
+
+.youtube{
+    position:fixed;
+
+    width:1px;
+    height:1px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    left:-10px;
+    top:-10px;
+}
+
+
+/* VOLVER */
+
+.volver{
+    position:fixed;
+
+    left:25px;
+    bottom:28px;
+
+    color:#c9a35b;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    letter-spacing:2px;
+
+    z-index:9999;
+
+    text-shadow:0 2px 5px #000;
+
+    transition:color .3s ease;
+}
+
+.volver:hover{
+    color:#e8dcc5;
+}
+
+
+/* MÓVIL */
+
+@media(max-width:800px){
+
+    .marco{
+        width:94vw;
+        height:82vh;
+    }
+
+    .titulo{
+        font-size:21px;
+
+        letter-spacing:3px;
+
+        top:14px;
+    }
+
+    .volver{
+        left:15px;
+
+        bottom:18px;
+
+        font-size:14px;
+    }
+
+    .musica{
+        right:15px;
+
+        bottom:15px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="escenario">
+
+
+    <div class="marco">
+
+
+        <div class="titulo">
+            CRISTOS
+        </div>
+
+
+        <!-- =========================
+             ROSTRO 1
+        ========================== -->
+
+        <img
+            class="foto"
+            src="https://i.pinimg.com/736x/d0/48/46/d04846c8311d4a0382a015e527018573.jpg"
+            alt="Cristo">
+
+
+        <!-- =========================
+             ROSTRO 2
+        ========================== -->
+
+        <img
+            class="foto"
+            src="https://www.jerez.es/fileadmin/user_upload/CRCORONACION.png"
+            alt="Cristo de la Coronación">
+
+
+        <!-- =========================
+             ROSTRO 3
+        ========================== -->
+
+        <img
+            class="foto"
+            src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Cristo_del_amor_-_Jerez_DSC06375.JPG/960px-Cristo_del-amor_-_Jerez_DSC06375.JPG?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+            alt="Cristo del Amor">
+
+
+        <!-- =========================
+             ROSTRO 4
+        ========================== -->
+
+        <img
+            class="foto"
+            src="https://www.hermandaddelaexaltacion.com/wp-content/uploads/2022/08/exaltacionweb-4-de-15-scaled.jpg"
+            alt="Cristo de la Exaltación">
+
+
+        <!-- =========================
+             ROSTRO 5
+        ========================== -->
+
+        <img
+            class="foto"
+            src="https://www.uniondehermandades.com/wp-content/uploads/2018/11/1-1.jpg"
+            alt="Cristo">
+
+
+        <!-- =========================
+             ROSTRO 6
+        ========================== -->
+
+        <img
+            class="foto"
+            src="https://www.mundocofrade.es/asset/thumbnail,768,432,center,center/media/mundocofrade/images/2025/10/28/20251028120203044573.jpg"
+            alt="Cristo">
+
+
+        <!-- =========================
+             ROSTRO 7
+        ========================== -->
+
+        <img
+            class="foto"
+            src="https://scontent.fsvq2-2.fna.fbcdn.net/v/t39.30808-6/653712851_122181134720868573_8634379347911416642_n.jpg?stp=dst-jpg_tt6&cstp=mx449x445&ctp=s449x445&_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=833d8c&_nc_ohc=25Eh-hChlCYQ7kNvwH2NJ2G&_nc_oc=Adp46OyrVg68X00tuBaweQ7CZPv2r4IKZP4xs9aACcdMK9b_0hxEKycCYrzR0lzYg5E&_nc_zt=23&_nc_ht=scontent.fsvq2-2.fna&_nc_gid=zM3Fi3bye7wp5fe0Wrv1lQ&_nc_ss=7b2a8&oh=00_AQPirYoPrH2shADv_mN0OH_orP5BAhLZmFM4PdUREklBaw&oe=6AC32A5F"
+            alt="Cristo">
+
+
+        <!-- =========================
+             ROSTRO 8
+        ========================== -->
+
+        <img
+            class="foto"
+            src="https://www.veracruzjerez.es/wp-content/uploads/2025/11/Foto-Cristo-de-la-Esperanza-06-11-25-3-980x735.jpg"
+            alt="Cristo de la Esperanza">
+
+
+    </div>
+
+</div>
+
+
+<!-- VOLVER -->
+
+<a
+    href="rostros.html"
+    class="volver">
+
+    ← ROSTROS
+
+</a>
+
+
+<!-- BOTÓN MÚSICA -->
+
+<button
+    class="musica"
+    id="botonMusica">
+
+    ♪
+
+</button>
+
+
+<!-- YOUTUBE OCULTO -->
+
+<iframe
+    id="youtube"
+    class="youtube"
+    src="https://www.youtube.com/embed/ZQm6kIUK-m0?start=0&enablejsapi=1&playsinline=1&controls=0&loop=1&playlist=ZQm6kIUK-m0"
+    allow="autoplay">
+</iframe>
+
+
+<script>
+
+const boton =
+    document.getElementById("botonMusica");
+
+const youtube =
+    document.getElementById("youtube");
+
+let sonando = false;
+
+
+boton.addEventListener("click",function(){
+
+    if(!sonando){
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            "*"
+        );
+
+        boton.textContent="Ⅱ";
+
+        sonando=true;
+
+    }else{
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}',
+            "*"
+        );
+
+        boton.textContent="♪";
+
+        sonando=false;
+
+    }
+
+});
+
+</script>
+
+
+</body>
+
+</html>
+
