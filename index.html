@@ -21,27 +21,38 @@ body{
     padding:0;
     width:100%;
     height:100%;
+
     background:#000;
+
     font-family:Georgia,"Times New Roman",serif;
+
     overflow:hidden;
 }
 
 
-/* PORTADA */
+/* =========================
+   PORTADA
+========================= */
 
 .portada{
     position:relative;
+
     width:100%;
     height:100vh;
+
     overflow:hidden;
+
     background:#000;
 }
 
 
-/* IMAGENES */
+/* =========================
+   IMÁGENES DE PORTADA
+========================= */
 
 .slide{
     position:absolute;
+
     inset:0;
 
     opacity:0;
@@ -63,12 +74,15 @@ body{
 }
 
 
-/* CAPA OSCURA */
+/* =========================
+   CAPA OSCURA
+========================= */
 
 .portada::after{
     content:"";
 
     position:absolute;
+
     inset:0;
 
     background:rgba(0,0,0,.22);
@@ -77,7 +91,9 @@ body{
 }
 
 
-/* CONTENIDO */
+/* =========================
+   CONTENIDO
+========================= */
 
 .contenido{
     position:absolute;
@@ -97,7 +113,9 @@ body{
 }
 
 
-/* TITULO */
+/* =========================
+   TITULO
+========================= */
 
 h1{
     margin:0;
@@ -112,7 +130,9 @@ h1{
 }
 
 
-/* SUBTITULO */
+/* =========================
+   SUBTITULO
+========================= */
 
 .subtitulo{
     margin-top:18px;
@@ -127,7 +147,9 @@ h1{
 }
 
 
-/* MENU */
+/* =========================
+   MENU
+========================= */
 
 .menu{
     margin-top:45px;
@@ -161,7 +183,9 @@ h1{
 }
 
 
-/* BOTON MUSICA */
+/* =========================
+   BOTÓN MÚSICA
+========================= */
 
 .musica{
     position:fixed;
@@ -199,7 +223,9 @@ h1{
 }
 
 
-/* YOUTUBE OCULTO */
+/* =========================
+   YOUTUBE OCULTO
+========================= */
 
 .youtube{
     position:fixed;
@@ -216,7 +242,9 @@ h1{
 }
 
 
-/* MOVIL */
+/* =========================
+   MÓVIL
+========================= */
 
 @media(max-width:700px){
 
@@ -256,96 +284,132 @@ h1{
 <div class="portada">
 
 
-    <!-- IMAGEN 1 -->
+    <!-- =========================
+         IMAGEN 1
+    ========================= -->
 
     <div class="slide activa">
 
-        <img src="https://s1.abcstatics.com/abc/www/multimedia/sevilla/2024/06/06/lanzada-de-jerez-U65824505088nZV-1200x630%40diario_abc.jpg">
+        <img
+            src="https://s1.abcstatics.com/abc/www/multimedia/sevilla/2024/06/06/lanzada-de-jerez-U65824505088nZV-1200x630%40diario_abc.jpg"
+            alt="Semana Santa de Jerez">
 
     </div>
 
 
-    <!-- IMAGEN 2 -->
+    <!-- =========================
+         IMAGEN 2
+    ========================= -->
 
     <div class="slide">
 
-        <img src="https://static.grupojoly.com/clip/5d24e317-06f7-4d5a-b0ad-1845cccd8844_source-aspect-ratio_1600w_0.jpg">
+        <img
+            src="https://static.grupojoly.com/clip/5d24e317-06f7-4d5a-b0ad-1845cccd8844_source-aspect-ratio_1600w_0.jpg"
+            alt="Semana Santa de Jerez">
 
     </div>
 
 
-    <!-- IMAGEN 3 -->
+    <!-- =========================
+         IMAGEN 3
+    ========================= -->
 
     <div class="slide">
 
-        <img src="https://www.uniondehermandades.com/wp-content/uploads/2018/11/1-1.jpg">
+        <img
+            src="https://www.uniondehermandades.com/wp-content/uploads/2018/11/1-1.jpg"
+            alt="Semana Santa de Jerez">
 
     </div>
 
 
-    <!-- CONTENIDO -->
+    <!-- =========================
+         CONTENIDO
+    ========================= -->
 
     <div class="contenido">
 
-        <h1>SEMANA SANTA DE JEREZ</h1>
+
+        <h1>
+            SEMANA SANTA DE JEREZ
+        </h1>
 
 
         <div class="subtitulo">
-
             Fe · tradición · silencio · emoción
-
         </div>
 
 
         <nav class="menu">
+
+
+            <!-- HERMANDADES -->
 
             <a href="hermandades.html">
                 HERMANDADES
             </a>
 
 
+            <!-- MADRUGÁ -->
+
             <a href="madruga.html">
                 MADRUGÁ
             </a>
 
 
-         
+            <!-- SEMANA SANTA -->
+
             <a href="semana-santa.html">
-    SEMANA SANTA
-</a>
+                SEMANA SANTA
+            </a>
 
 
-            
-            <a href="devociones.html">DEVOCIONES</a>
+            <!-- DEVOCIONES -->
+
+            <a href="devociones.html">
+                DEVOCIONES
+            </a>
 
 
-        
-            <a href="galeria.html">GALERÍA</a>
+            <!-- ROSTROS -->
+
+            <a href="rostros.html">
+                ROSTROS
+            </a>
+
+
+            <!-- GALERÍA -->
+
+            <a href="galeria.html">
+                GALERÍA
+            </a>
+
+
         </nav>
 
+
     </div>
+
 
 </div>
 
 
-<!-- BOTON MUSICA -->
+<!-- =========================
+     BOTÓN MÚSICA
+========================= -->
 
-<button class="musica" id="botonMusica">
+<button
+    class="musica"
+    id="botonMusica">
 
     ♪
 
 </button>
 
 
-```html
-<!-- BOTÓN DE MÚSICA -->
-
-<button class="musica" id="botonMusica">
-    ♪
-</button>
-
-
-<!-- YOUTUBE -->
+<!-- =========================
+     YOUTUBE
+========================= -->
 
 <iframe
     id="youtube"
@@ -356,6 +420,35 @@ h1{
 
 
 <script>
+
+
+/* =========================
+   CAMBIO AUTOMÁTICO DE PORTADA
+========================= */
+
+const slides = document.querySelectorAll(".slide");
+
+let indiceSlide = 0;
+
+
+setInterval(function(){
+
+    slides[indiceSlide].classList.remove("activa");
+
+    indiceSlide++;
+
+    if(indiceSlide >= slides.length){
+        indiceSlide = 0;
+    }
+
+    slides[indiceSlide].classList.add("activa");
+
+},6000);
+
+
+/* =========================
+   MÚSICA
+========================= */
 
 const boton = document.getElementById("botonMusica");
 
@@ -392,20 +485,16 @@ boton.addEventListener("click", function(){
 
 });
 
+
 </script>
-
-
-    
-
-    
-
-
-    
 
 
 </body>
 
 </html>
+
+
+
 
 
 
