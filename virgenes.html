@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vírgenes — Rostros</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#080808;
+    font-family:Georgia,"Times New Roman",serif;
+}
+
+/* ESCENARIO */
+
+.escenario{
+    position:relative;
+    width:100vw;
+    height:100vh;
+    background:#080808;
+}
+
+/* MARCO PRINCIPAL */
+
+.marco{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+
+    width:92vw;
+    max-width:1500px;
+    height:86vh;
+
+    border:1px solid #9b7a3c;
+    background:#000;
+    overflow:hidden;
+
+    box-shadow:
+        0 0 35px rgba(0,0,0,.8),
+        0 0 2px rgba(201,163,91,.4);
+}
+
+/* FOTOGRAFÍAS */
+
+.foto{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    object-position:center;
+
+    opacity:0;
+
+    animation:mostrar 54s infinite;
+}
+
+/* 9 fotografías */
+
+.foto:nth-of-type(1){
+    animation-delay:0s;
+}
+
+.foto:nth-of-type(2){
+    animation-delay:6s;
+}
+
+.foto:nth-of-type(3){
+    animation-delay:12s;
+}
+
+.foto:nth-of-type(4){
+    animation-delay:18s;
+}
+
+.foto:nth-of-type(5){
+    animation-delay:24s;
+}
+
+.foto:nth-of-type(6){
+    animation-delay:30s;
+}
+
+.foto:nth-of-type(7){
+    animation-delay:36s;
+}
+
+.foto:nth-of-type(8){
+    animation-delay:42s;
+}
+
+.foto:nth-of-type(9){
+    animation-delay:48s;
+}
+
+/* EFECTO DE TRANSICIÓN */
+
+@keyframes mostrar{
+
+    0%{
+        opacity:0;
+    }
+
+    5%{
+        opacity:1;
+    }
+
+    12.5%{
+        opacity:1;
+    }
+
+    17.5%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+/* TÍTULO */
+
+.titulo{
+    position:absolute;
+    top:20px;
+    left:0;
+    right:0;
+
+    text-align:center;
+
+    color:#e8dcc5;
+
+    font-size:28px;
+    letter-spacing:5px;
+
+    text-shadow:0 2px 8px #000;
+
+    z-index:20;
+
+    pointer-events:none;
+}
+
+/* BOTÓN DE MÚSICA */
+
+.musica{
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+    border:1px solid #c9a35b;
+
+    background:#111;
+
+    color:#c9a35b;
+
+    font-size:23px;
+
+    cursor:pointer;
+
+    z-index:9999;
+
+    box-shadow:
+        0 0 12px rgba(201,163,91,.25);
+}
+
+.musica:hover{
+    background:#c9a35b;
+    color:#080808;
+}
+
+/* YOUTUBE OCULTO */
+
+.youtube{
+    position:fixed;
+
+    width:1px;
+    height:1px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    left:-10px;
+    top:-10px;
+}
+
+/* VOLVER */
+
+.volver{
+    position:fixed;
+
+    left:25px;
+    bottom:28px;
+
+    color:#c9a35b;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    letter-spacing:2px;
+
+    z-index:9999;
+
+    text-shadow:0 2px 5px #000;
+
+    transition:color .3s ease;
+}
+
+.volver:hover{
+    color:#e8dcc5;
+}
+
+/* MÓVIL */
+
+@media(max-width:800px){
+
+    .marco{
+        width:94vw;
+        height:82vh;
+    }
+
+    .titulo{
+        font-size:21px;
+        letter-spacing:3px;
+        top:14px;
+    }
+
+    .volver{
+        left:15px;
+        bottom:18px;
+        font-size:14px;
+    }
+
+    .musica{
+        right:15px;
+        bottom:15px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="escenario">
+
+```
+<div class="marco">
+
+    <div class="titulo">
+        VÍRGENES
+    </div>
+
+
+    <!-- 1 -->
+
+    <img
+        class="foto"
+        src="https://www.loretojerez.com/wp-content/uploads/2020/08/WhatsApp-Image-2020-08-12-at-18.44.13.jpeg"
+        alt="Virgen"
+    >
+
+
+    <!-- 2 -->
+
+    <img
+        class="foto"
+        src="https://islapasion.net/wp-content/uploads/2024/10/amparosed.jpg"
+        alt="Virgen"
+    >
+
+
+    <!-- 3 -->
+
+    <img
+        class="foto"
+        src="https://www.hermandaddelaexaltacion.com/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-02-at-23.07.41-1.jpeg"
+        alt="Virgen"
+    >
+
+
+    <!-- 4 -->
+
+    <img
+        class="foto"
+        src="https://www.defension.com/wp-content/uploads/2020/12/IMG_0005.jpg"
+        alt="Virgen"
+    >
+
+
+    <!-- 5 -->
+
+    <img
+        class="foto"
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiyDiOpilF3-oJ-lvyqLg-SfOLSveVKfEW2QpeLsCa8HPwZrWxIdeBTObfiCKW2QpeLsCa8HPwZrWxIdeBTObfiCKGSR1ul38TthMCKnHTnJ4wPtuV7ajAVEZeoEc76cPx3-7iVKqn-KtHqLqiwC55fP_MoCxn7M_aTpYyov4/s1600/7.jpg"
+        alt="Virgen"
+    >
+
+
+    <!-- 6 -->
+
+    <img
+        class="foto"
+        src="https://www.elmira.es/asset/thumbnail,992,558,center,center/media/elmira/images/2017/02/03/Virgen-del-valle-de-Jerez-Jorge-Cabeza.jpg"
+        alt="Virgen del Valle de Jerez"
+    >
+
+
+    <!-- 7 -->
+
+    <img
+        class="foto"
+        src="https://www.jerezcofrade.tv/wp-content/uploads/2019/04/Ntra.-Sra.-de-la-Estrella-Tercer-Domingo-de-Cuaresma-Jerez-2019-4-1024x683.jpg"
+        alt="Nuestra Señora de la Estrella"
+    >
+
+
+    <!-- 8 -->
+
+    <img
+        class="foto"
+        src="https://hermandaddeltransporte.com/wp-content/uploads/2022/11/img_20210610_072420_535.jpg?w=1024&h=803"
+        alt="Virgen"
+    >
+
+
+    <!-- 9 -->
+
+    <img
+        class="foto"
+        src="https://www.elmira.es/asset/thumbnail,992,558,center,center/media/elmira/images/2017/02/03/Virgen-del-valle-de-Jerez-Jorge-Cabeza.jpg"
+        alt="Virgen del Valle de Jerez"
+    >
+
+</div>
+```
+
+</div>
+
+<!-- VOLVER -->
+
+<a href="rostros.html" class="volver">
+    ← ROSTROS
+</a>
+
+<!-- BOTÓN MÚSICA -->
+
+<button class="musica" id="botonMusica">
+    ♪
+</button>
+
+<!-- YOUTUBE -->
+
+<iframe
+    id="youtube"
+    class="youtube"
+    src="https://www.youtube.com/embed/crnVuKw1Cvk?start=0&enablejsapi=1&playsinline=1&controls=0&loop=1&playlist=crnVuKw1Cvk"
+    allow="autoplay">
+</iframe>
+
+<script>
+
+const boton =
+    document.getElementById("botonMusica");
+
+const youtube =
+    document.getElementById("youtube");
+
+let sonando = false;
+
+
+boton.addEventListener("click", function(){
+
+    if(!sonando){
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            "*"
+        );
+
+        boton.textContent = "Ⅱ";
+
+        sonando = true;
+
+    }else{
+
+        youtube.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}',
+            "*"
+        );
+
+        boton.textContent = "♪";
+
+        sonando = false;
+
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>
